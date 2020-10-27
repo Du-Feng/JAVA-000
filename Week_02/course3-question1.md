@@ -27,11 +27,11 @@ Java 8|Java 11
 
 因此，Java 8 的命令：
 
-    java -XX:+UseSerialGC -Xms512m -Xmx512m -Xloggc:gc.demo.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+        java -XX:+UseSerialGC -Xms512m -Xmx512m -Xloggc:gc.demo.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
 
 在 Java 11 变为：
 
-    java -XX:+UseSerialGC -Xms512m -Xmx512m -Xlog:gc:gc.demo.log -Xlog:gc* -Xlog:gc::time GCLogAnalysis
+        java -XX:+UseSerialGC -Xms512m -Xmx512m -Xlog:gc:gc.demo.log -Xlog:gc* -Xlog:gc::time GCLogAnalysis
 
 # 串行
 
