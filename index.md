@@ -1,3 +1,3 @@
 # Content
 - [Week 01 作业](Week_01)
-- [Week 02 作业](Week_O2)
+- [Week 02 作业](Week_02)

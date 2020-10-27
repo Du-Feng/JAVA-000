@@ -22,17 +22,19 @@
 两者的区别就在于synchronous IO做**IO operation**的时候会将process阻塞。按照这个定义，blocking IO，non-blocking IO，IO multiplexing都属于synchronous IO。有人可能会说，non-blocking IO并没有被block啊。这里有个非常**狡猾**的地方，定义中所指的**IO operation**是指真实的IO操作，就是例子中的recvfrom这个system call。non-blocking IO在执行recvfrom这个system call的时候，如果kernel的数据没有准备好，这时候不会block进程。但是，当kernel中数据准备好的时候，recvfrom会将数据从kernel拷贝到用户内存中，这个时候进程是被block了，在这段时间内，进程是被block的。而asynchronous IO则不一样，当进程发起IO 操作之后，就直接返回再也不理睬了，直到kernel发送一个信号，告诉进程说IO完成。在这整个过程中，进程完全没有被block。
 **注意**：select，poll，epoll都属于IO多路复用，而IO多路复用又属于同步的范畴，故，epoll只是一个伪异步而已。
 
-##　非阻塞(non-blocking) vs 异步(asynchronous)
-non-blocking IO和asynchronous IO的区别还是很明显的。
+## 非阻塞(non-blocking) vs 异步(asynchronous)
+non-blocking IO和asynchronous IO的区别还是很明显的：
 - 在non-blocking IO中，虽然进程大部分时间都不会被block，但是它仍然要求进程去主动的check，并且当数据准备完成以后，也需要进程主动的再次调用recvfrom来将数据拷贝到用户内存。
 - asynchronous IO则完全不同。它就像是用户进程将整个IO操作交给了他人（kernel）完成，然后他人做完后发信号通知。在此期间，用户进程不需要去检查IO操作的状态，也不需要主动的去拷贝数据。
 
 ## 五种IO模型比较
-五种IO模型的比较如下图所示：
+五种IO模型的类型如下：
+![IO Model Summary](assets/images/IO-Model-Summary.png)
+五种IO模型的比较如下图：
 ![IO Model Comparison](assets/images/IO-Model-Comparison.png)
 用类比的方式总结一下：
-- **blocking IO（阻塞IO）**:就像买票的时候必须自己一直在等着买，不能干别的事。
-- **non-blocking IO（非阻塞IO）**：间隔一段时间去问一下有票没有，可以干别的事，但是在得知有票的时候还要去排队买票，这时也不能干别的事。（在此时也是阻塞的）
-- **IO multiplexing（IO多路复用）**：同时监听多个窗口，某一窗口有票就去买。整个过程不能干其他的事。
-- **Asynchronous IO（异步IO）**：自己托别人买，可以一直干自己的事，用的时候去拿就好。
+- **blocking IO（阻塞IO）**: 就像买票的时候必须自己一直在等着买，不能干别的事。
+- **non-blocking IO（非阻塞IO）**: 间隔一段时间去问一下有票没有，可以干别的事，但是在得知有票的时候还要去排队买票，这时也不能干别的事。（在此时也是阻塞的）
+- **IO multiplexing（IO多路复用）**: 同时监听多个窗口，某一窗口有票就去买。整个过程不能干其他的事。
+- **Asynchronous IO（异步IO）**: 自己托别人买，可以一直干自己的事，用的时候去拿就好。
 
