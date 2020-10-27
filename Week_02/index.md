@@ -1,2 +1,3 @@
 # 学习心得
-- [IO 模型](IOModel.md)
+- [五种IO模型](IOModel.md)
+- GC

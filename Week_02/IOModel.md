@@ -29,6 +29,7 @@ non-blocking IO和asynchronous IO的区别还是很明显的：
 ## 五种IO模型比较
 五种IO模型的类型如下：
 ![IO Model Summary](assets/images/IO-Model-Summary.png)
+<br/>
 五种IO模型的比较如下图：
 ![IO Model Comparison](assets/images/IO-Model-Comparison.png)
 用买票作类比，总结一下：
