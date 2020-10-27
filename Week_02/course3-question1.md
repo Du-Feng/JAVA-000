@@ -19,6 +19,20 @@
 - 2GB
 - 4GB
 
+我使用的 Java 11，GC日志相关的命令有所变化：
+Java 8|Java 11
+-Xloggc:gc.demo.log|-Xlog:gc:gc.demo.log
+-XX:+PrintGCDetails|-Xlog:gc*
+-XX:+PrintGCDateStamps|-Xlog:gc::time (-Xlog:gc::utctime)
+
+因此，Java 8 的命令：
+
+    java -XX:+UseSerialGC -Xms512m -Xmx512m -Xloggc:gc.demo.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+
+在 Java 11 变为：
+
+    java -XX:+UseSerialGC -Xms512m -Xmx512m -Xlog:gc:gc.demo.log -Xlog:gc* -Xlog:gc::time GCLogAnalysis
+
 # 串行
 
 # 并行
