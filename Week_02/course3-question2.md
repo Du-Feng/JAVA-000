@@ -261,4 +261,80 @@
 [Web Live Report](course3-question2/cms/2020-10-28_17-43-16.114257_cms.4g/index.html)
 
 # G1
+## G1GC - 128MB
+启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
 
+    java -jar -XX:+UseG1GC -Xms128m -Xmx128m gateway-server-0.0.1-SNAPSHOT.jar
+
+结果如下：
+<br/>
+![Terminal](course3-question2/g1/g1-128m-sb-terminal.png)
+<br/><br/>
+![Web](course3-question2/g1/g1-128m-sb-web.png)
+<br/><br/>
+[Web Live Report](course3-question2/g1/2020-10-28_17-55-03.459551_g1.128m/index.html)
+
+## G1GC - 256MB
+启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
+
+    java -jar -XX:+UseG1GC -Xms256m -Xmx256m gateway-server-0.0.1-SNAPSHOT.jar
+
+结果如下：
+<br/>
+![Terminal](course3-question2/g1/g1-256m-sb-terminal.png)
+<br/><br/>
+![Web](course3-question2/g1/g1-256m-sb-web.png)
+<br/><br/>
+[Web Live Report](course3-question2/g1/2020-10-28_18-01-20.467665_g1.256m/index.html)
+
+## G1GC - 512MB
+启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
+
+    java -jar -XX:+UseG1GC -Xms512m -Xmx512m gateway-server-0.0.1-SNAPSHOT.jar
+
+结果如下：
+<br/>
+![Terminal](course3-question2/g1/g1-512m-sb-terminal.png)
+<br/><br/>
+![Web](course3-question2/g1/g1-512m-sb-web.png)
+<br/><br/>
+[Web Live Report](course3-question2/g1/2020-10-28_18-04-44.442805_g1.512m/index.html)
+
+## G1GC - 1GB
+启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
+
+    java -jar -XX:+UseG1GC -Xms1g -Xmx1g gateway-server-0.0.1-SNAPSHOT.jar
+
+结果如下：
+<br/>
+![Terminal](course3-question2/g1/g1-1g-sb-terminal.png)
+<br/><br/>
+![Web](course3-question2/g1/g1-1g-sb-web.png)
+<br/><br/>
+[Web Live Report](course3-question2/g1/2020-10-28_18-08-07.063920_g1.1g/index.html)
+
+## G1GC - 2GB
+启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
+
+    java -jar -XX:+UseG1GC -Xms2g -Xmx2g gateway-server-0.0.1-SNAPSHOT.jar
+
+结果如下：
+<br/>
+![Terminal](course3-question2/g1/g1-2g-sb-terminal.png)
+<br/><br/>
+![Web](course3-question2/g1/g1-2g-sb-web.png)
+<br/><br/>
+[Web Live Report](course3-question2/g1/2020-10-28_18-13-22.636939_g1.2g/index.html)
+
+## G1GC - 4GB
+启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
+
+    java -jar -XX:+UseG1GC -Xms4g -Xmx4g gateway-server-0.0.1-SNAPSHOT.jar
+
+结果如下：
+<br/>
+![Terminal](course3-question2/g1/g1-4g-sb-terminal.png)
+<br/><br/>
+![Web](course3-question2/g1/g1-4g-sb-web.png)
+<br/><br/>
+[Web Live Report](course3-question2/g1/2020-10-28_18-16-03.408513_g1.4g/index.html)
