@@ -19,7 +19,78 @@
 - 1GB
 - 2GB
 
+使用sb的命令如下：
+
+    sb -u http://localhost:8088/api/hello -c 20 -N 60
+
 # 串行
+## SerialGC - 128MB
+启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
+
+    java -jar -XX:+UseSerialGC -Xmx128m -Xms128m gateway-server-0.0.1-SNAPSHOT.jar
+
+结果如下：
+<br/>
+![Terminal](course3-question2/serial/serial-128m-sb-terminal.png)
+<br/><br/>
+![Web](course3-question2/serial/serial-128m-sb-web.png)
+
+## SerialGC - 256MB
+启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
+
+    java -jar -XX:+UseSerialGC -Xmx256m -Xms256m gateway-server-0.0.1-SNAPSHOT.jar
+
+结果如下：
+<br/>
+![Terminal](course3-question2/serial/serial-256m-sb-terminal.png)
+<br/><br/>
+![Web](course3-question2/serial/serial-256m-sb-web.png)
+<br/>
+[Report](course3-question2/serial/2020-10-28_14-37-56.879899_serial.128m/index.html)
+
+## SerialGC - 512MB
+启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
+
+    java -jar -XX:+UseSerialGC -Xmx512m -Xms512m gateway-server-0.0.1-SNAPSHOT.jar
+
+结果如下：
+<br/>
+![Terminal](course3-question2/serial/serial-512m-sb-terminal.png)
+<br/><br/>
+![Web](course3-question2/serial/serial-512m-sb-web.png)
+
+## SerialGC - 1GB
+启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
+
+    java -jar -XX:+UseSerialGC -Xmx1g -Xms1g gateway-server-0.0.1-SNAPSHOT.jar
+
+结果如下：
+<br/>
+![Terminal](course3-question2/serial/serial-1g-sb-terminal.png)
+<br/><br/>
+![Web](course3-question2/serial/serial-1g-sb-web.png)
+
+## SerialGC - 2GB
+启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
+
+    java -jar -XX:+UseSerialGC -Xmx2g -Xms2g gateway-server-0.0.1-SNAPSHOT.jar
+
+结果如下：
+<br/>
+![Terminal](course3-question2/serial/serial-2g-sb-terminal.png)
+<br/><br/>
+![Web](course3-question2/serial/serial-2g-sb-web.png)
+
+## SerialGC - 4GB
+启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
+
+    java -jar -XX:+UseSerialGC -Xmx4g -Xms4g gateway-server-0.0.1-SNAPSHOT.jar
+
+结果如下：
+<br/>
+![Terminal](course3-question2/serial/serial-4g-sb-terminal.png)
+<br/><br/>
+![Web](course3-question2/serial/serial-4g-sb-web.png)
 
 # 并行
 
