@@ -1360,7 +1360,8 @@
         java -XX:+UseG1GC -Xms1g -Xmx1g -Xlog:gc*:file=gc.g1.1g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
 
 结果如下：
-
+<details><summary>Click to expand</summary><p><br/>
+        
         PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseG1GC -Xms1g -Xmx1g -Xlog:gc*:file=gc.g1.1g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
         [2020-10-28T10:49:28.540+0800][0.044s][9644][13168] Using G1
         正在执行...
@@ -1407,6 +1408,8 @@
         [2020-10-28T10:49:30.373+0800][1.876s][9644][13168]   region size 1024K, 26 young (26624K), 25 survivors (25600K)
         [2020-10-28T10:49:30.373+0800][1.877s][9644][13168]  Metaspace       used 16560K, capacity 16956K, committed 17024K, reserved 1064960K
         [2020-10-28T10:49:30.373+0800][1.877s][9644][13168]   class space    used 1747K, capacity 1890K, committed 1920K, reserved 1048576K
+        
+<br/></p></details>
 
 ## 2GB
 执行命令行：
@@ -1414,7 +1417,7 @@
         java -XX:+UseG1GC -Xms2g -Xmx2g -Xlog:gc*:file=gc.g1.2g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
 
 结果如下：
-<details><summary>Click to expand</summary><p>
+<details><summary>Click to expand</summary><p><br/>
 
         PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseG1GC -Xms2g -Xmx2g -Xlog:gc*:file=gc.g1.2g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
         [2020-10-28T10:50:17.928+0800][0.071s][1964][3712] Using G1
@@ -1439,7 +1442,7 @@
         [2020-10-28T10:50:19.726+0800][1.869s][1964][3712]  Metaspace       used 16580K, capacity 16955K, committed 17024K, reserved 1064960K
         [2020-10-28T10:50:19.726+0800][1.869s][1964][3712]   class space    used 1746K, capacity 1890K, committed 1920K, reserved 1048576K
         
-</p></details>
+<br/></p></details>
 
 ## 4GB
 执行命令行：
@@ -1447,7 +1450,7 @@
         java -XX:+UseG1GC -Xms4g -Xmx4g -Xlog:gc*:file=gc.g1.4g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
 
 结果如下：
-<details><summary>Click to expand</summary>
+<details><summary>Click to expand</summary><br/>
         
         PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseG1GC -Xms4g -Xmx4g -Xlog:gc*:file=gc.g1.4g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
         [2020-10-28T10:51:02.984+0800][0.116s][16528][7964] Using G1
@@ -1471,6 +1474,6 @@
         [2020-10-28T10:51:04.766+0800][1.899s][16528][7964 ]  Metaspace       used 16549K, capacity 16956K, committed 17024K, reserved 1064960K
         [2020-10-28T10:51:04.767+0800][1.899s][16528][7964 ]   class space    used 1748K, capacity 1890K, committed 1920K, reserved 1048576K
         
-</details>
+<br/></details>
 
 
