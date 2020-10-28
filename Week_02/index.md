@@ -1,5 +1,8 @@
 # [主页](../index.md)
 
+# 如果查看图片
+Github的markdown文件中，图片无法显示，也可以访问 [https://du-feng.github.io/JAVA-000/Week_02/](https://du-feng.github.io/JAVA-000/Week_02/) 查看 markdown 转变后的 html 页面。
+
 # 学习心得
 - [GC](GC.md)
 - [压力测试工具](StressTestTools.md)
