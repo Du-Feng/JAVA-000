@@ -1,4 +1,4 @@
-# [主页](index.md)
+# [主页](../index.md)
 
 # 学习心得
 - [GC](GC.md)
