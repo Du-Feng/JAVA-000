@@ -2,7 +2,7 @@
 
 # 作业要求
 第四节课作业实践
-2、写一段代码，使用 HttpClient 或 OkHttp 访问 http://localhost:8801，代码提交到Github。
+2、写一段代码，使用 HttpClient 或 OkHttp 访问 http://localhost:8801 ，代码提交到Github。
 
 # 简述
 使用之前练习的一个 [咖啡 Rest API 小程序](course4-question2/complex-controller)，同时参考如下链接，写了一个简单的 [HttpClient小程序](course4-question2/httpclient-demo)，演练如何使用 HttpClient 访问咖啡Rest API：
