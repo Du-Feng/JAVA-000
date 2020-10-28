@@ -13,7 +13,9 @@
 - **-XX:MaxDirectMemorySize=size**: 系统可以使用的最大堆外内存，这个参数跟 -Dsun.nio.MaxDirectMemorySize 效果相同。是JVM用于处理IO的buffer。
 注意：**Native** 是Java用本地语言调用时所使用的内存。**Direct Memory** 和 **Native** 都不会被 GC 回收。
 
-![JVM Memory Model 1](JVMMemoryModel/JVM.Memory.Model.1.png)
-<br/>
-![JVM Memory Model 2](JVMMemoryModel/JVM.Memory.Model.2.png)
+**JVM Memory 树图**<br/>
+![JVM Memory 树图](JVMMemoryModel/JVM.Memory.Model.1.png)
+
+**JVM Memory 块图**<br/>
+![JVM Memory 块图](JVMMemoryModel/JVM.Memory.Model.2.png)
 
