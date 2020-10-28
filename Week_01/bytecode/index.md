@@ -1,3 +1,9 @@
+# [返回](index.md)
+
+# 作业要求
+1、自己写一个简单的 Hello.java，里面需要涉及基本类型，四则运行，if 和 for，然后
+自己分析一下对应的字节码，有问题群里讨论。
+
 # 演示Java Class文件的字节码(bytecode)，以及 javac 和 javap 工具的使用
 - [Hello World](pages/helloworld.md)
 - [四则运算](pages/ArithmeticOperation.md)
