@@ -1357,7 +1357,7 @@
 ## 1GB
 执行命令行：
 
-        java -XX:+UseG1GC -Xms1g -Xmx1g -Xlog:gc*:file=gc.g1.1g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
+    java -XX:+UseG1GC -Xms1g -Xmx1g -Xlog:gc*:file=gc.g1.1g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
 
 结果如下：
 <details><summary>Click to expand</summary><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
