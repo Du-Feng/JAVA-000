@@ -27,7 +27,7 @@
 ## SerialGC - 128MB
 启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
 
-    java -jar -XX:+UseSerialGC -Xmx128m -Xms128m gateway-server-0.0.1-SNAPSHOT.jar
+    java -jar -XX:+UseSerialGC -Xms128m -Xmx128m gateway-server-0.0.1-SNAPSHOT.jar
 
 结果如下：
 <br/>
@@ -40,7 +40,7 @@
 ## SerialGC - 256MB
 启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
 
-    java -jar -XX:+UseSerialGC -Xmx256m -Xms256m gateway-server-0.0.1-SNAPSHOT.jar
+    java -jar -XX:+UseSerialGC -Xms256m -Xmx256m gateway-server-0.0.1-SNAPSHOT.jar
 
 结果如下：
 <br/>
@@ -53,7 +53,7 @@
 ## SerialGC - 512MB
 启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
 
-    java -jar -XX:+UseSerialGC -Xmx512m -Xms512m gateway-server-0.0.1-SNAPSHOT.jar
+    java -jar -XX:+UseSerialGC -Xms512m -Xmx512m gateway-server-0.0.1-SNAPSHOT.jar
 
 结果如下：
 <br/>
@@ -66,7 +66,7 @@
 ## SerialGC - 1GB
 启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
 
-    java -jar -XX:+UseSerialGC -Xmx1g -Xms1g gateway-server-0.0.1-SNAPSHOT.jar
+    java -jar -XX:+UseSerialGC -Xms1g -Xmx1g gateway-server-0.0.1-SNAPSHOT.jar
 
 结果如下：
 <br/>
@@ -79,7 +79,7 @@
 ## SerialGC - 2GB
 启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
 
-    java -jar -XX:+UseSerialGC -Xmx2g -Xms2g gateway-server-0.0.1-SNAPSHOT.jar
+    java -jar -XX:+UseSerialGC -Xms2g -Xmx2g gateway-server-0.0.1-SNAPSHOT.jar
 
 结果如下：
 <br/>
@@ -92,7 +92,7 @@
 ## SerialGC - 4GB
 启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
 
-    java -jar -XX:+UseSerialGC -Xmx4g -Xms4g gateway-server-0.0.1-SNAPSHOT.jar
+    java -jar -XX:+UseSerialGC -Xms4g -Xmx4g gateway-server-0.0.1-SNAPSHOT.jar
 
 结果如下：
 <br/>
@@ -103,6 +103,83 @@
 [Web Live Report](course3-question2/serial/2020-10-28_15-07-18.070700_serial.4g/index.html)
 
 # 并行
+## ParallelGC - 128MB
+启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
+
+    java -jar -XX:+UseParallelGC -Xms128m -Xmx128m gateway-server-0.0.1-SNAPSHOT.jar
+
+结果如下：
+<br/>
+![Terminal](course3-question2/parallel/parallel-128m-sb-terminal.png)
+<br/><br/>
+![Web](course3-question2/parallel/parallel-128m-sb-web.png)
+<br/><br/>
+[Web Live Report](course3-question2/parallel/2020-10-28_16-48-15.880068_parallel.128m/index.html)
+
+## ParallelGC - 256MB
+启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
+
+    java -jar -XX:+UseParallelGC -Xms256m -Xmx256m gateway-server-0.0.1-SNAPSHOT.jar
+
+结果如下：
+<br/>
+![Terminal](course3-question2/parallel/parallel-256m-sb-terminal.png)
+<br/><br/>
+![Web](course3-question2/parallel/parallel-256m-sb-web.png)
+<br/><br/>
+[Web Live Report](course3-question2/parallel/2020-10-28_16-54-27.126586_parallel.256m/index.html)
+
+## ParallelGC - 512MB
+启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
+
+    java -jar -XX:+UseParallelGC -Xms512m -Xmx512m gateway-server-0.0.1-SNAPSHOT.jar
+
+结果如下：
+<br/>
+![Terminal](course3-question2/parallel/parallel-512m-sb-terminal.png)
+<br/><br/>
+![Web](course3-question2/parallel/parallel-512m-sb-web.png)
+<br/><br/>
+[Web Live Report](course3-question2/parallel/2020-10-28_16-58-43.648794_parallel.512m/index.html)
+
+## ParallelGC - 1GB
+启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
+
+    java -jar -XX:+UseParallelGC -Xms1g -Xmx1g gateway-server-0.0.1-SNAPSHOT.jar
+
+结果如下：
+<br/>
+![Terminal](course3-question2/parallel/parallel-1g-sb-terminal.png)
+<br/><br/>
+![Web](course3-question2/parallel/parallel-1g-sb-web.png)
+<br/><br/>
+[Web Live Report](course3-question2/parallel/2020-10-28_17-03-11.994880_parallel.1g/index.html)
+
+## ParallelGC - 2GB
+启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
+
+    java -jar -XX:+UseParallelGC -Xms2g -Xmx2g gateway-server-0.0.1-SNAPSHOT.jar
+
+结果如下：
+<br/>
+![Terminal](course3-question2/parallel/parallel-2g-sb-terminal.png)
+<br/><br/>
+![Web](course3-question2/parallel/parallel-2g-sb-web.png)
+<br/><br/>
+[Web Live Report](course3-question2/parallel/2020-10-28_17-06-31.760732_parallel.2g/index.html)
+
+## ParallelGC - 4GB
+启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
+
+    java -jar -XX:+UseParallelGC -Xms4g -Xmx4g gateway-server-0.0.1-SNAPSHOT.jar
+
+结果如下：
+<br/>
+![Terminal](course3-question2/parallel/parallel-4g-sb-terminal.png)
+<br/><br/>
+![Web](course3-question2/parallel/parallel-4g-sb-web.png)
+<br/><br/>
+[Web Live Report](course3-question2/parallel/2020-10-28_17-09-52.859059_parallel.4g/index.html)
 
 # CMS
 

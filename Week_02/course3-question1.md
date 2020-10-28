@@ -44,7 +44,7 @@
 
 # 串行
 
-## 128MB
+## SerialGC - 128MB
 执行命令行：
 
     java -XX:+UseSerialGC -Xms128m -Xmx128m -Xlog:gc*:file=gc.serial.128m.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
@@ -97,7 +97,7 @@ Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
 
 </code></pre></div></div></details>
 
-## 256MB
+## SerialGC - 256MB
 执行命令行：
 
     java -XX:+UseSerialGC -Xms256m -Xmx256m -Xlog:gc*:file=gc.serial.256m.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
@@ -142,7 +142,7 @@ PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseSerialGC -Xms256m -Xmx256m
 
 </code></pre></div></div></details>
 
-## 512MB
+## SerialGC - 512MB
 执行命令行：
 
     java -XX:+UseSerialGC -Xms512m -Xmx512m -Xlog:gc*:file=gc.serial.512m.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
@@ -183,7 +183,7 @@ PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseSerialGC -Xms512m -Xmx512m
 
 </code></pre></div></div></details>
 
-## 1GB
+## SerialGC - 1GB
 执行命令行：
 
     java -XX:+UseSerialGC -Xms1g -Xmx1g -Xlog:gc*:file=gc.serial.1g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
@@ -216,7 +216,7 @@ PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseSerialGC -Xms1g -Xmx1g -Xl
 
 </code></pre></div></div></details>
 
-## 2GB
+## SerialGC - 2GB
 执行命令行：
 
     java -XX:+UseSerialGC -Xms2g -Xmx2g -Xlog:gc*:file=gc.serial.2g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
@@ -249,7 +249,7 @@ PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseSerialGC -Xms1g -Xmx1g -Xl
 
 </code></pre></div></div></details>       
 
-## 4GB
+## SerialGC - 4GB
 执行命令行：
 
     java -XX:+UseSerialGC -Xms4g -Xmx4g -Xlog:gc*:file=gc.serial.4g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
@@ -276,7 +276,7 @@ PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseSerialGC -Xms4g -Xmx4g -Xl
 </code></pre></div></div></details>
 
 # 并行
-## 128MB
+## ParallelGC - 128MB
 执行命令行：
 
     java -XX:+UseParallelGC -Xms128m -Xmx128m -Xlog:gc*:file=gc.parallel.128m.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
@@ -330,7 +330,7 @@ PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseParallelGC -Xms128m -Xmx12
 
 </code></pre></div></div></details>
 
-## 256MB
+## ParallelGC - 256MB
 执行命令行：
 
     java -XX:+UseParallelGC -Xms256m -Xmx256m -Xlog:gc*:file=gc.parallel.256m.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
@@ -377,7 +377,7 @@ PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseParallelGC -Xms256m -Xmx25
 
 </code></pre></div></div></details>
 
-## 512MB
+## ParallelGC - 512MB
 执行命令行：
 
     java -XX:+UseParallelGC -Xms512m -Xmx512m -Xlog:gc*:file=gc.parallel.512m.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
@@ -424,7 +424,7 @@ PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseParallelGC -Xms512m -Xmx51
 
 </code></pre></div></div></details>
 
-## 1GB
+## ParallelGC - 1GB
 执行命令行：
 
     java -XX:+UseParallelGC -Xms1g -Xmx1g -Xlog:gc*:file=gc.parallel.1g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
@@ -460,7 +460,7 @@ PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseParallelGC -Xms1g -Xmx1g -
 
 </code></pre></div></div></details>
 
-## 2GB
+## ParallelGC - 2GB
 执行命令行：
 
     java -XX:+UseParallelGC -Xms2g -Xmx2g -Xlog:gc*:file=gc.parallel.2g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
@@ -488,7 +488,7 @@ PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseParallelGC -Xms2g -Xmx2g -
 
 </code></pre></div></div></details>
 
-## 4GB
+## ParallelGC - 4GB
 执行命令行：
 
     java -XX:+UseParallelGC -Xms4g -Xmx4g -Xlog:gc*:file=gc.parallel.4g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
