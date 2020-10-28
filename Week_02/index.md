@@ -11,7 +11,7 @@
 2. 使用压测工具（wrk或sb），演练gateway-server-0.0.1-SNAPSHOT.jar 示例。
    <br/>[答案](course3-question2.md)
 3. (选做)如果自己本地有可以运行的项目，可以按照2的方式进行演练。
-   <br/>[答案](course3-question3.md)
+   <br/>此题没有做。
 <br/>根据上述自己对于1和2的演示，写一段对于不同 GC 的总结，提交到 Github。
 <br/>[GC心得](GC.md)
 
