@@ -1,0 +1,183 @@
+[2020-10-28T10:39:43.782+0800][0.021s][1336][3772][info][gc] Using Concurrent Mark Sweep
+[2020-10-28T10:39:43.783+0800][0.022s][1336][3772][info][gc,heap,coops] Heap address: 0x00000000e0000000, size: 512 MB, Compressed Oops mode: 32-bit
+[2020-10-28T10:39:44.689+0800][0.928s][1336][20400][info][gc,start     ] GC(0) Pause Young (Allocation Failure)
+[2020-10-28T10:39:44.690+0800][0.929s][1336][20400][info][gc,task      ] GC(0) Using 8 workers of 8 for evacuation
+[2020-10-28T10:39:44.710+0800][0.949s][1336][20400][info][gc,heap      ] GC(0) ParNew: 139776K->17471K(157248K)
+[2020-10-28T10:39:44.710+0800][0.949s][1336][20400][info][gc,heap      ] GC(0) CMS: 0K->26856K(349568K)
+[2020-10-28T10:39:44.715+0800][0.953s][1336][20400][info][gc,metaspace ] GC(0) Metaspace: 16357K->16357K(1064960K)
+[2020-10-28T10:39:44.715+0800][0.953s][1336][20400][info][gc           ] GC(0) Pause Young (Allocation Failure) 136M->43M(494M) 25.514ms
+[2020-10-28T10:39:44.715+0800][0.954s][1336][20400][info][gc,cpu       ] GC(0) User=0.03s Sys=0.08s Real=0.03s
+[2020-10-28T10:39:44.767+0800][1.006s][1336][20400][info][gc,start     ] GC(1) Pause Young (Allocation Failure)
+[2020-10-28T10:39:44.767+0800][1.006s][1336][20400][info][gc,task      ] GC(1) Using 8 workers of 8 for evacuation
+[2020-10-28T10:39:44.803+0800][1.042s][1336][20400][info][gc,heap      ] GC(1) ParNew: 157247K->17472K(157248K)
+[2020-10-28T10:39:44.803+0800][1.042s][1336][20400][info][gc,heap      ] GC(1) CMS: 26856K->74791K(349568K)
+[2020-10-28T10:39:44.803+0800][1.042s][1336][20400][info][gc,metaspace ] GC(1) Metaspace: 16358K->16358K(1064960K)
+[2020-10-28T10:39:44.803+0800][1.042s][1336][20400][info][gc           ] GC(1) Pause Young (Allocation Failure) 179M->90M(494M) 36.167ms
+[2020-10-28T10:39:44.804+0800][1.043s][1336][20400][info][gc,cpu       ] GC(1) User=0.06s Sys=0.08s Real=0.04s
+[2020-10-28T10:39:44.852+0800][1.091s][1336][20400][info][gc,start     ] GC(2) Pause Young (Allocation Failure)
+[2020-10-28T10:39:44.853+0800][1.091s][1336][20400][info][gc,task      ] GC(2) Using 8 workers of 8 for evacuation
+[2020-10-28T10:39:44.897+0800][1.136s][1336][20400][info][gc,heap      ] GC(2) ParNew: 157025K->17472K(157248K)
+[2020-10-28T10:39:44.897+0800][1.136s][1336][20400][info][gc,heap      ] GC(2) CMS: 74791K->134376K(349568K)
+[2020-10-28T10:39:44.897+0800][1.136s][1336][20400][info][gc,metaspace ] GC(2) Metaspace: 16358K->16358K(1064960K)
+[2020-10-28T10:39:44.897+0800][1.136s][1336][20400][info][gc           ] GC(2) Pause Young (Allocation Failure) 226M->148M(494M) 45.127ms
+[2020-10-28T10:39:44.898+0800][1.136s][1336][20400][info][gc,cpu       ] GC(2) User=0.25s Sys=0.05s Real=0.05s
+[2020-10-28T10:39:44.922+0800][1.161s][1336][20400][info][gc,start     ] GC(3) Pause Young (Allocation Failure)
+[2020-10-28T10:39:44.922+0800][1.161s][1336][20400][info][gc,task      ] GC(3) Using 8 workers of 8 for evacuation
+[2020-10-28T10:39:44.963+0800][1.202s][1336][20400][info][gc,heap      ] GC(3) ParNew: 157021K->17472K(157248K)
+[2020-10-28T10:39:44.964+0800][1.202s][1336][20400][info][gc,heap      ] GC(3) CMS: 134376K->188571K(349568K)
+[2020-10-28T10:39:44.964+0800][1.202s][1336][20400][info][gc,metaspace ] GC(3) Metaspace: 16358K->16358K(1064960K)
+[2020-10-28T10:39:44.964+0800][1.202s][1336][20400][info][gc           ] GC(3) Pause Young (Allocation Failure) 284M->201M(494M) 41.347ms
+[2020-10-28T10:39:44.964+0800][1.203s][1336][20400][info][gc,cpu       ] GC(3) User=0.17s Sys=0.02s Real=0.04s
+[2020-10-28T10:39:44.964+0800][1.203s][1336][20400][info][gc,start     ] GC(4) Pause Initial Mark
+[2020-10-28T10:39:44.965+0800][1.203s][1336][20400][info][gc           ] GC(4) Pause Initial Mark 204M->204M(494M) 0.415ms
+[2020-10-28T10:39:44.966+0800][1.204s][1336][20400][info][gc,cpu       ] GC(4) User=0.02s Sys=0.00s Real=0.00s
+[2020-10-28T10:39:44.966+0800][1.204s][1336][11936][info][gc           ] GC(4) Concurrent Mark
+[2020-10-28T10:39:44.967+0800][1.205s][1336][11936][info][gc,task      ] GC(4) Using 2 workers of 2 for marking
+[2020-10-28T10:39:44.974+0800][1.213s][1336][11936][info][gc           ] GC(4) Concurrent Mark 8.705ms
+[2020-10-28T10:39:44.975+0800][1.214s][1336][11936][info][gc,cpu       ] GC(4) User=0.00s Sys=0.00s Real=0.01s
+[2020-10-28T10:39:44.975+0800][1.214s][1336][11936][info][gc           ] GC(4) Concurrent Preclean
+[2020-10-28T10:39:44.976+0800][1.215s][1336][11936][info][gc           ] GC(4) Concurrent Preclean 1.147ms
+[2020-10-28T10:39:44.977+0800][1.215s][1336][11936][info][gc,cpu       ] GC(4) User=0.00s Sys=0.00s Real=0.00s
+[2020-10-28T10:39:44.977+0800][1.215s][1336][11936][info][gc           ] GC(4) Concurrent Abortable Preclean
+[2020-10-28T10:39:44.994+0800][1.232s][1336][20400][info][gc,start     ] GC(5) Pause Young (Allocation Failure)
+[2020-10-28T10:39:44.994+0800][1.232s][1336][20400][info][gc,task      ] GC(5) Using 8 workers of 8 for evacuation
+[2020-10-28T10:39:45.037+0800][1.275s][1336][20400][info][gc,heap      ] GC(5) ParNew: 157248K->17472K(157248K)
+[2020-10-28T10:39:45.037+0800][1.275s][1336][20400][info][gc,heap      ] GC(5) CMS: 188571K->237156K(349568K)
+[2020-10-28T10:39:45.037+0800][1.275s][1336][20400][info][gc,metaspace ] GC(5) Metaspace: 16358K->16358K(1064960K)
+[2020-10-28T10:39:45.037+0800][1.275s][1336][20400][info][gc           ] GC(5) Pause Young (Allocation Failure) 337M->248M(494M) 43.307ms
+[2020-10-28T10:39:45.037+0800][1.276s][1336][20400][info][gc,cpu       ] GC(5) User=0.30s Sys=0.02s Real=0.04s
+[2020-10-28T10:39:45.065+0800][1.303s][1336][20400][info][gc,start     ] GC(6) Pause Young (Allocation Failure)
+[2020-10-28T10:39:45.065+0800][1.303s][1336][20400][info][gc,task      ] GC(6) Using 8 workers of 8 for evacuation
+[2020-10-28T10:39:45.107+0800][1.346s][1336][20400][info][gc,heap      ] GC(6) ParNew: 157248K->17472K(157248K)
+[2020-10-28T10:39:45.107+0800][1.346s][1336][20400][info][gc,heap      ] GC(6) CMS: 237156K->287007K(349568K)
+[2020-10-28T10:39:45.107+0800][1.346s][1336][20400][info][gc,metaspace ] GC(6) Metaspace: 16358K->16358K(1064960K)
+[2020-10-28T10:39:45.107+0800][1.346s][1336][20400][info][gc           ] GC(6) Pause Young (Allocation Failure) 385M->297M(494M) 42.595ms
+[2020-10-28T10:39:45.107+0800][1.346s][1336][20400][info][gc,cpu       ] GC(6) User=0.28s Sys=0.03s Real=0.04s
+[2020-10-28T10:39:45.139+0800][1.378s][1336][20400][info][gc,start     ] GC(7) Pause Young (Allocation Failure)
+[2020-10-28T10:39:45.139+0800][1.378s][1336][20400][info][gc,task      ] GC(7) Using 8 workers of 8 for evacuation
+[2020-10-28T10:39:45.176+0800][1.415s][1336][20400][info][gc,heap      ] GC(7) ParNew: 157248K->17472K(157248K)
+[2020-10-28T10:39:45.176+0800][1.415s][1336][20400][info][gc,heap      ] GC(7) CMS: 287007K->332919K(349568K)
+[2020-10-28T10:39:45.177+0800][1.415s][1336][20400][info][gc,metaspace ] GC(7) Metaspace: 16358K->16358K(1064960K)
+[2020-10-28T10:39:45.177+0800][1.415s][1336][20400][info][gc           ] GC(7) Pause Young (Allocation Failure) 433M->342M(494M) 37.558ms
+[2020-10-28T10:39:45.177+0800][1.416s][1336][20400][info][gc,cpu       ] GC(7) User=0.13s Sys=0.03s Real=0.04s
+[2020-10-28T10:39:45.177+0800][1.416s][1336][11936][info][gc           ] GC(4) Concurrent Abortable Preclean 200.317ms
+[2020-10-28T10:39:45.177+0800][1.416s][1336][11936][info][gc,cpu       ] GC(4) User=0.83s Sys=0.09s Real=0.20s
+[2020-10-28T10:39:45.177+0800][1.416s][1336][20400][info][gc,start     ] GC(4) Pause Remark
+[2020-10-28T10:39:45.182+0800][1.421s][1336][20400][info][gc           ] GC(4) Pause Remark 348M->348M(494M) 4.713ms
+[2020-10-28T10:39:45.183+0800][1.422s][1336][20400][info][gc,cpu       ] GC(4) User=0.00s Sys=0.00s Real=0.01s
+[2020-10-28T10:39:45.183+0800][1.422s][1336][11936][info][gc           ] GC(4) Concurrent Sweep
+[2020-10-28T10:39:45.190+0800][1.429s][1336][11936][info][gc           ] GC(4) Concurrent Sweep 6.824ms
+[2020-10-28T10:39:45.190+0800][1.429s][1336][11936][info][gc,cpu       ] GC(4) User=0.03s Sys=0.02s Real=0.01s
+[2020-10-28T10:39:45.191+0800][1.429s][1336][11936][info][gc           ] GC(4) Concurrent Reset
+[2020-10-28T10:39:45.193+0800][1.432s][1336][11936][info][gc           ] GC(4) Concurrent Reset 2.781ms
+[2020-10-28T10:39:45.195+0800][1.434s][1336][11936][info][gc,cpu       ] GC(4) User=0.00s Sys=0.00s Real=0.00s
+[2020-10-28T10:39:45.195+0800][1.434s][1336][11936][info][gc,heap      ] GC(4) Old: 188571K->306378K(349568K)
+[2020-10-28T10:39:45.227+0800][1.466s][1336][20400][info][gc,start     ] GC(8) Pause Young (Allocation Failure)
+[2020-10-28T10:39:45.227+0800][1.466s][1336][20400][info][gc,task      ] GC(8) Using 8 workers of 8 for evacuation
+[2020-10-28T10:39:45.227+0800][1.466s][1336][20400][info][gc,start     ] GC(9) Pause Full (Allocation Failure)
+[2020-10-28T10:39:45.227+0800][1.466s][1336][20400][info][gc,phases,start] GC(9) Phase 1: Mark live objects
+[2020-10-28T10:39:45.234+0800][1.473s][1336][20400][info][gc,phases      ] GC(9) Phase 1: Mark live objects 6.994ms
+[2020-10-28T10:39:45.234+0800][1.473s][1336][20400][info][gc,phases,start] GC(9) Phase 2: Compute new object addresses
+[2020-10-28T10:39:45.237+0800][1.476s][1336][20400][info][gc,phases      ] GC(9) Phase 2: Compute new object addresses 2.838ms
+[2020-10-28T10:39:45.237+0800][1.476s][1336][20400][info][gc,phases,start] GC(9) Phase 3: Adjust pointers
+[2020-10-28T10:39:45.241+0800][1.480s][1336][20400][info][gc,phases      ] GC(9) Phase 3: Adjust pointers 3.911ms
+[2020-10-28T10:39:45.241+0800][1.480s][1336][20400][info][gc,phases,start] GC(9) Phase 4: Move objects
+[2020-10-28T10:39:45.301+0800][1.539s][1336][20400][info][gc,phases      ] GC(9) Phase 4: Move objects 59.381ms
+[2020-10-28T10:39:45.301+0800][1.540s][1336][20400][info][gc             ] GC(9) Pause Full (Allocation Failure) 452M->255M(494M) 74.113ms
+[2020-10-28T10:39:45.302+0800][1.540s][1336][20400][info][gc,heap        ] GC(8) ParNew: 157248K->0K(157248K)
+[2020-10-28T10:39:45.302+0800][1.541s][1336][20400][info][gc,heap        ] GC(8) CMS: 306378K->261829K(349568K)
+[2020-10-28T10:39:45.302+0800][1.541s][1336][20400][info][gc,metaspace   ] GC(8) Metaspace: 16361K->16361K(1064960K)
+[2020-10-28T10:39:45.302+0800][1.541s][1336][20400][info][gc             ] GC(8) Pause Young (Allocation Failure) 452M->255M(494M) 74.992ms
+[2020-10-28T10:39:45.302+0800][1.541s][1336][20400][info][gc,cpu         ] GC(8) User=0.08s Sys=0.00s Real=0.08s
+[2020-10-28T10:39:45.303+0800][1.541s][1336][20400][info][gc,start       ] GC(10) Pause Initial Mark
+[2020-10-28T10:39:45.303+0800][1.542s][1336][20400][info][gc             ] GC(10) Pause Initial Mark 259M->259M(494M) 0.517ms
+[2020-10-28T10:39:45.304+0800][1.542s][1336][20400][info][gc,cpu         ] GC(10) User=0.00s Sys=0.00s Real=0.00s
+[2020-10-28T10:39:45.304+0800][1.543s][1336][11936][info][gc             ] GC(10) Concurrent Mark
+[2020-10-28T10:39:45.304+0800][1.543s][1336][11936][info][gc,task        ] GC(10) Using 2 workers of 2 for marking
+[2020-10-28T10:39:45.310+0800][1.548s][1336][11936][info][gc             ] GC(10) Concurrent Mark 5.730ms
+[2020-10-28T10:39:45.310+0800][1.549s][1336][11936][info][gc,cpu         ] GC(10) User=0.06s Sys=0.03s Real=0.01s
+[2020-10-28T10:39:45.310+0800][1.549s][1336][11936][info][gc             ] GC(10) Concurrent Preclean
+[2020-10-28T10:39:45.311+0800][1.550s][1336][11936][info][gc             ] GC(10) Concurrent Preclean 0.794ms
+[2020-10-28T10:39:45.312+0800][1.550s][1336][11936][info][gc,cpu         ] GC(10) User=0.00s Sys=0.00s Real=0.00s
+[2020-10-28T10:39:45.312+0800][1.550s][1336][11936][info][gc             ] GC(10) Concurrent Abortable Preclean
+[2020-10-28T10:39:45.332+0800][1.571s][1336][20400][info][gc,start       ] GC(11) Pause Young (Allocation Failure)
+[2020-10-28T10:39:45.332+0800][1.571s][1336][20400][info][gc,task        ] GC(11) Using 8 workers of 8 for evacuation
+[2020-10-28T10:39:45.355+0800][1.594s][1336][20400][info][gc,heap        ] GC(11) ParNew: 139776K->17472K(157248K)
+[2020-10-28T10:39:45.355+0800][1.594s][1336][20400][info][gc,heap        ] GC(11) CMS: 261829K->296911K(349568K)
+[2020-10-28T10:39:45.355+0800][1.594s][1336][20400][info][gc,metaspace   ] GC(11) Metaspace: 16361K->16361K(1064960K)
+[2020-10-28T10:39:45.355+0800][1.594s][1336][20400][info][gc             ] GC(11) Pause Young (Allocation Failure) 392M->307M(494M) 23.183ms
+[2020-10-28T10:39:45.356+0800][1.594s][1336][20400][info][gc,cpu         ] GC(11) User=0.22s Sys=0.00s Real=0.02s
+[2020-10-28T10:39:45.383+0800][1.621s][1336][20400][info][gc,start       ] GC(12) Pause Young (Allocation Failure)
+[2020-10-28T10:39:45.383+0800][1.622s][1336][20400][info][gc,task        ] GC(12) Using 8 workers of 8 for evacuation
+[2020-10-28T10:39:45.410+0800][1.648s][1336][20400][info][gc,heap        ] GC(12) ParNew: 157248K->17472K(157248K)
+[2020-10-28T10:39:45.410+0800][1.648s][1336][20400][info][gc,heap        ] GC(12) CMS: 296911K->347061K(349568K)
+[2020-10-28T10:39:45.410+0800][1.648s][1336][20400][info][gc,metaspace   ] GC(12) Metaspace: 16361K->16361K(1064960K)
+[2020-10-28T10:39:45.410+0800][1.648s][1336][20400][info][gc             ] GC(12) Pause Young (Allocation Failure) 443M->355M(494M) 26.994ms
+[2020-10-28T10:39:45.410+0800][1.649s][1336][20400][info][gc,cpu         ] GC(12) User=0.17s Sys=0.00s Real=0.03s
+[2020-10-28T10:39:45.410+0800][1.649s][1336][11936][info][gc             ] GC(10) Concurrent Abortable Preclean 98.580ms
+[2020-10-28T10:39:45.410+0800][1.649s][1336][11936][info][gc,cpu         ] GC(10) User=0.42s Sys=0.00s Real=0.10s
+[2020-10-28T10:39:45.411+0800][1.649s][1336][20400][info][gc,start       ] GC(10) Pause Remark
+[2020-10-28T10:39:45.414+0800][1.653s][1336][20400][info][gc             ] GC(10) Pause Remark 358M->358M(494M) 3.545ms
+[2020-10-28T10:39:45.415+0800][1.653s][1336][20400][info][gc,cpu         ] GC(10) User=0.00s Sys=0.00s Real=0.00s
+[2020-10-28T10:39:45.415+0800][1.653s][1336][11936][info][gc             ] GC(10) Concurrent Sweep
+[2020-10-28T10:39:45.420+0800][1.659s][1336][11936][info][gc             ] GC(10) Concurrent Sweep 5.232ms
+[2020-10-28T10:39:45.421+0800][1.659s][1336][11936][info][gc,cpu         ] GC(10) User=0.03s Sys=0.00s Real=0.01s
+[2020-10-28T10:39:45.421+0800][1.660s][1336][11936][info][gc             ] GC(10) Concurrent Reset
+[2020-10-28T10:39:45.422+0800][1.661s][1336][11936][info][gc             ] GC(10) Concurrent Reset 1.262ms
+[2020-10-28T10:39:45.423+0800][1.661s][1336][11936][info][gc,cpu         ] GC(10) User=0.00s Sys=0.00s Real=0.00s
+[2020-10-28T10:39:45.423+0800][1.661s][1336][11936][info][gc,heap        ] GC(10) Old: 261829K->345096K(349568K)
+[2020-10-28T10:39:45.441+0800][1.679s][1336][20400][info][gc,start       ] GC(13) Pause Young (Allocation Failure)
+[2020-10-28T10:39:45.441+0800][1.679s][1336][20400][info][gc,task        ] GC(13) Using 8 workers of 8 for evacuation
+[2020-10-28T10:39:45.441+0800][1.679s][1336][20400][info][gc,start       ] GC(14) Pause Full (Allocation Failure)
+[2020-10-28T10:39:45.441+0800][1.679s][1336][20400][info][gc,phases,start] GC(14) Phase 1: Mark live objects
+[2020-10-28T10:39:45.446+0800][1.684s][1336][20400][info][gc,phases      ] GC(14) Phase 1: Mark live objects 4.914ms
+[2020-10-28T10:39:45.446+0800][1.684s][1336][20400][info][gc,phases,start] GC(14) Phase 2: Compute new object addresses
+[2020-10-28T10:39:45.448+0800][1.687s][1336][20400][info][gc,phases      ] GC(14) Phase 2: Compute new object addresses 2.097ms
+[2020-10-28T10:39:45.448+0800][1.687s][1336][20400][info][gc,phases,start] GC(14) Phase 3: Adjust pointers
+[2020-10-28T10:39:45.454+0800][1.693s][1336][20400][info][gc,phases      ] GC(14) Phase 3: Adjust pointers 5.968ms
+[2020-10-28T10:39:45.454+0800][1.693s][1336][20400][info][gc,phases,start] GC(14) Phase 4: Move objects
+[2020-10-28T10:39:45.542+0800][1.781s][1336][20400][info][gc,phases      ] GC(14) Phase 4: Move objects 88.447ms
+[2020-10-28T10:39:45.543+0800][1.782s][1336][20400][info][gc             ] GC(14) Pause Full (Allocation Failure) 490M->300M(494M) 102.273ms
+[2020-10-28T10:39:45.544+0800][1.782s][1336][20400][info][gc,heap        ] GC(13) ParNew: 157248K->0K(157248K)
+[2020-10-28T10:39:45.544+0800][1.782s][1336][20400][info][gc,heap        ] GC(13) CMS: 345096K->307664K(349568K)
+[2020-10-28T10:39:45.544+0800][1.782s][1336][20400][info][gc,metaspace   ] GC(13) Metaspace: 16361K->16361K(1064960K)
+[2020-10-28T10:39:45.544+0800][1.782s][1336][20400][info][gc             ] GC(13) Pause Young (Allocation Failure) 490M->300M(494M) 103.180ms
+[2020-10-28T10:39:45.544+0800][1.783s][1336][20400][info][gc,cpu         ] GC(13) User=0.09s Sys=0.02s Real=0.10s
+[2020-10-28T10:39:45.545+0800][1.784s][1336][20400][info][gc,start       ] GC(15) Pause Initial Mark
+[2020-10-28T10:39:45.546+0800][1.784s][1336][20400][info][gc             ] GC(15) Pause Initial Mark 301M->301M(494M) 0.629ms
+[2020-10-28T10:39:45.546+0800][1.785s][1336][20400][info][gc,cpu         ] GC(15) User=0.00s Sys=0.00s Real=0.00s
+[2020-10-28T10:39:45.546+0800][1.785s][1336][11936][info][gc             ] GC(15) Concurrent Mark
+[2020-10-28T10:39:45.547+0800][1.785s][1336][11936][info][gc,task        ] GC(15) Using 2 workers of 2 for marking
+[2020-10-28T10:39:45.556+0800][1.795s][1336][11936][info][gc             ] GC(15) Concurrent Mark 9.631ms
+[2020-10-28T10:39:45.557+0800][1.796s][1336][11936][info][gc,cpu         ] GC(15) User=0.00s Sys=0.00s Real=0.01s
+[2020-10-28T10:39:45.557+0800][1.796s][1336][11936][info][gc             ] GC(15) Concurrent Preclean
+[2020-10-28T10:39:45.560+0800][1.799s][1336][11936][info][gc             ] GC(15) Concurrent Preclean 3.157ms
+[2020-10-28T10:39:45.561+0800][1.800s][1336][11936][info][gc,cpu         ] GC(15) User=0.03s Sys=0.00s Real=0.00s
+[2020-10-28T10:39:45.561+0800][1.800s][1336][11936][info][gc             ] GC(15) Concurrent Abortable Preclean
+[2020-10-28T10:39:45.586+0800][1.825s][1336][20400][info][gc,start       ] GC(16) Pause Young (Allocation Failure)
+[2020-10-28T10:39:45.586+0800][1.825s][1336][20400][info][gc,task        ] GC(16) Using 8 workers of 8 for evacuation
+[2020-10-28T10:39:45.603+0800][1.841s][1336][20400][info][gc,heap        ] GC(16) ParNew: 139776K->17472K(157248K)
+[2020-10-28T10:39:45.603+0800][1.841s][1336][20400][info][gc,heap        ] GC(16) CMS: 307664K->343961K(349568K)
+[2020-10-28T10:39:45.603+0800][1.841s][1336][20400][info][gc,metaspace   ] GC(16) Metaspace: 16361K->16361K(1064960K)
+[2020-10-28T10:39:45.603+0800][1.841s][1336][20400][info][gc             ] GC(16) Pause Young (Allocation Failure) 436M->352M(494M) 16.781ms
+[2020-10-28T10:39:45.603+0800][1.842s][1336][20400][info][gc,cpu         ] GC(16) User=0.11s Sys=0.00s Real=0.02s
+[2020-10-28T10:39:45.603+0800][1.842s][1336][11936][info][gc             ] GC(15) Concurrent Abortable Preclean 41.749ms
+[2020-10-28T10:39:45.603+0800][1.842s][1336][11936][info][gc,cpu         ] GC(15) User=0.13s Sys=0.00s Real=0.04s
+[2020-10-28T10:39:45.603+0800][1.842s][1336][20400][info][gc,start       ] GC(15) Pause Remark
+[2020-10-28T10:39:45.607+0800][1.846s][1336][20400][info][gc             ] GC(15) Pause Remark 357M->357M(494M) 3.461ms
+[2020-10-28T10:39:45.607+0800][1.846s][1336][20400][info][gc,cpu         ] GC(15) User=0.02s Sys=0.00s Real=0.00s
+[2020-10-28T10:39:45.607+0800][1.846s][1336][11936][info][gc             ] GC(15) Concurrent Sweep
+[2020-10-28T10:39:45.609+0800][1.848s][1336][11936][info][gc             ] GC(15) Concurrent Sweep 2.174ms
+[2020-10-28T10:39:45.610+0800][1.849s][1336][11936][info][gc,cpu         ] GC(15) User=0.00s Sys=0.00s Real=0.00s
+[2020-10-28T10:39:45.610+0800][1.849s][1336][11936][info][gc             ] GC(15) Concurrent Reset
+[2020-10-28T10:39:45.611+0800][1.850s][1336][11936][info][gc             ] GC(15) Concurrent Reset 1.123ms
+[2020-10-28T10:39:45.612+0800][1.851s][1336][11936][info][gc,cpu         ] GC(15) User=0.00s Sys=0.00s Real=0.00s
+[2020-10-28T10:39:45.612+0800][1.851s][1336][11936][info][gc,heap        ] GC(15) Old: 307664K->341969K(349568K)
+[2020-10-28T10:39:45.640+0800][1.879s][1336][3772 ][info][gc,heap,exit   ] Heap
+[2020-10-28T10:39:45.640+0800][1.879s][1336][3772 ][info][gc,heap,exit   ]  par new generation   total 157248K, used 83154K [0x00000000e0000000, 0x00000000eaaa0000, 0x00000000eaaa0000)
+[2020-10-28T10:39:45.641+0800][1.879s][1336][3772 ][info][gc,heap,exit   ]   eden space 139776K,  46% used [0x00000000e0000000, 0x00000000e4024900, 0x00000000e8880000)
+[2020-10-28T10:39:45.641+0800][1.880s][1336][3772 ][info][gc,heap,exit   ]   from space 17472K, 100% used [0x00000000e8880000, 0x00000000e9990000, 0x00000000e9990000)
+[2020-10-28T10:39:45.642+0800][1.881s][1336][3772 ][info][gc,heap,exit   ]   to   space 17472K,   0% used [0x00000000e9990000, 0x00000000e9990000, 0x00000000eaaa0000)
+[2020-10-28T10:39:45.643+0800][1.881s][1336][3772 ][info][gc,heap,exit   ]  concurrent mark-sweep generation total 349568K, used 341969K [0x00000000eaaa0000, 0x0000000100000000, 0x0000000100000000)
+[2020-10-28T10:39:45.643+0800][1.882s][1336][3772 ][info][gc,heap,exit   ]  Metaspace       used 16524K, capacity 16891K, committed 17024K, reserved 1064960K
+[2020-10-28T10:39:45.644+0800][1.883s][1336][3772 ][info][gc,heap,exit   ]   class space    used 1746K, capacity 1890K, committed 1920K, reserved 1048576K

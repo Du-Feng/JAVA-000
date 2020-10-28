@@ -1,0 +1,17 @@
+PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseConcMarkSweepGC -Xms4g -Xmx4g -Xlog:gc*:file=gc.cms.4g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
+Java HotSpot(TM) 64-Bit Server VM warning: Option UseConcMarkSweepGC was deprecated in version 9.0 and will likely be removed in a future release.
+[2020-10-28T10:42:27.495+0800][0.037s][9208][19288] Using Concurrent Mark Sweep
+正在执行...
+[2020-10-28T10:42:28.643+0800][1.185s][9208][19872] GC(0) Pause Young (Allocation Failure) 532M->154M(4029M) 47.135ms
+[2020-10-28T10:42:28.824+0800][1.367s][9208][19872] GC(1) Pause Young (Allocation Failure) 687M->288M(4029M) 56.927ms
+[2020-10-28T10:42:29.032+0800][1.575s][9208][19872] GC(2) Pause Young (Allocation Failure) 821M->414M(4029M) 106.071ms
+[2020-10-28T10:42:29.242+0800][1.784s][9208][19872] GC(3) Pause Young (Allocation Failure) 947M->541M(4029M) 106.341ms
+执行结束!共生成对象次数:11813
+[2020-10-28T10:42:29.321+0800][1.863s][9208][19288] Heap
+[2020-10-28T10:42:29.322+0800][1.864s][9208][19288]  par new generation   total 613440K, used 480195K [0x0000000700000000, 0x0000000729990000, 0x0000000729990000)
+[2020-10-28T10:42:29.323+0800][1.865s][9208][19288]   eden space 545344K,  75% used [0x0000000700000000, 0x0000000719270f98, 0x0000000721490000)
+[2020-10-28T10:42:29.323+0800][1.865s][9208][19288]   from space 68096K, 100% used [0x0000000721490000, 0x0000000725710000, 0x0000000725710000)
+[2020-10-28T10:42:29.323+0800][1.866s][9208][19288]   to   space 68096K,   0% used [0x0000000725710000, 0x0000000725710000, 0x0000000729990000)
+[2020-10-28T10:42:29.324+0800][1.866s][9208][19288]  concurrent mark-sweep generation total 3512768K, used 486716K [0x0000000729990000, 0x0000000800000000, 0x0000000800000000)
+[2020-10-28T10:42:29.324+0800][1.866s][9208][19288]  Metaspace       used 16559K, capacity 16956K, committed 17024K, reserved 1064960K
+[2020-10-28T10:42:29.324+0800][1.867s][9208][19288]   class space    used 1744K, capacity 1890K, committed 1920K, reserved 1048576K

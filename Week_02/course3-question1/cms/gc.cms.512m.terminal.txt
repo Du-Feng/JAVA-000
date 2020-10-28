@@ -1,0 +1,63 @@
+PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseConcMarkSweepGC -Xms512m -Xmx512m -Xlog:gc*:file=gc.cms.512m.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
+Java HotSpot(TM) 64-Bit Server VM warning: Option UseConcMarkSweepGC was deprecated in version 9.0 and will likely be removed in a future release.
+[2020-10-28T10:39:43.782+0800][0.021s][1336][3772] Using Concurrent Mark Sweep
+正在执行...
+[2020-10-28T10:39:44.715+0800][0.953s][1336][20400] GC(0) Pause Young (Allocation Failure) 136M->43M(494M) 25.514ms
+[2020-10-28T10:39:44.803+0800][1.042s][1336][20400] GC(1) Pause Young (Allocation Failure) 179M->90M(494M) 36.167ms
+[2020-10-28T10:39:44.897+0800][1.136s][1336][20400] GC(2) Pause Young (Allocation Failure) 226M->148M(494M) 45.127ms
+[2020-10-28T10:39:44.964+0800][1.202s][1336][20400] GC(3) Pause Young (Allocation Failure) 284M->201M(494M) 41.347ms
+[2020-10-28T10:39:44.965+0800][1.203s][1336][20400] GC(4) Pause Initial Mark 204M->204M(494M) 0.415ms
+[2020-10-28T10:39:44.966+0800][1.204s][1336][11936] GC(4) Concurrent Mark
+[2020-10-28T10:39:44.974+0800][1.213s][1336][11936] GC(4) Concurrent Mark 8.705ms
+[2020-10-28T10:39:44.975+0800][1.214s][1336][11936] GC(4) Concurrent Preclean
+[2020-10-28T10:39:44.976+0800][1.215s][1336][11936] GC(4) Concurrent Preclean 1.147ms
+[2020-10-28T10:39:44.977+0800][1.215s][1336][11936] GC(4) Concurrent Abortable Preclean
+[2020-10-28T10:39:45.037+0800][1.275s][1336][20400] GC(5) Pause Young (Allocation Failure) 337M->248M(494M) 43.307ms
+[2020-10-28T10:39:45.107+0800][1.346s][1336][20400] GC(6) Pause Young (Allocation Failure) 385M->297M(494M) 42.595ms
+[2020-10-28T10:39:45.177+0800][1.415s][1336][20400] GC(7) Pause Young (Allocation Failure) 433M->342M(494M) 37.558ms
+[2020-10-28T10:39:45.177+0800][1.416s][1336][11936] GC(4) Concurrent Abortable Preclean 200.317ms
+[2020-10-28T10:39:45.182+0800][1.421s][1336][20400] GC(4) Pause Remark 348M->348M(494M) 4.713ms
+[2020-10-28T10:39:45.183+0800][1.422s][1336][11936] GC(4) Concurrent Sweep
+[2020-10-28T10:39:45.190+0800][1.429s][1336][11936] GC(4) Concurrent Sweep 6.824ms
+[2020-10-28T10:39:45.191+0800][1.429s][1336][11936] GC(4) Concurrent Reset
+[2020-10-28T10:39:45.193+0800][1.432s][1336][11936] GC(4) Concurrent Reset 2.781ms
+[2020-10-28T10:39:45.301+0800][1.540s][1336][20400] GC(9) Pause Full (Allocation Failure) 452M->255M(494M) 74.113ms
+[2020-10-28T10:39:45.302+0800][1.541s][1336][20400] GC(8) Pause Young (Allocation Failure) 452M->255M(494M) 74.992ms
+[2020-10-28T10:39:45.303+0800][1.542s][1336][20400] GC(10) Pause Initial Mark 259M->259M(494M) 0.517ms
+[2020-10-28T10:39:45.304+0800][1.543s][1336][11936] GC(10) Concurrent Mark
+[2020-10-28T10:39:45.310+0800][1.548s][1336][11936] GC(10) Concurrent Mark 5.730ms
+[2020-10-28T10:39:45.310+0800][1.549s][1336][11936] GC(10) Concurrent Preclean
+[2020-10-28T10:39:45.311+0800][1.550s][1336][11936] GC(10) Concurrent Preclean 0.794ms
+[2020-10-28T10:39:45.312+0800][1.550s][1336][11936] GC(10) Concurrent Abortable Preclean
+[2020-10-28T10:39:45.355+0800][1.594s][1336][20400] GC(11) Pause Young (Allocation Failure) 392M->307M(494M) 23.183ms
+[2020-10-28T10:39:45.410+0800][1.648s][1336][20400] GC(12) Pause Young (Allocation Failure) 443M->355M(494M) 26.994ms
+[2020-10-28T10:39:45.410+0800][1.649s][1336][11936] GC(10) Concurrent Abortable Preclean 98.580ms
+[2020-10-28T10:39:45.414+0800][1.653s][1336][20400] GC(10) Pause Remark 358M->358M(494M) 3.545ms
+[2020-10-28T10:39:45.415+0800][1.653s][1336][11936] GC(10) Concurrent Sweep
+[2020-10-28T10:39:45.420+0800][1.659s][1336][11936] GC(10) Concurrent Sweep 5.232ms
+[2020-10-28T10:39:45.421+0800][1.660s][1336][11936] GC(10) Concurrent Reset
+[2020-10-28T10:39:45.422+0800][1.661s][1336][11936] GC(10) Concurrent Reset 1.262ms
+[2020-10-28T10:39:45.543+0800][1.782s][1336][20400] GC(14) Pause Full (Allocation Failure) 490M->300M(494M) 102.273ms
+[2020-10-28T10:39:45.544+0800][1.782s][1336][20400] GC(13) Pause Young (Allocation Failure) 490M->300M(494M) 103.180ms
+[2020-10-28T10:39:45.546+0800][1.784s][1336][20400] GC(15) Pause Initial Mark 301M->301M(494M) 0.629ms
+[2020-10-28T10:39:45.546+0800][1.785s][1336][11936] GC(15) Concurrent Mark
+[2020-10-28T10:39:45.556+0800][1.795s][1336][11936] GC(15) Concurrent Mark 9.631ms
+[2020-10-28T10:39:45.557+0800][1.796s][1336][11936] GC(15) Concurrent Preclean
+[2020-10-28T10:39:45.560+0800][1.799s][1336][11936] GC(15) Concurrent Preclean 3.157ms
+[2020-10-28T10:39:45.561+0800][1.800s][1336][11936] GC(15) Concurrent Abortable Preclean
+[2020-10-28T10:39:45.603+0800][1.841s][1336][20400] GC(16) Pause Young (Allocation Failure) 436M->352M(494M) 16.781ms
+[2020-10-28T10:39:45.603+0800][1.842s][1336][11936] GC(15) Concurrent Abortable Preclean 41.749ms
+[2020-10-28T10:39:45.607+0800][1.846s][1336][20400] GC(15) Pause Remark 357M->357M(494M) 3.461ms
+[2020-10-28T10:39:45.607+0800][1.846s][1336][11936] GC(15) Concurrent Sweep
+[2020-10-28T10:39:45.609+0800][1.848s][1336][11936] GC(15) Concurrent Sweep 2.174ms
+[2020-10-28T10:39:45.610+0800][1.849s][1336][11936] GC(15) Concurrent Reset
+[2020-10-28T10:39:45.611+0800][1.850s][1336][11936] GC(15) Concurrent Reset 1.123ms
+执行结束!共生成对象次数:7871
+[2020-10-28T10:39:45.640+0800][1.879s][1336][3772 ] Heap
+[2020-10-28T10:39:45.640+0800][1.879s][1336][3772 ]  par new generation   total 157248K, used 83154K [0x00000000e0000000, 0x00000000eaaa0000, 0x00000000eaaa0000)
+[2020-10-28T10:39:45.641+0800][1.879s][1336][3772 ]   eden space 139776K,  46% used [0x00000000e0000000, 0x00000000e4024900, 0x00000000e8880000)
+[2020-10-28T10:39:45.641+0800][1.880s][1336][3772 ]   from space 17472K, 100% used [0x00000000e8880000, 0x00000000e9990000, 0x00000000e9990000)
+[2020-10-28T10:39:45.642+0800][1.881s][1336][3772 ]   to   space 17472K,   0% used [0x00000000e9990000, 0x00000000e9990000, 0x00000000eaaa0000)
+[2020-10-28T10:39:45.643+0800][1.881s][1336][3772 ]  concurrent mark-sweep generation total 349568K, used 341969K [0x00000000eaaa0000, 0x0000000100000000, 0x0000000100000000)
+[2020-10-28T10:39:45.643+0800][1.882s][1336][3772 ]  Metaspace       used 16524K, capacity 16891K, committed 17024K, reserved 1064960K
+[2020-10-28T10:39:45.644+0800][1.883s][1336][3772 ]   class space    used 1746K, capacity 1890K, committed 1920K, reserved 1048576K

@@ -1,0 +1,16 @@
+PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseConcMarkSweepGC -Xms2g -Xmx2g -Xlog:gc*:file=gc.cms.2g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
+Java HotSpot(TM) 64-Bit Server VM warning: Option UseConcMarkSweepGC was deprecated in version 9.0 and will likely be removed in a future release.
+[2020-10-28T10:41:39.436+0800][0.037s][11464][6792] Using Concurrent Mark Sweep
+正在执行...
+[2020-10-28T10:41:40.955+0800][1.556s][11464][10144] GC(0) Pause Young (Allocation Failure) 532M->146M(1981M) 50.348ms
+[2020-10-28T10:41:41.158+0800][1.758s][11464][10144] GC(1) Pause Young (Allocation Failure) 679M->276M(1981M) 64.834ms
+[2020-10-28T10:41:41.488+0800][2.089s][11464][10144] GC(2) Pause Young (Allocation Failure) 809M->396M(1981M) 207.983ms
+执行结束!共生成对象次数:8085
+[2020-10-28T10:41:41.560+0800][2.160s][11464][6792 ] Heap
+[2020-10-28T10:41:41.560+0800][2.161s][11464][6792 ]  par new generation   total 613440K, used 235183K [0x0000000080000000, 0x00000000a9990000, 0x00000000a9990000)
+[2020-10-28T10:41:41.560+0800][2.161s][11464][6792 ]   eden space 545344K,  30% used [0x0000000080000000, 0x000000008a32be40, 0x00000000a1490000)
+[2020-10-28T10:41:41.561+0800][2.162s][11464][6792 ]   from space 68096K, 100% used [0x00000000a5710000, 0x00000000a9990000, 0x00000000a9990000)
+[2020-10-28T10:41:41.561+0800][2.162s][11464][6792 ]   to   space 68096K,   0% used [0x00000000a1490000, 0x00000000a1490000, 0x00000000a5710000)
+[2020-10-28T10:41:41.562+0800][2.162s][11464][6792 ]  concurrent mark-sweep generation total 1415616K, used 337467K [0x00000000a9990000, 0x0000000100000000, 0x0000000100000000)
+[2020-10-28T10:41:41.562+0800][2.163s][11464][6792 ]  Metaspace       used 16565K, capacity 16956K, committed 17024K, reserved 1064960K
+[2020-10-28T10:41:41.563+0800][2.164s][11464][6792 ]   class space    used 1750K, capacity 1890K, committed 1920K, reserved 1048576K
