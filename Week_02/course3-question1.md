@@ -514,7 +514,7 @@ PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseParallelGC -Xms4g -Xmx4g -
 </code></pre></div></div></details>
 
 # CMS
-## 128MB
+## ConcMarkSweepGC - 128MB
 执行命令行：
 
     java -XX:+UseConcMarkSweepGC -Xms128m -Xmx128m -Xlog:gc*:file=gc.cms.128m.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
@@ -605,7 +605,7 @@ Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
 
 </code></pre></div></div></details>
 
-## 256MB
+## ConcMarkSweepGC - 256MB
 执行命令行：
 
     java -XX:+UseConcMarkSweepGC -Xms256m -Xmx256m -Xlog:gc*:file=gc.cms.256m.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
@@ -681,7 +681,7 @@ Java HotSpot(TM) 64-Bit Server VM warning: Option UseConcMarkSweepGC was depreca
 
 </code></pre></div></div></details>
 
-## 512MB
+## ConcMarkSweepGC - 512MB
 执行命令行：
 
     java -XX:+UseConcMarkSweepGC -Xms512m -Xmx512m -Xlog:gc*:file=gc.cms.512m.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
@@ -755,7 +755,7 @@ Java HotSpot(TM) 64-Bit Server VM warning: Option UseConcMarkSweepGC was depreca
 
 </code></pre></div></div></details>
 
-## 1GB
+## ConcMarkSweepGC - 1GB
 执行命令行：
 
     java -XX:+UseConcMarkSweepGC -Xms1g -Xmx1g -Xlog:gc*:file=gc.cms.1g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
@@ -798,7 +798,7 @@ Java HotSpot(TM) 64-Bit Server VM warning: Option UseConcMarkSweepGC was depreca
 
 </code></pre></div></div></details>
 
-## 2GB
+## ConcMarkSweepGC - 2GB
 执行命令行：
 
     java -XX:+UseConcMarkSweepGC -Xms2g -Xmx2g -Xlog:gc*:file=gc.cms.2g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
@@ -825,7 +825,7 @@ Java HotSpot(TM) 64-Bit Server VM warning: Option UseConcMarkSweepGC was depreca
 
 </code></pre></div></div></details>
 
-## 4GB
+## ConcMarkSweepGC - 4GB
 执行命令行：
 
     java -XX:+UseConcMarkSweepGC -Xms4g -Xmx4g -Xlog:gc*:file=gc.cms.4g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
@@ -854,7 +854,7 @@ Java HotSpot(TM) 64-Bit Server VM warning: Option UseConcMarkSweepGC was depreca
 </code></pre></div></div></details>
 
 # G1
-## 128MB
+## G1GC - 128MB
 执行命令行：
 
     java -XX:+UseG1GC -Xms128m -Xmx128m -Xlog:gc*:file=gc.g1.128m.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
@@ -1074,7 +1074,7 @@ Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
 
 </code></pre></div></div></details>
 
-## 256MB
+## G1GC - 256MB
 执行命令行：
 
     java -XX:+UseG1GC -Xms256m -Xmx256m -Xlog:gc*:file=gc.g1.256m.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
@@ -1286,7 +1286,7 @@ PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseG1GC -Xms256m -Xmx256m -Xl
 
 </code></pre></div></div></details>
 
-## 512MB
+## G1GC - 512MB
 执行命令行：
 
     java -XX:+UseG1GC -Xms512m -Xmx512m -Xlog:gc*:file=gc.g1.512m.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
@@ -1416,7 +1416,7 @@ PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseG1GC -Xms512m -Xmx512m -Xl
 
 </code></pre></div></div></details>
 
-## 1GB
+## G1GC - 1GB
 执行命令行：
 
     java -XX:+UseG1GC -Xms1g -Xmx1g -Xlog:gc*:file=gc.g1.1g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
@@ -1473,7 +1473,7 @@ PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseG1GC -Xms1g -Xmx1g -Xlog:g
 
 </code></pre></div></div></details>
 
-## 2GB
+## G1GC - 2GB
 执行命令行：
 
     java -XX:+UseG1GC -Xms2g -Xmx2g -Xlog:gc*:file=gc.g1.2g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
@@ -1506,7 +1506,7 @@ PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseG1GC -Xms2g -Xmx2g -Xlog:g
 
 </code></pre></div></div></details>
 
-## 4GB
+## G1GC - 4GB
 执行命令行：
 
     java -XX:+UseG1GC -Xms4g -Xmx4g -Xlog:gc*:file=gc.g1.4g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java

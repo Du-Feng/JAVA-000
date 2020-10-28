@@ -182,6 +182,83 @@
 [Web Live Report](course3-question2/parallel/2020-10-28_17-09-52.859059_parallel.4g/index.html)
 
 # CMS
+## ConcMarkSweepGC - 128MB
+启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
+
+    java -jar -XX:+UseConcMarkSweepGC -Xms128m -Xmx128m gateway-server-0.0.1-SNAPSHOT.jar
+
+结果如下：
+<br/>
+![Terminal](course3-question2/cms/cms-128m-sb-terminal.png)
+<br/><br/>
+![Web](course3-question2/cms/cms-128m-sb-web.png)
+<br/><br/>
+[Web Live Report](course3-question2/cms/2020-10-28_17-24-14.097825_cms.128m/index.html)
+
+## ConcMarkSweepGC - 256MB
+启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
+
+    java -jar -XX:+UseConcMarkSweepGC -Xms256m -Xmx256m gateway-server-0.0.1-SNAPSHOT.jar
+
+结果如下：
+<br/>
+![Terminal](course3-question2/cms/cms-256m-sb-terminal.png)
+<br/><br/>
+![Web](course3-question2/cms/cms-256m-sb-web.png)
+<br/><br/>
+[Web Live Report](course3-question2/cms/2020-10-28_17-28-29.571897_cms.256m/index.html)
+
+## ConcMarkSweepGC - 512MB
+启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
+
+    java -jar -XX:+UseConcMarkSweepGC -Xms512m -Xmx512m gateway-server-0.0.1-SNAPSHOT.jar
+
+结果如下：
+<br/>
+![Terminal](course3-question2/cms/cms-512m-sb-terminal.png)
+<br/><br/>
+![Web](course3-question2/cms/cms-512m-sb-web.png)
+<br/><br/>
+[Web Live Report](course3-question2/cms/2020-10-28_17-31-36.765894_cms.512m/index.html)
+
+## ConcMarkSweepGC - 1GB
+启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
+
+    java -jar -XX:+UseConcMarkSweepGC -Xms1g -Xmx1g gateway-server-0.0.1-SNAPSHOT.jar
+
+结果如下：
+<br/>
+![Terminal](course3-question2/cms/cms-1g-sb-terminal.png)
+<br/><br/>
+![Web](course3-question2/cms/cms-1g-sb-web.png)
+<br/><br/>
+[Web Live Report](course3-question2/cms/2020-10-28_17-34-52.158236_cms.1g/index.html)
+
+## ConcMarkSweepGC - 2GB
+启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
+
+    java -jar -XX:+UseConcMarkSweepGC -Xms2g -Xmx2g gateway-server-0.0.1-SNAPSHOT.jar
+
+结果如下：
+<br/>
+![Terminal](course3-question2/cms/cms-2g-sb-terminal.png)
+<br/><br/>
+![Web](course3-question2/cms/cms-2g-sb-web.png)
+<br/><br/>
+[Web Live Report](course3-question2/cms/2020-10-28_17-38-16.857610_cms.2g/index.html)
+
+## ConcMarkSweepGC - 4GB
+启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
+
+    java -jar -XX:+UseConcMarkSweepGC -Xms4g -Xmx4g gateway-server-0.0.1-SNAPSHOT.jar
+
+结果如下：
+<br/>
+![Terminal](course3-question2/cms/cms-4g-sb-terminal.png)
+<br/><br/>
+![Web](course3-question2/cms/cms-4g-sb-web.png)
+<br/><br/>
+[Web Live Report](course3-question2/cms/2020-10-28_17-43-16.114257_cms.4g/index.html)
 
 # G1
 

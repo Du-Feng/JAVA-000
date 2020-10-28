@@ -1,0 +1,22 @@
+C:\Data\Code\GitHub\JAVA-000\Week_02>sb -u http://localhost:8088/api/hello -c 20 -N 60
+Starting at 10/28/2020 5:24:14 PM
+[Press C to stop the test]
+141415  (RPS: 2011.1)
+---------------Finished!----------------
+Finished at 10/28/2020 5:25:24 PM (took 00:01:10.5138893)
+Status 200:    141415
+
+RPS: 2311.3 (requests/second)
+Max: 488ms
+Min: 0ms
+Avg: 0.6ms
+
+  50%   below 0ms
+  60%   below 0ms
+  70%   below 0ms
+  80%   below 0ms
+  90%   below 1ms
+  95%   below 3ms
+  98%   below 7ms
+  99%   below 12ms
+99.9%   below 42ms
