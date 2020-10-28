@@ -1360,86 +1360,88 @@
         java -XX:+UseG1GC -Xms1g -Xmx1g -Xlog:gc*:file=gc.g1.1g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
 
 结果如下：
-        
-        PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseG1GC -Xms1g -Xmx1g -Xlog:gc*:file=gc.g1.1g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
-        [2020-10-28T10:49:28.540+0800][0.044s][9644][13168] Using G1
-        正在执行...
-        [2020-10-28T10:49:29.384+0800][0.887s][9644][8044 ] GC(0) Pause Young (Normal) (G1 Evacuation Pause) 64M->18M(1024M) 11.011ms
-        [2020-10-28T10:49:29.418+0800][0.921s][9644][8044 ] GC(1) Pause Young (Normal) (G1 Evacuation Pause) 85M->44M(1024M) 8.966ms
-        [2020-10-28T10:49:29.442+0800][0.945s][9644][8044 ] GC(2) Pause Young (Normal) (G1 Evacuation Pause) 115M->70M(1024M) 4.773ms
-        [2020-10-28T10:49:29.475+0800][0.979s][9644][8044 ] GC(3) Pause Young (Normal) (G1 Evacuation Pause) 169M->106M(1024M) 5.675ms
-        [2020-10-28T10:49:29.501+0800][1.004s][9644][8044 ] GC(4) Pause Young (Normal) (G1 Evacuation Pause) 191M->139M(1024M) 9.266ms
-        [2020-10-28T10:49:29.534+0800][1.037s][9644][8044 ] GC(5) Pause Young (Normal) (G1 Evacuation Pause) 239M->177M(1024M) 10.535ms
-        [2020-10-28T10:49:29.571+0800][1.075s][9644][8044 ] GC(6) Pause Young (Normal) (G1 Evacuation Pause) 296M->233M(1024M) 12.142ms
-        [2020-10-28T10:49:29.621+0800][1.125s][9644][8044 ] GC(7) Pause Young (Normal) (G1 Evacuation Pause) 382M->289M(1024M) 11.475ms
-        [2020-10-28T10:49:29.677+0800][1.181s][9644][8044 ] GC(8) Pause Young (Normal) (G1 Evacuation Pause) 462M->350M(1024M) 12.849ms
-        [2020-10-28T10:49:29.726+0800][1.230s][9644][8044 ] GC(9) Pause Young (Normal) (G1 Evacuation Pause) 529M->394M(1024M) 15.239ms
-        [2020-10-28T10:49:29.788+0800][1.291s][9644][8044 ] GC(10) Pause Young (Concurrent Start) (G1 Humongous Allocation) 608M->438M(1024M) 15.601ms
-        [2020-10-28T10:49:29.789+0800][1.292s][9644][21200] GC(11) Concurrent Cycle
-        [2020-10-28T10:49:29.802+0800][1.306s][9644][8044 ] GC(11) Pause Remark 481M->472M(1024M) 2.238ms
-        [2020-10-28T10:49:29.817+0800][1.321s][9644][8044 ] GC(11) Pause Cleanup 516M->516M(1024M) 0.591ms
-        [2020-10-28T10:49:29.824+0800][1.327s][9644][21200] GC(11) Concurrent Cycle 35.215ms
-        [2020-10-28T10:49:29.973+0800][1.477s][9644][8044 ] GC(12) Pause Young (Prepare Mixed) (G1 Evacuation Pause) 853M->529M(1024M) 24.793ms
-        [2020-10-28T10:49:29.989+0800][1.493s][9644][8044 ] GC(13) Pause Young (Mixed) (G1 Evacuation Pause) 546M->457M(1024M) 11.259ms
-        [2020-10-28T10:49:30.000+0800][1.504s][9644][8044 ] GC(14) Pause Young (Concurrent Start) (G1 Humongous Allocation) 487M->469M(1024M) 4.948ms
-        [2020-10-28T10:49:30.001+0800][1.504s][9644][21200] GC(15) Concurrent Cycle
-        [2020-10-28T10:49:30.010+0800][1.514s][9644][8044 ] GC(15) Pause Remark 514M->508M(1024M) 1.968ms
-        [2020-10-28T10:49:30.017+0800][1.521s][9644][8044 ] GC(15) Pause Cleanup 531M->531M(1024M) 0.581ms
-        [2020-10-28T10:49:30.020+0800][1.524s][9644][21200] GC(15) Concurrent Cycle 19.620ms
-        [2020-10-28T10:49:30.098+0800][1.602s][9644][8044 ] GC(16) Pause Young (Prepare Mixed) (G1 Evacuation Pause) 857M->543M(1024M) 23.171ms
-        [2020-10-28T10:49:30.118+0800][1.621s][9644][8044 ] GC(17) Pause Young (Mixed) (G1 Evacuation Pause) 571M->477M(1024M) 14.773ms
-        [2020-10-28T10:49:30.120+0800][1.624s][9644][8044 ] GC(18) Pause Young (Concurrent Start) (G1 Humongous Allocation) 477M->477M(1024M) 1.915ms
-        [2020-10-28T10:49:30.120+0800][1.624s][9644][21200] GC(19) Concurrent Cycle
-        [2020-10-28T10:49:30.133+0800][1.636s][9644][8044 ] GC(19) Pause Remark 530M->529M(1024M) 1.604ms
-        [2020-10-28T10:49:30.137+0800][1.640s][9644][8044 ] GC(19) Pause Cleanup 550M->550M(1024M) 0.314ms
-        [2020-10-28T10:49:30.139+0800][1.642s][9644][21200] GC(19) Concurrent Cycle 18.575ms
-        [2020-10-28T10:49:30.193+0800][1.697s][9644][8044 ] GC(20) Pause Young (Prepare Mixed) (G1 Evacuation Pause) 778M->548M(1024M) 17.419ms
-        [2020-10-28T10:49:30.214+0800][1.717s][9644][8044 ] GC(21) Pause Young (Mixed) (G1 Evacuation Pause) 590M->488M(1024M) 14.169ms
-        [2020-10-28T10:49:30.274+0800][1.778s][9644][8044 ] GC(22) Pause Young (Concurrent Start) (G1 Humongous Allocation) 778M->553M(1024M) 14.236ms
-        [2020-10-28T10:49:30.275+0800][1.778s][9644][21200] GC(23) Concurrent Cycle
-        [2020-10-28T10:49:30.286+0800][1.790s][9644][8044 ] GC(23) Pause Remark 600M->589M(1024M) 1.913ms
-        [2020-10-28T10:49:30.291+0800][1.795s][9644][8044 ] GC(23) Pause Cleanup 615M->615M(1024M) 0.317ms
-        [2020-10-28T10:49:30.297+0800][1.801s][9644][21200] GC(23) Concurrent Cycle 22.621ms
-        [2020-10-28T10:49:30.355+0800][1.858s][9644][8044 ] GC(24) Pause Young (Prepare Mixed) (G1 Evacuation Pause) 820M->611M(1024M) 21.038ms
-        执行结束!共生成对象次数:12649
-        [2020-10-28T10:49:30.372+0800][1.875s][9644][13168] Heap
-        [2020-10-28T10:49:30.373+0800][1.876s][9644][13168]  garbage-first heap   total 1048576K, used 626663K [0x00000000c0000000, 0x0000000100000000)
-        [2020-10-28T10:49:30.373+0800][1.876s][9644][13168]   region size 1024K, 26 young (26624K), 25 survivors (25600K)
-        [2020-10-28T10:49:30.373+0800][1.877s][9644][13168]  Metaspace       used 16560K, capacity 16956K, committed 17024K, reserved 1064960K
-        [2020-10-28T10:49:30.373+0800][1.877s][9644][13168]   class space    used 1747K, capacity 1890K, committed 1920K, reserved 1048576K
-        
+<details><summary>Click to expand</summary><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseG1GC -Xms1g -Xmx1g -Xlog:gc*:file=gc.g1.1g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
+[2020-10-28T10:49:28.540+0800][0.044s][9644][13168] Using G1
+正在执行...
+[2020-10-28T10:49:29.384+0800][0.887s][9644][8044 ] GC(0) Pause Young (Normal) (G1 Evacuation Pause) 64M->18M(1024M) 11.011ms
+[2020-10-28T10:49:29.418+0800][0.921s][9644][8044 ] GC(1) Pause Young (Normal) (G1 Evacuation Pause) 85M->44M(1024M) 8.966ms
+[2020-10-28T10:49:29.442+0800][0.945s][9644][8044 ] GC(2) Pause Young (Normal) (G1 Evacuation Pause) 115M->70M(1024M) 4.773ms
+[2020-10-28T10:49:29.475+0800][0.979s][9644][8044 ] GC(3) Pause Young (Normal) (G1 Evacuation Pause) 169M->106M(1024M) 5.675ms
+[2020-10-28T10:49:29.501+0800][1.004s][9644][8044 ] GC(4) Pause Young (Normal) (G1 Evacuation Pause) 191M->139M(1024M) 9.266ms
+[2020-10-28T10:49:29.534+0800][1.037s][9644][8044 ] GC(5) Pause Young (Normal) (G1 Evacuation Pause) 239M->177M(1024M) 10.535ms
+[2020-10-28T10:49:29.571+0800][1.075s][9644][8044 ] GC(6) Pause Young (Normal) (G1 Evacuation Pause) 296M->233M(1024M) 12.142ms
+[2020-10-28T10:49:29.621+0800][1.125s][9644][8044 ] GC(7) Pause Young (Normal) (G1 Evacuation Pause) 382M->289M(1024M) 11.475ms
+[2020-10-28T10:49:29.677+0800][1.181s][9644][8044 ] GC(8) Pause Young (Normal) (G1 Evacuation Pause) 462M->350M(1024M) 12.849ms
+[2020-10-28T10:49:29.726+0800][1.230s][9644][8044 ] GC(9) Pause Young (Normal) (G1 Evacuation Pause) 529M->394M(1024M) 15.239ms
+[2020-10-28T10:49:29.788+0800][1.291s][9644][8044 ] GC(10) Pause Young (Concurrent Start) (G1 Humongous Allocation) 608M->438M(1024M) 15.601ms
+[2020-10-28T10:49:29.789+0800][1.292s][9644][21200] GC(11) Concurrent Cycle
+[2020-10-28T10:49:29.802+0800][1.306s][9644][8044 ] GC(11) Pause Remark 481M->472M(1024M) 2.238ms
+[2020-10-28T10:49:29.817+0800][1.321s][9644][8044 ] GC(11) Pause Cleanup 516M->516M(1024M) 0.591ms
+[2020-10-28T10:49:29.824+0800][1.327s][9644][21200] GC(11) Concurrent Cycle 35.215ms
+[2020-10-28T10:49:29.973+0800][1.477s][9644][8044 ] GC(12) Pause Young (Prepare Mixed) (G1 Evacuation Pause) 853M->529M(1024M) 24.793ms
+[2020-10-28T10:49:29.989+0800][1.493s][9644][8044 ] GC(13) Pause Young (Mixed) (G1 Evacuation Pause) 546M->457M(1024M) 11.259ms
+[2020-10-28T10:49:30.000+0800][1.504s][9644][8044 ] GC(14) Pause Young (Concurrent Start) (G1 Humongous Allocation) 487M->469M(1024M) 4.948ms
+[2020-10-28T10:49:30.001+0800][1.504s][9644][21200] GC(15) Concurrent Cycle
+[2020-10-28T10:49:30.010+0800][1.514s][9644][8044 ] GC(15) Pause Remark 514M->508M(1024M) 1.968ms
+[2020-10-28T10:49:30.017+0800][1.521s][9644][8044 ] GC(15) Pause Cleanup 531M->531M(1024M) 0.581ms
+[2020-10-28T10:49:30.020+0800][1.524s][9644][21200] GC(15) Concurrent Cycle 19.620ms
+[2020-10-28T10:49:30.098+0800][1.602s][9644][8044 ] GC(16) Pause Young (Prepare Mixed) (G1 Evacuation Pause) 857M->543M(1024M) 23.171ms
+[2020-10-28T10:49:30.118+0800][1.621s][9644][8044 ] GC(17) Pause Young (Mixed) (G1 Evacuation Pause) 571M->477M(1024M) 14.773ms
+[2020-10-28T10:49:30.120+0800][1.624s][9644][8044 ] GC(18) Pause Young (Concurrent Start) (G1 Humongous Allocation) 477M->477M(1024M) 1.915ms
+[2020-10-28T10:49:30.120+0800][1.624s][9644][21200] GC(19) Concurrent Cycle
+[2020-10-28T10:49:30.133+0800][1.636s][9644][8044 ] GC(19) Pause Remark 530M->529M(1024M) 1.604ms
+[2020-10-28T10:49:30.137+0800][1.640s][9644][8044 ] GC(19) Pause Cleanup 550M->550M(1024M) 0.314ms
+[2020-10-28T10:49:30.139+0800][1.642s][9644][21200] GC(19) Concurrent Cycle 18.575ms
+[2020-10-28T10:49:30.193+0800][1.697s][9644][8044 ] GC(20) Pause Young (Prepare Mixed) (G1 Evacuation Pause) 778M->548M(1024M) 17.419ms
+[2020-10-28T10:49:30.214+0800][1.717s][9644][8044 ] GC(21) Pause Young (Mixed) (G1 Evacuation Pause) 590M->488M(1024M) 14.169ms
+[2020-10-28T10:49:30.274+0800][1.778s][9644][8044 ] GC(22) Pause Young (Concurrent Start) (G1 Humongous Allocation) 778M->553M(1024M) 14.236ms
+[2020-10-28T10:49:30.275+0800][1.778s][9644][21200] GC(23) Concurrent Cycle
+[2020-10-28T10:49:30.286+0800][1.790s][9644][8044 ] GC(23) Pause Remark 600M->589M(1024M) 1.913ms
+[2020-10-28T10:49:30.291+0800][1.795s][9644][8044 ] GC(23) Pause Cleanup 615M->615M(1024M) 0.317ms
+[2020-10-28T10:49:30.297+0800][1.801s][9644][21200] GC(23) Concurrent Cycle 22.621ms
+[2020-10-28T10:49:30.355+0800][1.858s][9644][8044 ] GC(24) Pause Young (Prepare Mixed) (G1 Evacuation Pause) 820M->611M(1024M) 21.038ms
+执行结束!共生成对象次数:12649
+[2020-10-28T10:49:30.372+0800][1.875s][9644][13168] Heap
+[2020-10-28T10:49:30.373+0800][1.876s][9644][13168]  garbage-first heap   total 1048576K, used 626663K [0x00000000c0000000, 0x0000000100000000)
+[2020-10-28T10:49:30.373+0800][1.876s][9644][13168]   region size 1024K, 26 young (26624K), 25 survivors (25600K)
+[2020-10-28T10:49:30.373+0800][1.877s][9644][13168]  Metaspace       used 16560K, capacity 16956K, committed 17024K, reserved 1064960K
+[2020-10-28T10:49:30.373+0800][1.877s][9644][13168]   class space    used 1747K, capacity 1890K, committed 1920K, reserved 1048576K
+
+</code></pre></div></div></details>
 
 ## 2GB
 执行命令行：
 
-        java -XX:+UseG1GC -Xms2g -Xmx2g -Xlog:gc*:file=gc.g1.2g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
+    java -XX:+UseG1GC -Xms2g -Xmx2g -Xlog:gc*:file=gc.g1.2g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
 
 结果如下：
 <details><summary>Click to expand</summary><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-        
-        PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseG1GC -Xms2g -Xmx2g -Xlog:gc*:file=gc.g1.2g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
-        [2020-10-28T10:50:17.928+0800][0.071s][1964][3712] Using G1
-        正在执行...
-        [2020-10-28T10:50:18.791+0800][0.934s][1964][9088] GC(0) Pause Young (Normal) (G1 Evacuation Pause) 142M->52M(2048M) 11.123ms
-        [2020-10-28T10:50:18.840+0800][0.983s][1964][9088] GC(1) Pause Young (Normal) (G1 Evacuation Pause) 187M->107M(2048M) 13.263ms
-        [2020-10-28T10:50:18.883+0800][1.026s][1964][9088] GC(2) Pause Young (Normal) (G1 Evacuation Pause) 245M->158M(2048M) 13.929ms
-        [2020-10-28T10:50:18.922+0800][1.065s][1964][9088] GC(3) Pause Young (Normal) (G1 Evacuation Pause) 296M->202M(2048M) 11.991ms
-        [2020-10-28T10:50:18.963+0800][1.106s][1964][9088] GC(4) Pause Young (Normal) (G1 Evacuation Pause) 343M->251M(2048M) 12.320ms
-        [2020-10-28T10:50:19.010+0800][1.153s][1964][9088] GC(5) Pause Young (Normal) (G1 Evacuation Pause) 392M->302M(2048M) 13.887ms
-        [2020-10-28T10:50:19.062+0800][1.205s][1964][9088] GC(6) Pause Young (Normal) (G1 Evacuation Pause) 473M->352M(2048M) 14.122ms
-        [2020-10-28T10:50:19.114+0800][1.257s][1964][9088] GC(7) Pause Young (Normal) (G1 Evacuation Pause) 540M->403M(2048M) 14.664ms
-        [2020-10-28T10:50:19.176+0800][1.319s][1964][9088] GC(8) Pause Young (Normal) (G1 Evacuation Pause) 629M->476M(2048M) 12.897ms
-        [2020-10-28T10:50:19.253+0800][1.396s][1964][9088] GC(9) Pause Young (Normal) (G1 Evacuation Pause) 713M->533M(2048M) 14.820ms
-        [2020-10-28T10:50:19.376+0800][1.519s][1964][9088] GC(10) Pause Young (Normal) (G1 Evacuation Pause) 899M->603M(2048M) 20.406ms
-        [2020-10-28T10:50:19.514+0800][1.657s][1964][9088] GC(11) Pause Young (Normal) (G1 Evacuation Pause) 1042M->695M(2048M) 34.230ms
-        [2020-10-28T10:50:19.675+0800][1.818s][1964][9088] GC(12) Pause Young (Normal) (G1 Evacuation Pause) 1213M->792M(2048M) 41.601ms
-        执行结束!共生成对象次数:12978
-        [2020-10-28T10:50:19.725+0800][1.868s][1964][3712] Heap
-        [2020-10-28T10:50:19.725+0800][1.868s][1964][3712]  garbage-first heap   total 2097152K, used 994657K [0x0000000080000000, 0x0000000100000000)
-        [2020-10-28T10:50:19.725+0800][1.869s][1964][3712]   region size 1024K, 165 young (168960K), 47 survivors (48128K)
-        [2020-10-28T10:50:19.726+0800][1.869s][1964][3712]  Metaspace       used 16580K, capacity 16955K, committed 17024K, reserved 1064960K
-        [2020-10-28T10:50:19.726+0800][1.869s][1964][3712]   class space    used 1746K, capacity 1890K, committed 1920K, reserved 1048576K
-        
+
+    PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseG1GC -Xms2g -Xmx2g -Xlog:gc*:file=gc.g1.2g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
+    [2020-10-28T10:50:17.928+0800][0.071s][1964][3712] Using G1
+    正在执行...
+    [2020-10-28T10:50:18.791+0800][0.934s][1964][9088] GC(0) Pause Young (Normal) (G1 Evacuation Pause) 142M->52M(2048M) 11.123ms
+    [2020-10-28T10:50:18.840+0800][0.983s][1964][9088] GC(1) Pause Young (Normal) (G1 Evacuation Pause) 187M->107M(2048M) 13.263ms
+    [2020-10-28T10:50:18.883+0800][1.026s][1964][9088] GC(2) Pause Young (Normal) (G1 Evacuation Pause) 245M->158M(2048M) 13.929ms
+    [2020-10-28T10:50:18.922+0800][1.065s][1964][9088] GC(3) Pause Young (Normal) (G1 Evacuation Pause) 296M->202M(2048M) 11.991ms
+    [2020-10-28T10:50:18.963+0800][1.106s][1964][9088] GC(4) Pause Young (Normal) (G1 Evacuation Pause) 343M->251M(2048M) 12.320ms
+    [2020-10-28T10:50:19.010+0800][1.153s][1964][9088] GC(5) Pause Young (Normal) (G1 Evacuation Pause) 392M->302M(2048M) 13.887ms
+    [2020-10-28T10:50:19.062+0800][1.205s][1964][9088] GC(6) Pause Young (Normal) (G1 Evacuation Pause) 473M->352M(2048M) 14.122ms
+    [2020-10-28T10:50:19.114+0800][1.257s][1964][9088] GC(7) Pause Young (Normal) (G1 Evacuation Pause) 540M->403M(2048M) 14.664ms
+    [2020-10-28T10:50:19.176+0800][1.319s][1964][9088] GC(8) Pause Young (Normal) (G1 Evacuation Pause) 629M->476M(2048M) 12.897ms
+    [2020-10-28T10:50:19.253+0800][1.396s][1964][9088] GC(9) Pause Young (Normal) (G1 Evacuation Pause) 713M->533M(2048M) 14.820ms
+    [2020-10-28T10:50:19.376+0800][1.519s][1964][9088] GC(10) Pause Young (Normal) (G1 Evacuation Pause) 899M->603M(2048M) 20.406ms
+    [2020-10-28T10:50:19.514+0800][1.657s][1964][9088] GC(11) Pause Young (Normal) (G1 Evacuation Pause) 1042M->695M(2048M) 34.230ms
+    [2020-10-28T10:50:19.675+0800][1.818s][1964][9088] GC(12) Pause Young (Normal) (G1 Evacuation Pause) 1213M->792M(2048M) 41.601ms
+    执行结束!共生成对象次数:12978
+    [2020-10-28T10:50:19.725+0800][1.868s][1964][3712] Heap
+    [2020-10-28T10:50:19.725+0800][1.868s][1964][3712]  garbage-first heap   total 2097152K, used 994657K [0x0000000080000000, 0x0000000100000000)
+    [2020-10-28T10:50:19.725+0800][1.869s][1964][3712]   region size 1024K, 165 young (168960K), 47 survivors (48128K)
+    [2020-10-28T10:50:19.726+0800][1.869s][1964][3712]  Metaspace       used 16580K, capacity 16955K, committed 17024K, reserved 1064960K
+    [2020-10-28T10:50:19.726+0800][1.869s][1964][3712]   class space    used 1746K, capacity 1890K, committed 1920K, reserved 1048576K
+
 </code></pre></div></div></details>
 
 ## 4GB
