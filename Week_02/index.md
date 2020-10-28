@@ -19,5 +19,5 @@
 ## 第四节课作业实践
 1. （可选）运行课上的例子，以及 Netty 的例子，分析相关现象。
    <br/> 此题没有做。
-2. 写一段代码，使用 HttpClient 或 OkHttp 访问 http://localhost:8801，代码提交到Github。
+2. 写一段代码，使用 HttpClient 或 OkHttp 访问 http://localhost:8801 ，代码提交到Github。
    <br/>[答案](course4-question2.md)
