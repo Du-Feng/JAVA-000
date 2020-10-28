@@ -1445,6 +1445,7 @@
 
 结果如下：
 
+        <details><summary>Click to expand</summary><p>
         PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseG1GC -Xms4g -Xmx4g -Xlog:gc*:file=gc.g1.4g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
         [2020-10-28T10:51:02.984+0800][0.116s][16528][7964] Using G1
         正在执行...
@@ -1466,3 +1467,4 @@
         [2020-10-28T10:51:04.766+0800][1.899s][16528][7964 ]   region size 2048K, 251 young (514048K), 24 survivors (49152K)
         [2020-10-28T10:51:04.766+0800][1.899s][16528][7964 ]  Metaspace       used 16549K, capacity 16956K, committed 17024K, reserved 1064960K
         [2020-10-28T10:51:04.767+0800][1.899s][16528][7964 ]   class space    used 1748K, capacity 1890K, committed 1920K, reserved 1048576K
+        </p></details>
