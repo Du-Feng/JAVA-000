@@ -20,11 +20,11 @@
 - 4GB
 
 我使用的 Java 11，GC日志相关的命令有所变化：
-Java 8 | Java 11
--- | --
--Xloggc:gc.demo.log | -Xlog:gc:gc.demo.log
--XX:+PrintGCDetails | -Xlog:gc*
--XX:+PrintGCDateStamps | -Xlog:gc::time (-Xlog:gc::utctime)
+| Java 8 | Java 11 |
+| - - | - - |
+| -Xloggc:gc.demo.log | -Xlog:gc:gc.demo.log |
+| -XX:+PrintGCDetails | -Xlog:gc* |
+| -XX:+PrintGCDateStamps | -Xlog:gc::time (-Xlog:gc::utctime) |
 
 因此，Java 8 的命令：
 
