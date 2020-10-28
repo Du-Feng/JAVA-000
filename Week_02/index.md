@@ -1,3 +1,5 @@
+# [主页](index.md)
+
 # 学习心得
 - [GC](GC.md)
 - [五种IO模型](IOModel.md)
