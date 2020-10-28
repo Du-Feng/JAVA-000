@@ -6,7 +6,7 @@
 
 # 简述
 使用之前练习的一个 [咖啡 Rest API 小程序](course4-question2/complex-controller)，同时参考如下链接，写了一个简单的 [HttpClient小程序](course4-question2/httpclient-demo)，演练如何使用 HttpClient 访问咖啡Rest API：
-- [Java HTTP Client](Java HttpClient API Tutorial with Examples)
+- [Java HTTP Client](https://openjdk.java.net/groups/net/httpclient/)
 - [Introduction to the Java HTTP Client](https://openjdk.java.net/groups/net/httpclient/intro.html)
 - [Examples and Recipes](https://openjdk.java.net/groups/net/httpclient/recipes.html)
 - [Java HttpClient API Tutorial with Examples](https://hellokoding.com/java-http-client-api/)
