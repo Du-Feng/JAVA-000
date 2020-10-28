@@ -1,0 +1,21 @@
+PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseG1GC -Xms4g -Xmx4g -Xlog:gc*:file=gc.g1.4g.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
+[2020-10-28T10:51:02.984+0800][0.116s][16528][7964] Using G1
+正在执行...
+[2020-10-28T10:51:03.886+0800][1.019s][16528][11296] GC(0) Pause Young (Normal) (G1 Evacuation Pause) 203M->72M(4096M) 23.980ms
+[2020-10-28T10:51:03.949+0800][1.082s][16528][11296] GC(1) Pause Young (Normal) (G1 Evacuation Pause) 250M->137M(4096M) 21.356ms
+[2020-10-28T10:51:04.005+0800][1.138s][16528][11296] GC(2) Pause Young (Normal) (G1 Evacuation Pause) 315M->206M(4096M) 25.575ms
+[2020-10-28T10:51:04.061+0800][1.193s][16528][11296] GC(3) Pause Young (Normal) (G1 Evacuation Pause) 384M->279M(4096M) 21.981ms
+[2020-10-28T10:51:04.114+0800][1.247s][16528][11296] GC(4) Pause Young (Normal) (G1 Evacuation Pause) 456M->355M(4096M) 23.564ms
+[2020-10-28T10:51:04.170+0800][1.302s][16528][11296] GC(5) Pause Young (Normal) (G1 Evacuation Pause) 533M->422M(4096M) 24.201ms
+[2020-10-28T10:51:04.222+0800][1.355s][16528][11296] GC(6) Pause Young (Normal) (G1 Evacuation Pause) 600M->485M(4096M) 19.828ms
+[2020-10-28T10:51:04.277+0800][1.409s][16528][11296] GC(7) Pause Young (Normal) (G1 Evacuation Pause) 663M->550M(4096M) 21.831ms
+[2020-10-28T10:51:04.344+0800][1.477s][16528][11296] GC(8) Pause Young (Normal) (G1 Evacuation Pause) 764M->631M(4096M) 22.350ms
+[2020-10-28T10:51:04.413+0800][1.546s][16528][11296] GC(9) Pause Young (Normal) (G1 Evacuation Pause) 870M->723M(4096M) 27.559ms
+[2020-10-28T10:51:04.524+0800][1.657s][16528][11296] GC(10) Pause Young (Normal) (G1 Evacuation Pause) 1001M->815M(4096M) 30.164ms
+[2020-10-28T10:51:04.642+0800][1.774s][16528][11296] GC(11) Pause Young (Normal) (G1 Evacuation Pause) 1147M->918M(4096M) 41.258ms
+执行结束!共生成对象次数:13950
+[2020-10-28T10:51:04.765+0800][1.897s][16528][7964 ] Heap
+[2020-10-28T10:51:04.765+0800][1.898s][16528][7964 ]  garbage-first heap   total 4194304K, used 1401110K [0x0000000700000000, 0x0000000800000000)
+[2020-10-28T10:51:04.766+0800][1.899s][16528][7964 ]   region size 2048K, 251 young (514048K), 24 survivors (49152K)
+[2020-10-28T10:51:04.766+0800][1.899s][16528][7964 ]  Metaspace       used 16549K, capacity 16956K, committed 17024K, reserved 1064960K
+[2020-10-28T10:51:04.767+0800][1.899s][16528][7964 ]   class space    used 1748K, capacity 1890K, committed 1920K, reserved 1048576K
