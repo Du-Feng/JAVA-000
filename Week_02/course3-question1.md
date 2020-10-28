@@ -375,7 +375,7 @@ PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseParallelGC -Xms256m -Xmx25
 [2020-10-28T10:27:36.993+0800][1.911s][19796][5392]  Metaspace       used 16543K, capacity 16939K, committed 17024K, reserved 1064960K
 [2020-10-28T10:27:36.994+0800][1.912s][19796][5392]   class space    used 1746K, capacity 1890K, committed 1920K, reserved 1048576K
 
-<details><summary>Click to expand</summary><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div></details>
 
 ## 512MB
 执行命令行：
