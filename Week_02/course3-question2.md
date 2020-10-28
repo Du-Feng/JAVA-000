@@ -34,6 +34,8 @@
 ![Terminal](course3-question2/serial/serial-128m-sb-terminal.png)
 <br/><br/>
 ![Web](course3-question2/serial/serial-128m-sb-web.png)
+<br/><br/>
+[Web Live Report](course3-question2/serial/2020-10-28_14-37-56.879899_serial.128m/index.html)
 
 ## SerialGC - 256MB
 启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
@@ -45,8 +47,8 @@
 ![Terminal](course3-question2/serial/serial-256m-sb-terminal.png)
 <br/><br/>
 ![Web](course3-question2/serial/serial-256m-sb-web.png)
-<br/>
-[Report](course3-question2/serial/2020-10-28_14-37-56.879899_serial.128m/index.html)
+<br/><br/>
+[Web Live Report](course3-question2/serial/2020-10-28_14-44-08.984718_serial.256m/index.html)
 
 ## SerialGC - 512MB
 启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
@@ -58,6 +60,8 @@
 ![Terminal](course3-question2/serial/serial-512m-sb-terminal.png)
 <br/><br/>
 ![Web](course3-question2/serial/serial-512m-sb-web.png)
+<br/><br/>
+[Web Live Report](course3-question2/serial/2020-10-28_14-55-30.510836_serial.512m/index.html)
 
 ## SerialGC - 1GB
 启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
@@ -69,6 +73,8 @@
 ![Terminal](course3-question2/serial/serial-1g-sb-terminal.png)
 <br/><br/>
 ![Web](course3-question2/serial/serial-1g-sb-web.png)
+<br/><br/>
+[Web Live Report](course3-question2/serial/2020-10-28_14-59-56.949790_serial.1g/index.html)
 
 ## SerialGC - 2GB
 启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
@@ -80,6 +86,8 @@
 ![Terminal](course3-question2/serial/serial-2g-sb-terminal.png)
 <br/><br/>
 ![Web](course3-question2/serial/serial-2g-sb-web.png)
+<br/><br/>
+[Web Live Report](course3-question2/serial/2020-10-28_15-03-29.905306_serial.2g/index.html)
 
 ## SerialGC - 4GB
 启动gateway-server-0.0.1-SNAPSHOT.jar的命令如下：
@@ -91,6 +99,8 @@
 ![Terminal](course3-question2/serial/serial-4g-sb-terminal.png)
 <br/><br/>
 ![Web](course3-question2/serial/serial-4g-sb-web.png)
+<br/><br/>
+[Web Live Report](course3-question2/serial/2020-10-28_15-07-18.070700_serial.4g/index.html)
 
 # 并行
 
