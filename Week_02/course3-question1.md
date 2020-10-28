@@ -6,8 +6,8 @@
 
 # 简述
 使用 GCLogAnalysis.java 演练如下四个GC：
-- 串行
-- 并行
+- [串行](#串行)
+- [并行](course3-question1.md#并行)
 - CMS
 - G1
 
