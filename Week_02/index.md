@@ -1,6 +1,6 @@
 # 学习心得
-- [五种IO模型](IOModel.md)
 - [GC](GC.md)
+- [五种IO模型](IOModel.md)
 
 # 作业
 ## 第 3 课作业实践

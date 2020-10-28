@@ -1,0 +1,129 @@
+[2020-10-28T09:42:26.188+0800][0.019s][26404][2936][info][gc] Using Serial
+[2020-10-28T09:42:26.188+0800][0.020s][26404][2936][info][gc,heap,coops] Heap address: 0x00000000e0000000, size: 512 MB, Compressed Oops mode: 32-bit
+[2020-10-28T09:42:27.017+0800][0.849s][26404][18168][info][gc,start     ] GC(0) Pause Young (Allocation Failure)
+[2020-10-28T09:42:27.052+0800][0.884s][26404][18168][info][gc,heap      ] GC(0) DefNew: 139776K->17471K(157248K)
+[2020-10-28T09:42:27.052+0800][0.884s][26404][18168][info][gc,heap      ] GC(0) Tenured: 0K->27690K(349568K)
+[2020-10-28T09:42:27.052+0800][0.884s][26404][18168][info][gc,metaspace ] GC(0) Metaspace: 16344K->16344K(1064960K)
+[2020-10-28T09:42:27.058+0800][0.889s][26404][18168][info][gc           ] GC(0) Pause Young (Allocation Failure) 136M->44M(494M) 39.757ms
+[2020-10-28T09:42:27.058+0800][0.890s][26404][18168][info][gc,cpu       ] GC(0) User=0.08s Sys=0.02s Real=0.04s
+[2020-10-28T09:42:27.092+0800][0.924s][26404][18168][info][gc,start     ] GC(1) Pause Young (Allocation Failure)
+[2020-10-28T09:42:27.130+0800][0.962s][26404][18168][info][gc,heap      ] GC(1) DefNew: 157247K->17472K(157248K)
+[2020-10-28T09:42:27.130+0800][0.962s][26404][18168][info][gc,heap      ] GC(1) Tenured: 27690K->70485K(349568K)
+[2020-10-28T09:42:27.130+0800][0.962s][26404][18168][info][gc,metaspace ] GC(1) Metaspace: 16347K->16347K(1064960K)
+[2020-10-28T09:42:27.130+0800][0.962s][26404][18168][info][gc           ] GC(1) Pause Young (Allocation Failure) 180M->85M(494M) 37.985ms
+[2020-10-28T09:42:27.131+0800][0.962s][26404][18168][info][gc,cpu       ] GC(1) User=0.05s Sys=0.00s Real=0.04s
+[2020-10-28T09:42:27.155+0800][0.987s][26404][18168][info][gc,start     ] GC(2) Pause Young (Allocation Failure)
+[2020-10-28T09:42:27.195+0800][1.027s][26404][18168][info][gc,heap      ] GC(2) DefNew: 157248K->17471K(157248K)
+[2020-10-28T09:42:27.195+0800][1.027s][26404][18168][info][gc,heap      ] GC(2) Tenured: 70485K->122719K(349568K)
+[2020-10-28T09:42:27.195+0800][1.027s][26404][18168][info][gc,metaspace ] GC(2) Metaspace: 16347K->16347K(1064960K)
+[2020-10-28T09:42:27.195+0800][1.027s][26404][18168][info][gc           ] GC(2) Pause Young (Allocation Failure) 222M->136M(494M) 40.480ms
+[2020-10-28T09:42:27.196+0800][1.028s][26404][18168][info][gc,cpu       ] GC(2) User=0.00s Sys=0.05s Real=0.04s
+[2020-10-28T09:42:27.222+0800][1.053s][26404][18168][info][gc,start     ] GC(3) Pause Young (Allocation Failure)
+[2020-10-28T09:42:27.261+0800][1.093s][26404][18168][info][gc,heap      ] GC(3) DefNew: 157247K->17471K(157248K)
+[2020-10-28T09:42:27.261+0800][1.093s][26404][18168][info][gc,heap      ] GC(3) Tenured: 122719K->172984K(349568K)
+[2020-10-28T09:42:27.261+0800][1.093s][26404][18168][info][gc,metaspace ] GC(3) Metaspace: 16347K->16347K(1064960K)
+[2020-10-28T09:42:27.261+0800][1.093s][26404][18168][info][gc           ] GC(3) Pause Young (Allocation Failure) 273M->185M(494M) 39.789ms
+[2020-10-28T09:42:27.262+0800][1.094s][26404][18168][info][gc,cpu       ] GC(3) User=0.02s Sys=0.03s Real=0.04s
+[2020-10-28T09:42:27.289+0800][1.121s][26404][18168][info][gc,start     ] GC(4) Pause Young (Allocation Failure)
+[2020-10-28T09:42:27.325+0800][1.157s][26404][18168][info][gc,heap      ] GC(4) DefNew: 157247K->17471K(157248K)
+[2020-10-28T09:42:27.326+0800][1.157s][26404][18168][info][gc,heap      ] GC(4) Tenured: 172984K->222578K(349568K)
+[2020-10-28T09:42:27.326+0800][1.157s][26404][18168][info][gc,metaspace ] GC(4) Metaspace: 16347K->16347K(1064960K)
+[2020-10-28T09:42:27.326+0800][1.157s][26404][18168][info][gc           ] GC(4) Pause Young (Allocation Failure) 322M->234M(494M) 36.408ms
+[2020-10-28T09:42:27.326+0800][1.158s][26404][18168][info][gc,cpu       ] GC(4) User=0.00s Sys=0.03s Real=0.04s
+[2020-10-28T09:42:27.353+0800][1.185s][26404][18168][info][gc,start     ] GC(5) Pause Young (Allocation Failure)
+[2020-10-28T09:42:27.390+0800][1.222s][26404][18168][info][gc,heap      ] GC(5) DefNew: 157247K->17471K(157248K)
+[2020-10-28T09:42:27.390+0800][1.222s][26404][18168][info][gc,heap      ] GC(5) Tenured: 222578K->272703K(349568K)
+[2020-10-28T09:42:27.390+0800][1.222s][26404][18168][info][gc,metaspace ] GC(5) Metaspace: 16347K->16347K(1064960K)
+[2020-10-28T09:42:27.390+0800][1.222s][26404][18168][info][gc           ] GC(5) Pause Young (Allocation Failure) 370M->283M(494M) 36.583ms
+[2020-10-28T09:42:27.391+0800][1.223s][26404][18168][info][gc,cpu       ] GC(5) User=0.02s Sys=0.02s Real=0.04s
+[2020-10-28T09:42:27.414+0800][1.246s][26404][18168][info][gc,start     ] GC(6) Pause Young (Allocation Failure)
+[2020-10-28T09:42:27.452+0800][1.284s][26404][18168][info][gc,heap      ] GC(6) DefNew: 157247K->17471K(157248K)
+[2020-10-28T09:42:27.452+0800][1.284s][26404][18168][info][gc,heap      ] GC(6) Tenured: 272703K->321272K(349568K)
+[2020-10-28T09:42:27.452+0800][1.284s][26404][18168][info][gc,metaspace ] GC(6) Metaspace: 16347K->16347K(1064960K)
+[2020-10-28T09:42:27.452+0800][1.284s][26404][18168][info][gc           ] GC(6) Pause Young (Allocation Failure) 419M->330M(494M) 37.767ms
+[2020-10-28T09:42:27.453+0800][1.284s][26404][18168][info][gc,cpu       ] GC(6) User=0.02s Sys=0.02s Real=0.04s
+[2020-10-28T09:42:27.478+0800][1.309s][26404][18168][info][gc,start     ] GC(7) Pause Young (Allocation Failure)
+[2020-10-28T09:42:27.478+0800][1.309s][26404][18168][info][gc,start     ] GC(8) Pause Full (Allocation Failure)
+[2020-10-28T09:42:27.478+0800][1.309s][26404][18168][info][gc,phases,start] GC(8) Phase 1: Mark live objects
+[2020-10-28T09:42:27.487+0800][1.318s][26404][18168][info][gc,phases      ] GC(8) Phase 1: Mark live objects 8.743ms
+[2020-10-28T09:42:27.487+0800][1.318s][26404][18168][info][gc,phases,start] GC(8) Phase 2: Compute new object addresses
+[2020-10-28T09:42:27.488+0800][1.320s][26404][18168][info][gc,phases      ] GC(8) Phase 2: Compute new object addresses 1.813ms
+[2020-10-28T09:42:27.488+0800][1.320s][26404][18168][info][gc,phases,start] GC(8) Phase 3: Adjust pointers
+[2020-10-28T09:42:27.492+0800][1.323s][26404][18168][info][gc,phases      ] GC(8) Phase 3: Adjust pointers 3.259ms
+[2020-10-28T09:42:27.492+0800][1.323s][26404][18168][info][gc,phases,start] GC(8) Phase 4: Move objects
+[2020-10-28T09:42:27.542+0800][1.373s][26404][18168][info][gc,phases      ] GC(8) Phase 4: Move objects 50.009ms
+[2020-10-28T09:42:27.542+0800][1.374s][26404][18168][info][gc             ] GC(8) Pause Full (Allocation Failure) 467M->259M(494M) 64.313ms
+[2020-10-28T09:42:27.543+0800][1.374s][26404][18168][info][gc,heap        ] GC(7) DefNew: 157247K->0K(157248K)
+[2020-10-28T09:42:27.543+0800][1.374s][26404][18168][info][gc,heap        ] GC(7) Tenured: 321272K->265895K(349568K)
+[2020-10-28T09:42:27.543+0800][1.374s][26404][18168][info][gc,metaspace   ] GC(7) Metaspace: 16347K->16347K(1064960K)
+[2020-10-28T09:42:27.543+0800][1.374s][26404][18168][info][gc             ] GC(7) Pause Young (Allocation Failure) 467M->259M(494M) 65.100ms
+[2020-10-28T09:42:27.543+0800][1.375s][26404][18168][info][gc,cpu         ] GC(7) User=0.06s Sys=0.00s Real=0.07s
+[2020-10-28T09:42:27.572+0800][1.403s][26404][18168][info][gc,start       ] GC(9) Pause Young (Allocation Failure)
+[2020-10-28T09:42:27.586+0800][1.417s][26404][18168][info][gc,heap        ] GC(9) DefNew: 139776K->17471K(157248K)
+[2020-10-28T09:42:27.586+0800][1.417s][26404][18168][info][gc,heap        ] GC(9) Tenured: 265895K->297666K(349568K)
+[2020-10-28T09:42:27.586+0800][1.417s][26404][18168][info][gc,metaspace   ] GC(9) Metaspace: 16347K->16347K(1064960K)
+[2020-10-28T09:42:27.586+0800][1.417s][26404][18168][info][gc             ] GC(9) Pause Young (Allocation Failure) 396M->307M(494M) 14.156ms
+[2020-10-28T09:42:27.587+0800][1.418s][26404][18168][info][gc,cpu         ] GC(9) User=0.02s Sys=0.00s Real=0.01s
+[2020-10-28T09:42:27.612+0800][1.443s][26404][18168][info][gc,start       ] GC(10) Pause Young (Allocation Failure)
+[2020-10-28T09:42:27.612+0800][1.444s][26404][18168][info][gc,start       ] GC(11) Pause Full (Allocation Failure)
+[2020-10-28T09:42:27.612+0800][1.444s][26404][18168][info][gc,phases,start] GC(11) Phase 1: Mark live objects
+[2020-10-28T09:42:27.618+0800][1.449s][26404][18168][info][gc,phases      ] GC(11) Phase 1: Mark live objects 5.568ms
+[2020-10-28T09:42:27.618+0800][1.449s][26404][18168][info][gc,phases,start] GC(11) Phase 2: Compute new object addresses
+[2020-10-28T09:42:27.620+0800][1.451s][26404][18168][info][gc,phases      ] GC(11) Phase 2: Compute new object addresses 1.718ms
+[2020-10-28T09:42:27.620+0800][1.451s][26404][18168][info][gc,phases,start] GC(11) Phase 3: Adjust pointers
+[2020-10-28T09:42:27.623+0800][1.454s][26404][18168][info][gc,phases      ] GC(11) Phase 3: Adjust pointers 3.046ms
+[2020-10-28T09:42:27.623+0800][1.454s][26404][18168][info][gc,phases,start] GC(11) Phase 4: Move objects
+[2020-10-28T09:42:27.681+0800][1.513s][26404][18168][info][gc,phases      ] GC(11) Phase 4: Move objects 58.255ms
+[2020-10-28T09:42:27.681+0800][1.513s][26404][18168][info][gc             ] GC(11) Pause Full (Allocation Failure) 444M->278M(494M) 69.301ms
+[2020-10-28T09:42:27.682+0800][1.513s][26404][18168][info][gc,heap        ] GC(10) DefNew: 157199K->0K(157248K)
+[2020-10-28T09:42:27.682+0800][1.513s][26404][18168][info][gc,heap        ] GC(10) Tenured: 297666K->285033K(349568K)
+[2020-10-28T09:42:27.682+0800][1.513s][26404][18168][info][gc,metaspace   ] GC(10) Metaspace: 16347K->16347K(1064960K)
+[2020-10-28T09:42:27.682+0800][1.514s][26404][18168][info][gc             ] GC(10) Pause Young (Allocation Failure) 444M->278M(494M) 70.099ms
+[2020-10-28T09:42:27.682+0800][1.514s][26404][18168][info][gc,cpu         ] GC(10) User=0.08s Sys=0.00s Real=0.07s
+[2020-10-28T09:42:27.710+0800][1.542s][26404][18168][info][gc,start       ] GC(12) Pause Young (Allocation Failure)
+[2020-10-28T09:42:27.729+0800][1.560s][26404][18168][info][gc,heap        ] GC(12) DefNew: 139776K->17470K(157248K)
+[2020-10-28T09:42:27.729+0800][1.560s][26404][18168][info][gc,heap        ] GC(12) Tenured: 285033K->320642K(349568K)
+[2020-10-28T09:42:27.729+0800][1.560s][26404][18168][info][gc,metaspace   ] GC(12) Metaspace: 16347K->16347K(1064960K)
+[2020-10-28T09:42:27.729+0800][1.560s][26404][18168][info][gc             ] GC(12) Pause Young (Allocation Failure) 414M->330M(494M) 18.361ms
+[2020-10-28T09:42:27.729+0800][1.561s][26404][18168][info][gc,cpu         ] GC(12) User=0.02s Sys=0.00s Real=0.02s
+[2020-10-28T09:42:27.761+0800][1.592s][26404][18168][info][gc,start       ] GC(13) Pause Young (Allocation Failure)
+[2020-10-28T09:42:27.761+0800][1.592s][26404][18168][info][gc,start       ] GC(14) Pause Full (Allocation Failure)
+[2020-10-28T09:42:27.761+0800][1.592s][26404][18168][info][gc,phases,start] GC(14) Phase 1: Mark live objects
+[2020-10-28T09:42:27.768+0800][1.599s][26404][18168][info][gc,phases      ] GC(14) Phase 1: Mark live objects 7.011ms
+[2020-10-28T09:42:27.768+0800][1.600s][26404][18168][info][gc,phases,start] GC(14) Phase 2: Compute new object addresses
+[2020-10-28T09:42:27.771+0800][1.602s][26404][18168][info][gc,phases      ] GC(14) Phase 2: Compute new object addresses 2.822ms
+[2020-10-28T09:42:27.771+0800][1.603s][26404][18168][info][gc,phases,start] GC(14) Phase 3: Adjust pointers
+[2020-10-28T09:42:27.774+0800][1.606s][26404][18168][info][gc,phases      ] GC(14) Phase 3: Adjust pointers 3.079ms
+[2020-10-28T09:42:27.774+0800][1.606s][26404][18168][info][gc,phases,start] GC(14) Phase 4: Move objects
+[2020-10-28T09:42:27.853+0800][1.685s][26404][18168][info][gc,phases      ] GC(14) Phase 4: Move objects 79.135ms
+[2020-10-28T09:42:27.854+0800][1.685s][26404][18168][info][gc             ] GC(14) Pause Full (Allocation Failure) 466M->304M(494M) 92.983ms
+[2020-10-28T09:42:27.854+0800][1.686s][26404][18168][info][gc,heap        ] GC(13) DefNew: 157246K->0K(157248K)
+[2020-10-28T09:42:27.854+0800][1.686s][26404][18168][info][gc,heap        ] GC(13) Tenured: 320642K->311382K(349568K)
+[2020-10-28T09:42:27.854+0800][1.686s][26404][18168][info][gc,metaspace   ] GC(13) Metaspace: 16347K->16347K(1064960K)
+[2020-10-28T09:42:27.854+0800][1.686s][26404][18168][info][gc             ] GC(13) Pause Young (Allocation Failure) 466M->304M(494M) 93.712ms
+[2020-10-28T09:42:27.855+0800][1.686s][26404][18168][info][gc,cpu         ] GC(13) User=0.09s Sys=0.00s Real=0.09s
+[2020-10-28T09:42:27.894+0800][1.725s][26404][18168][info][gc,start       ] GC(15) Pause Young (Allocation Failure)
+[2020-10-28T09:42:27.894+0800][1.725s][26404][18168][info][gc,start       ] GC(16) Pause Full (Allocation Failure)
+[2020-10-28T09:42:27.894+0800][1.725s][26404][18168][info][gc,phases,start] GC(16) Phase 1: Mark live objects
+[2020-10-28T09:42:27.903+0800][1.734s][26404][18168][info][gc,phases      ] GC(16) Phase 1: Mark live objects 8.755ms
+[2020-10-28T09:42:27.903+0800][1.734s][26404][18168][info][gc,phases,start] GC(16) Phase 2: Compute new object addresses
+[2020-10-28T09:42:27.905+0800][1.737s][26404][18168][info][gc,phases      ] GC(16) Phase 2: Compute new object addresses 2.199ms
+[2020-10-28T09:42:27.905+0800][1.737s][26404][18168][info][gc,phases,start] GC(16) Phase 3: Adjust pointers
+[2020-10-28T09:42:27.909+0800][1.740s][26404][18168][info][gc,phases      ] GC(16) Phase 3: Adjust pointers 3.398ms
+[2020-10-28T09:42:27.909+0800][1.740s][26404][18168][info][gc,phases,start] GC(16) Phase 4: Move objects
+[2020-10-28T09:42:28.001+0800][1.832s][26404][18168][info][gc,phases      ] GC(16) Phase 4: Move objects 92.002ms
+[2020-10-28T09:42:28.001+0800][1.832s][26404][18168][info][gc             ] GC(16) Pause Full (Allocation Failure) 440M->293M(494M) 106.946ms
+[2020-10-28T09:42:28.001+0800][1.833s][26404][18168][info][gc,heap        ] GC(15) DefNew: 139194K->0K(157248K)
+[2020-10-28T09:42:28.001+0800][1.833s][26404][18168][info][gc,heap        ] GC(15) Tenured: 311382K->300965K(349568K)
+[2020-10-28T09:42:28.001+0800][1.833s][26404][18168][info][gc,metaspace   ] GC(15) Metaspace: 16347K->16347K(1064960K)
+[2020-10-28T09:42:28.001+0800][1.833s][26404][18168][info][gc             ] GC(15) Pause Young (Allocation Failure) 440M->293M(494M) 107.619ms
+[2020-10-28T09:42:28.002+0800][1.833s][26404][18168][info][gc,cpu         ] GC(15) User=0.11s Sys=0.00s Real=0.11s
+[2020-10-28T09:42:28.025+0800][1.857s][26404][2936 ][info][gc,heap,exit   ] Heap
+[2020-10-28T09:42:28.025+0800][1.857s][26404][2936 ][info][gc,heap,exit   ]  def new generation   total 157248K, used 7744K [0x00000000e0000000, 0x00000000eaaa0000, 0x00000000eaaa0000)
+[2020-10-28T09:42:28.026+0800][1.857s][26404][2936 ][info][gc,heap,exit   ]   eden space 139776K,   5% used [0x00000000e0000000, 0x00000000e0790398, 0x00000000e8880000)
+[2020-10-28T09:42:28.026+0800][1.857s][26404][2936 ][info][gc,heap,exit   ]   from space 17472K,   0% used [0x00000000e9990000, 0x00000000e9990000, 0x00000000eaaa0000)
+[2020-10-28T09:42:28.026+0800][1.858s][26404][2936 ][info][gc,heap,exit   ]   to   space 17472K,   0% used [0x00000000e8880000, 0x00000000e8880000, 0x00000000e9990000)
+[2020-10-28T09:42:28.026+0800][1.858s][26404][2936 ][info][gc,heap,exit   ]  tenured generation   total 349568K, used 300965K [0x00000000eaaa0000, 0x0000000100000000, 0x0000000100000000)
+[2020-10-28T09:42:28.027+0800][1.858s][26404][2936 ][info][gc,heap,exit   ]    the space 349568K,  86% used [0x00000000eaaa0000, 0x00000000fd089728, 0x00000000fd089800, 0x0000000100000000)
+[2020-10-28T09:42:28.027+0800][1.858s][26404][2936 ][info][gc,heap,exit   ]  Metaspace       used 16515K, capacity 16956K, committed 17024K, reserved 1064960K
+[2020-10-28T09:42:28.027+0800][1.859s][26404][2936 ][info][gc,heap,exit   ]   class space    used 1745K, capacity 1890K, committed 1920K, reserved 1048576K

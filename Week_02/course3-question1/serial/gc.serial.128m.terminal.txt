@@ -1,0 +1,42 @@
+PS C:\Data\Code\GitHub\JAVA-000\Week_02> java -XX:+UseSerialGC -Xms128m -Xmx128m -Xlog:gc*:file=gc.serial.128m.log:time,uptime,pid,tid,level,tags -Xlog:gc,gc+heap+exit::time,uptime,pid,tid GCLogAnalysis.java
+[2020-10-28T09:37:45.137+0800][0.018s][26280][15324] Using Serial
+[2020-10-28T09:37:45.991+0800][0.872s][26280][2160 ] GC(0) Pause Young (Allocation Failure) 34M->9M(123M) 19.907ms
+正在执行...
+[2020-10-28T09:37:46.060+0800][0.941s][26280][2160 ] GC(1) Pause Young (Allocation Failure) 43M->25M(123M) 21.031ms
+[2020-10-28T09:37:46.083+0800][0.964s][26280][2160 ] GC(2) Pause Young (Allocation Failure) 59M->39M(123M) 10.053ms
+[2020-10-28T09:37:46.103+0800][0.984s][26280][2160 ] GC(3) Pause Young (Allocation Failure) 73M->52M(123M) 11.921ms
+[2020-10-28T09:37:46.125+0800][1.006s][26280][2160 ] GC(4) Pause Young (Allocation Failure) 86M->66M(123M) 14.430ms
+[2020-10-28T09:37:46.146+0800][1.027s][26280][2160 ] GC(5) Pause Young (Allocation Failure) 100M->80M(123M) 11.202ms
+[2020-10-28T09:37:46.197+0800][1.078s][26280][2160 ] GC(7) Pause Full (Allocation Failure) 114M->88M(123M) 42.078ms
+[2020-10-28T09:37:46.197+0800][1.078s][26280][2160 ] GC(6) Pause Young (Allocation Failure) 114M->88M(123M) 42.896ms
+[2020-10-28T09:37:46.266+0800][1.147s][26280][2160 ] GC(8) Pause Full (Allocation Failure) 123M->101M(123M) 52.667ms
+[2020-10-28T09:37:46.322+0800][1.203s][26280][2160 ] GC(9) Pause Full (Allocation Failure) 123M->106M(123M) 48.915ms
+[2020-10-28T09:37:46.378+0800][1.259s][26280][2160 ] GC(10) Pause Full (Allocation Failure) 123M->107M(123M) 47.966ms
+[2020-10-28T09:37:46.406+0800][1.287s][26280][2160 ] GC(11) Pause Full (Allocation Failure) 123M->114M(123M) 23.602ms
+[2020-10-28T09:37:46.422+0800][1.303s][26280][2160 ] GC(12) Pause Full (Allocation Failure) 123M->115M(123M) 14.015ms
+[2020-10-28T09:37:46.438+0800][1.319s][26280][2160 ] GC(13) Pause Full (Allocation Failure) 123M->116M(123M) 13.806ms
+[2020-10-28T09:37:46.478+0800][1.359s][26280][2160 ] GC(14) Pause Full (Allocation Failure) 123M->115M(123M) 38.429ms
+[2020-10-28T09:37:46.495+0800][1.376s][26280][2160 ] GC(15) Pause Full (Allocation Failure) 123M->116M(123M) 12.889ms
+[2020-10-28T09:37:46.517+0800][1.398s][26280][2160 ] GC(16) Pause Full (Allocation Failure) 123M->119M(123M) 20.191ms
+[2020-10-28T09:37:46.533+0800][1.414s][26280][2160 ] GC(17) Pause Full (Allocation Failure) 123M->121M(123M) 13.733ms
+[2020-10-28T09:37:46.579+0800][1.460s][26280][2160 ] GC(18) Pause Full (Allocation Failure) 123M->121M(123M) 43.470ms
+[2020-10-28T09:37:46.593+0800][1.474s][26280][2160 ] GC(19) Pause Full (Allocation Failure) 123M->122M(123M) 12.581ms
+[2020-10-28T09:37:46.606+0800][1.487s][26280][2160 ] GC(20) Pause Full (Allocation Failure) 123M->122M(123M) 12.754ms
+[2020-10-28T09:37:46.617+0800][1.498s][26280][2160 ] GC(21) Pause Full (Allocation Failure) 123M->122M(123M) 10.021ms
+[2020-10-28T09:37:46.645+0800][1.526s][26280][2160 ] GC(22) Pause Full (Allocation Failure) 123M->123M(123M) 27.658ms
+[2020-10-28T09:37:46.657+0800][1.538s][26280][2160 ] GC(23) Pause Full (Allocation Failure) 123M->123M(123M) 10.376ms
+[2020-10-28T09:37:46.709+0800][1.590s][26280][2160 ] GC(24) Pause Full (Allocation Failure) 123M->122M(123M) 51.612ms
+[2020-10-28T09:37:46.743+0800][1.624s][26280][2160 ] GC(25) Pause Full (Allocation Failure) 123M->123M(123M) 30.063ms
+[2020-10-28T09:37:46.759+0800][1.640s][26280][2160 ] GC(26) Pause Full (Allocation Failure) 123M->123M(123M) 14.380ms
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+        at GCLogAnalysis.generateGarbage(GCLogAnalysis.java:42)
+        at GCLogAnalysis.main(GCLogAnalysis.java:25)
+[2020-10-28T09:37:46.762+0800][1.643s][26280][15324] Heap
+[2020-10-28T09:37:46.763+0800][1.644s][26280][15324]  def new generation   total 39296K, used 39169K [0x00000000f8000000, 0x00000000faaa0000, 0x00000000faaa0000)
+[2020-10-28T09:37:46.763+0800][1.644s][26280][15324]   eden space 34944K, 100% used [0x00000000f8000000, 0x00000000fa220000, 0x00000000fa220000)
+[2020-10-28T09:37:46.764+0800][1.645s][26280][15324]   from space 4352K,  97% used [0x00000000fa220000, 0x00000000fa6404f0, 0x00000000fa660000)
+[2020-10-28T09:37:46.764+0800][1.645s][26280][15324]   to   space 4352K,   0% used [0x00000000fa660000, 0x00000000fa660000, 0x00000000faaa0000)
+[2020-10-28T09:37:46.764+0800][1.645s][26280][15324]  tenured generation   total 87424K, used 87299K [0x00000000faaa0000, 0x0000000100000000, 0x0000000100000000)
+[2020-10-28T09:37:46.764+0800][1.645s][26280][15324]    the space 87424K,  99% used [0x00000000faaa0000, 0x00000000fffe0c30, 0x00000000fffe0e00, 0x0000000100000000)
+[2020-10-28T09:37:46.765+0800][1.646s][26280][15324]  Metaspace       used 16362K, capacity 16785K, committed 17024K, reserved 1064960K
+[2020-10-28T09:37:46.765+0800][1.646s][26280][15324]   class space    used 1717K, capacity 1872K, committed 1920K, reserved 1048576K
