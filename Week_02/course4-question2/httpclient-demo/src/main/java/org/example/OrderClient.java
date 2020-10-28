@@ -13,7 +13,7 @@ import java.util.concurrent.CompletableFuture;
 public class OrderClient {
     public void getCoffeeMenu() throws IOException, InterruptedException {
         System.out.println("\nGet coffee menu");
-        String uri = "http://localhost:8080/coffee/";
+        String uri = "http://localhost:8801/coffee/";
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(uri))
@@ -25,7 +25,7 @@ public class OrderClient {
 
     public void getCoffeeByName(String name) throws IOException, InterruptedException {
         System.out.println("\nGet coffee by name: " + name);
-        String uri = "http://localhost:8080/coffee/?name=" + name;
+        String uri = "http://localhost:8801/coffee/?name=" + name;
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(uri))
@@ -37,7 +37,7 @@ public class OrderClient {
 
     public void getCoffeeById(int id) throws IOException, InterruptedException {
         System.out.println("\nGet coffee by id: " + id);
-        String uri = "http://localhost:8080/coffee/" + id;
+        String uri = "http://localhost:8801/coffee/" + id;
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(uri))
@@ -48,8 +48,9 @@ public class OrderClient {
         System.out.println("Response body: " + response.body());
     }
 
-    public void createOrder(String uri, Order order) throws IOException {
+    public void createOrder(Order order) throws IOException {
         System.out.println("\nCreate an order");
+        String uri = "http://localhost:8801/order/";
         ObjectMapper objectMapper = new ObjectMapper();
         String json = objectMapper.writeValueAsString(order);
 

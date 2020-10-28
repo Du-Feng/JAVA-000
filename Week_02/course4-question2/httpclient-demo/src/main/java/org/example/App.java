@@ -8,7 +8,6 @@ import java.util.Arrays;
 
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
         try {
             OrderClient demo = new OrderClient();
             demo.getCoffeeMenu();
@@ -21,14 +20,11 @@ public class App {
                     .customer("Feng Du")
                     .items(new ArrayList(Arrays.asList("latte", "mocha")))
                     .build();
-            demo.createOrder("http://localhost:8080/order/", order);
-
+            demo.createOrder(order);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
-
-
 }
