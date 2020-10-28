@@ -1,0 +1,411 @@
+[2020-10-28T10:25:37.525+0800][0.080s][4624][21256][info][gc] Using Parallel
+[2020-10-28T10:25:37.525+0800][0.080s][4624][21256][info][gc,heap,coops] Heap address: 0x00000000f8000000, size: 128 MB, Compressed Oops mode: 32-bit
+[2020-10-28T10:25:38.985+0800][1.536s][4624][1688 ][info][gc,start     ] GC(0) Pause Young (Allocation Failure)
+[2020-10-28T10:25:39.002+0800][1.553s][4624][1688 ][info][gc,heap      ] GC(0) PSYoungGen: 33280K->5089K(38400K)
+[2020-10-28T10:25:39.002+0800][1.553s][4624][1688 ][info][gc,heap      ] GC(0) ParOldGen: 0K->4240K(87552K)
+[2020-10-28T10:25:39.002+0800][1.553s][4624][1688 ][info][gc,metaspace ] GC(0) Metaspace: 15577K->15577K(1062912K)
+[2020-10-28T10:25:39.003+0800][1.554s][4624][1688 ][info][gc           ] GC(0) Pause Young (Allocation Failure) 32M->9M(123M) 17.645ms
+[2020-10-28T10:25:39.003+0800][1.554s][4624][1688 ][info][gc,cpu       ] GC(0) User=0.05s Sys=0.00s Real=0.02s
+[2020-10-28T10:25:39.152+0800][1.704s][4624][1688 ][info][gc,start     ] GC(1) Pause Young (Allocation Failure)
+[2020-10-28T10:25:39.170+0800][1.722s][4624][1688 ][info][gc,heap      ] GC(1) PSYoungGen: 38176K->5117K(38400K)
+[2020-10-28T10:25:39.171+0800][1.722s][4624][1688 ][info][gc,heap      ] GC(1) ParOldGen: 4240K->16121K(87552K)
+[2020-10-28T10:25:39.171+0800][1.722s][4624][1688 ][info][gc,metaspace ] GC(1) Metaspace: 16369K->16369K(1064960K)
+[2020-10-28T10:25:39.171+0800][1.722s][4624][1688 ][info][gc           ] GC(1) Pause Young (Allocation Failure) 41M->20M(123M) 18.216ms
+[2020-10-28T10:25:39.171+0800][1.722s][4624][1688 ][info][gc,cpu       ] GC(1) User=0.06s Sys=0.00s Real=0.02s
+[2020-10-28T10:25:39.195+0800][1.746s][4624][1688 ][info][gc,start     ] GC(2) Pause Young (Allocation Failure)
+[2020-10-28T10:25:39.210+0800][1.761s][4624][1688 ][info][gc,heap      ] GC(2) PSYoungGen: 38397K->5119K(38400K)
+[2020-10-28T10:25:39.210+0800][1.761s][4624][1688 ][info][gc,heap      ] GC(2) ParOldGen: 16121K->27863K(87552K)
+[2020-10-28T10:25:39.210+0800][1.761s][4624][1688 ][info][gc,metaspace ] GC(2) Metaspace: 16372K->16372K(1064960K)
+[2020-10-28T10:25:39.210+0800][1.761s][4624][1688 ][info][gc           ] GC(2) Pause Young (Allocation Failure) 53M->32M(123M) 15.137ms
+[2020-10-28T10:25:39.210+0800][1.762s][4624][1688 ][info][gc,cpu       ] GC(2) User=0.00s Sys=0.03s Real=0.02s
+[2020-10-28T10:25:39.221+0800][1.772s][4624][1688 ][info][gc,start     ] GC(3) Pause Young (Allocation Failure)
+[2020-10-28T10:25:39.242+0800][1.793s][4624][1688 ][info][gc,heap      ] GC(3) PSYoungGen: 38399K->5096K(38400K)
+[2020-10-28T10:25:39.242+0800][1.793s][4624][1688 ][info][gc,heap      ] GC(3) ParOldGen: 27863K->40890K(87552K)
+[2020-10-28T10:25:39.242+0800][1.793s][4624][1688 ][info][gc,metaspace ] GC(3) Metaspace: 16376K->16376K(1064960K)
+[2020-10-28T10:25:39.242+0800][1.793s][4624][1688 ][info][gc           ] GC(3) Pause Young (Allocation Failure) 64M->44M(123M) 20.702ms
+[2020-10-28T10:25:39.242+0800][1.793s][4624][1688 ][info][gc,cpu       ] GC(3) User=0.03s Sys=0.03s Real=0.02s
+[2020-10-28T10:25:39.256+0800][1.808s][4624][1688 ][info][gc,start     ] GC(4) Pause Young (Allocation Failure)
+[2020-10-28T10:25:39.271+0800][1.822s][4624][1688 ][info][gc,heap      ] GC(4) PSYoungGen: 38186K->5116K(38400K)
+[2020-10-28T10:25:39.271+0800][1.822s][4624][1688 ][info][gc,heap      ] GC(4) ParOldGen: 40890K->53203K(87552K)
+[2020-10-28T10:25:39.271+0800][1.822s][4624][1688 ][info][gc,metaspace ] GC(4) Metaspace: 16376K->16376K(1064960K)
+[2020-10-28T10:25:39.271+0800][1.822s][4624][1688 ][info][gc           ] GC(4) Pause Young (Allocation Failure) 77M->56M(123M) 14.294ms
+[2020-10-28T10:25:39.271+0800][1.822s][4624][1688 ][info][gc,cpu       ] GC(4) User=0.00s Sys=0.00s Real=0.01s
+[2020-10-28T10:25:39.282+0800][1.833s][4624][1688 ][info][gc,start     ] GC(5) Pause Young (Allocation Failure)
+[2020-10-28T10:25:39.297+0800][1.849s][4624][1688 ][info][gc,heap      ] GC(5) PSYoungGen: 38386K->5114K(19968K)
+[2020-10-28T10:25:39.298+0800][1.849s][4624][1688 ][info][gc,heap      ] GC(5) ParOldGen: 53203K->66607K(87552K)
+[2020-10-28T10:25:39.298+0800][1.849s][4624][1688 ][info][gc,metaspace ] GC(5) Metaspace: 16376K->16376K(1064960K)
+[2020-10-28T10:25:39.298+0800][1.849s][4624][1688 ][info][gc           ] GC(5) Pause Young (Allocation Failure) 89M->70M(105M) 15.749ms
+[2020-10-28T10:25:39.298+0800][1.849s][4624][1688 ][info][gc,cpu       ] GC(5) User=0.03s Sys=0.00s Real=0.02s
+[2020-10-28T10:25:39.300+0800][1.852s][4624][1688 ][info][gc,start     ] GC(6) Pause Young (Allocation Failure)
+[2020-10-28T10:25:39.312+0800][1.863s][4624][1688 ][info][gc,heap      ] GC(6) PSYoungGen: 19698K->7229K(29184K)
+[2020-10-28T10:25:39.312+0800][1.863s][4624][1688 ][info][gc,heap      ] GC(6) ParOldGen: 66607K->71330K(87552K)
+[2020-10-28T10:25:39.312+0800][1.863s][4624][1688 ][info][gc,metaspace ] GC(6) Metaspace: 16376K->16376K(1064960K)
+[2020-10-28T10:25:39.312+0800][1.863s][4624][1688 ][info][gc           ] GC(6) Pause Young (Allocation Failure) 84M->76M(114M) 11.796ms
+[2020-10-28T10:25:39.313+0800][1.864s][4624][1688 ][info][gc,cpu       ] GC(6) User=0.03s Sys=0.00s Real=0.01s
+[2020-10-28T10:25:39.313+0800][1.864s][4624][1688 ][info][gc,start     ] GC(7) Pause Full (Ergonomics)
+[2020-10-28T10:25:39.313+0800][1.864s][4624][1688 ][info][gc,phases,start] GC(7) Marking Phase
+[2020-10-28T10:25:39.328+0800][1.879s][4624][1688 ][info][gc,phases      ] GC(7) Marking Phase 15.414ms
+[2020-10-28T10:25:39.328+0800][1.879s][4624][1688 ][info][gc,phases,start] GC(7) Summary Phase
+[2020-10-28T10:25:39.328+0800][1.880s][4624][1688 ][info][gc,phases      ] GC(7) Summary Phase 0.063ms
+[2020-10-28T10:25:39.328+0800][1.880s][4624][1688 ][info][gc,phases,start] GC(7) Adjust Roots
+[2020-10-28T10:25:39.335+0800][1.886s][4624][1688 ][info][gc,phases      ] GC(7) Adjust Roots 6.191ms
+[2020-10-28T10:25:39.335+0800][1.886s][4624][1688 ][info][gc,phases,start] GC(7) Compaction Phase
+[2020-10-28T10:25:39.380+0800][1.931s][4624][1688 ][info][gc,phases      ] GC(7) Compaction Phase 45.015ms
+[2020-10-28T10:25:39.380+0800][1.931s][4624][1688 ][info][gc,phases,start] GC(7) Post Compact
+[2020-10-28T10:25:39.380+0800][1.931s][4624][1688 ][info][gc,phases      ] GC(7) Post Compact 0.481ms
+[2020-10-28T10:25:39.381+0800][1.932s][4624][1688 ][info][gc,heap        ] GC(7) PSYoungGen: 7229K->0K(29184K)
+[2020-10-28T10:25:39.381+0800][1.932s][4624][1688 ][info][gc,heap        ] GC(7) ParOldGen: 71330K->71650K(87552K)
+[2020-10-28T10:25:39.381+0800][1.932s][4624][1688 ][info][gc,metaspace   ] GC(7) Metaspace: 16376K->16376K(1064960K)
+[2020-10-28T10:25:39.381+0800][1.932s][4624][1688 ][info][gc             ] GC(7) Pause Full (Ergonomics) 76M->69M(114M) 68.432ms
+[2020-10-28T10:25:39.382+0800][1.933s][4624][1688 ][info][gc,cpu         ] GC(7) User=0.09s Sys=0.02s Real=0.07s
+[2020-10-28T10:25:39.388+0800][1.939s][4624][1688 ][info][gc,start       ] GC(8) Pause Young (Allocation Failure)
+[2020-10-28T10:25:39.393+0800][1.944s][4624][1688 ][info][gc,heap        ] GC(8) PSYoungGen: 14439K->7259K(29184K)
+[2020-10-28T10:25:39.393+0800][1.945s][4624][1688 ][info][gc,heap        ] GC(8) ParOldGen: 71650K->71650K(87552K)
+[2020-10-28T10:25:39.393+0800][1.945s][4624][1688 ][info][gc,metaspace   ] GC(8) Metaspace: 16379K->16379K(1064960K)
+[2020-10-28T10:25:39.394+0800][1.945s][4624][1688 ][info][gc             ] GC(8) Pause Young (Allocation Failure) 84M->77M(114M) 5.428ms
+[2020-10-28T10:25:39.394+0800][1.945s][4624][1688 ][info][gc,cpu         ] GC(8) User=0.00s Sys=0.00s Real=0.01s
+[2020-10-28T10:25:39.394+0800][1.945s][4624][1688 ][info][gc,start       ] GC(9) Pause Full (Ergonomics)
+[2020-10-28T10:25:39.394+0800][1.945s][4624][1688 ][info][gc,phases,start] GC(9) Marking Phase
+[2020-10-28T10:25:39.408+0800][1.959s][4624][1688 ][info][gc,phases      ] GC(9) Marking Phase 13.537ms
+[2020-10-28T10:25:39.408+0800][1.959s][4624][1688 ][info][gc,phases,start] GC(9) Summary Phase
+[2020-10-28T10:25:39.408+0800][1.959s][4624][1688 ][info][gc,phases      ] GC(9) Summary Phase 0.106ms
+[2020-10-28T10:25:39.408+0800][1.959s][4624][1688 ][info][gc,phases,start] GC(9) Adjust Roots
+[2020-10-28T10:25:39.411+0800][1.962s][4624][1688 ][info][gc,phases      ] GC(9) Adjust Roots 2.917ms
+[2020-10-28T10:25:39.411+0800][1.963s][4624][1688 ][info][gc,phases,start] GC(9) Compaction Phase
+[2020-10-28T10:25:39.435+0800][1.986s][4624][1688 ][info][gc,phases      ] GC(9) Compaction Phase 23.604ms
+[2020-10-28T10:25:39.435+0800][1.986s][4624][1688 ][info][gc,phases,start] GC(9) Post Compact
+[2020-10-28T10:25:39.435+0800][1.986s][4624][1688 ][info][gc,phases      ] GC(9) Post Compact 0.239ms
+[2020-10-28T10:25:39.435+0800][1.987s][4624][1688 ][info][gc,heap        ] GC(9) PSYoungGen: 7259K->0K(29184K)
+[2020-10-28T10:25:39.435+0800][1.987s][4624][1688 ][info][gc,heap        ] GC(9) ParOldGen: 71650K->78392K(87552K)
+[2020-10-28T10:25:39.435+0800][1.987s][4624][1688 ][info][gc,metaspace   ] GC(9) Metaspace: 16379K->16379K(1064960K)
+[2020-10-28T10:25:39.436+0800][1.987s][4624][1688 ][info][gc             ] GC(9) Pause Full (Ergonomics) 77M->76M(114M) 41.332ms
+[2020-10-28T10:25:39.436+0800][1.987s][4624][1688 ][info][gc,cpu         ] GC(9) User=0.05s Sys=0.03s Real=0.04s
+[2020-10-28T10:25:39.444+0800][1.994s][4624][1688 ][info][gc,start       ] GC(10) Pause Full (Ergonomics)
+[2020-10-28T10:25:39.444+0800][1.994s][4624][1688 ][info][gc,phases,start] GC(10) Marking Phase
+[2020-10-28T10:25:39.453+0800][2.003s][4624][1688 ][info][gc,phases      ] GC(10) Marking Phase 8.904ms
+[2020-10-28T10:25:39.453+0800][2.003s][4624][1688 ][info][gc,phases,start] GC(10) Summary Phase
+[2020-10-28T10:25:39.453+0800][2.003s][4624][1688 ][info][gc,phases      ] GC(10) Summary Phase 0.037ms
+[2020-10-28T10:25:39.453+0800][2.003s][4624][1688 ][info][gc,phases,start] GC(10) Adjust Roots
+[2020-10-28T10:25:39.455+0800][2.006s][4624][1688 ][info][gc,phases      ] GC(10) Adjust Roots 2.600ms
+[2020-10-28T10:25:39.455+0800][2.006s][4624][1688 ][info][gc,phases,start] GC(10) Compaction Phase
+[2020-10-28T10:25:39.486+0800][2.036s][4624][1688 ][info][gc,phases      ] GC(10) Compaction Phase 30.331ms
+[2020-10-28T10:25:39.486+0800][2.036s][4624][1688 ][info][gc,phases,start] GC(10) Post Compact
+[2020-10-28T10:25:39.486+0800][2.036s][4624][1688 ][info][gc,phases      ] GC(10) Post Compact 0.338ms
+[2020-10-28T10:25:39.486+0800][2.036s][4624][1688 ][info][gc,heap        ] GC(10) PSYoungGen: 14792K->0K(29184K)
+[2020-10-28T10:25:39.486+0800][2.036s][4624][1688 ][info][gc,heap        ] GC(10) ParOldGen: 78392K->82883K(87552K)
+[2020-10-28T10:25:39.486+0800][2.036s][4624][1688 ][info][gc,metaspace   ] GC(10) Metaspace: 16379K->16379K(1064960K)
+[2020-10-28T10:25:39.486+0800][2.036s][4624][1688 ][info][gc             ] GC(10) Pause Full (Ergonomics) 91M->80M(114M) 42.748ms
+[2020-10-28T10:25:39.487+0800][2.037s][4624][1688 ][info][gc,cpu         ] GC(10) User=0.06s Sys=0.02s Real=0.04s
+[2020-10-28T10:25:39.494+0800][2.044s][4624][1688 ][info][gc,start       ] GC(11) Pause Full (Ergonomics)
+[2020-10-28T10:25:39.494+0800][2.044s][4624][1688 ][info][gc,phases,start] GC(11) Marking Phase
+[2020-10-28T10:25:39.502+0800][2.052s][4624][1688 ][info][gc,phases      ] GC(11) Marking Phase 7.572ms
+[2020-10-28T10:25:39.502+0800][2.052s][4624][1688 ][info][gc,phases,start] GC(11) Summary Phase
+[2020-10-28T10:25:39.502+0800][2.052s][4624][1688 ][info][gc,phases      ] GC(11) Summary Phase 0.038ms
+[2020-10-28T10:25:39.502+0800][2.052s][4624][1688 ][info][gc,phases,start] GC(11) Adjust Roots
+[2020-10-28T10:25:39.505+0800][2.055s][4624][1688 ][info][gc,phases      ] GC(11) Adjust Roots 2.828ms
+[2020-10-28T10:25:39.505+0800][2.055s][4624][1688 ][info][gc,phases,start] GC(11) Compaction Phase
+[2020-10-28T10:25:39.531+0800][2.082s][4624][1688 ][info][gc,phases      ] GC(11) Compaction Phase 26.613ms
+[2020-10-28T10:25:39.532+0800][2.082s][4624][1688 ][info][gc,phases,start] GC(11) Post Compact
+[2020-10-28T10:25:39.532+0800][2.082s][4624][1688 ][info][gc,phases      ] GC(11) Post Compact 0.235ms
+[2020-10-28T10:25:39.532+0800][2.082s][4624][1688 ][info][gc,heap        ] GC(11) PSYoungGen: 14652K->0K(29184K)
+[2020-10-28T10:25:39.532+0800][2.082s][4624][1688 ][info][gc,heap        ] GC(11) ParOldGen: 82883K->86922K(87552K)
+[2020-10-28T10:25:39.532+0800][2.082s][4624][1688 ][info][gc,metaspace   ] GC(11) Metaspace: 16379K->16379K(1064960K)
+[2020-10-28T10:25:39.532+0800][2.082s][4624][1688 ][info][gc             ] GC(11) Pause Full (Ergonomics) 95M->84M(114M) 37.800ms
+[2020-10-28T10:25:39.533+0800][2.083s][4624][1688 ][info][gc,cpu         ] GC(11) User=0.06s Sys=0.00s Real=0.04s
+[2020-10-28T10:25:39.536+0800][2.086s][4624][1688 ][info][gc,start       ] GC(12) Pause Full (Ergonomics)
+[2020-10-28T10:25:39.536+0800][2.086s][4624][1688 ][info][gc,phases,start] GC(12) Marking Phase
+[2020-10-28T10:25:39.546+0800][2.096s][4624][1688 ][info][gc,phases      ] GC(12) Marking Phase 10.024ms
+[2020-10-28T10:25:39.546+0800][2.096s][4624][1688 ][info][gc,phases,start] GC(12) Summary Phase
+[2020-10-28T10:25:39.546+0800][2.097s][4624][1688 ][info][gc,phases      ] GC(12) Summary Phase 0.035ms
+[2020-10-28T10:25:39.546+0800][2.097s][4624][1688 ][info][gc,phases,start] GC(12) Adjust Roots
+[2020-10-28T10:25:39.549+0800][2.099s][4624][1688 ][info][gc,phases      ] GC(12) Adjust Roots 2.416ms
+[2020-10-28T10:25:39.549+0800][2.099s][4624][1688 ][info][gc,phases,start] GC(12) Compaction Phase
+[2020-10-28T10:25:39.582+0800][2.132s][4624][1688 ][info][gc,phases      ] GC(12) Compaction Phase 33.266ms
+[2020-10-28T10:25:39.582+0800][2.132s][4624][1688 ][info][gc,phases,start] GC(12) Post Compact
+[2020-10-28T10:25:39.583+0800][2.133s][4624][1688 ][info][gc,phases      ] GC(12) Post Compact 0.360ms
+[2020-10-28T10:25:39.583+0800][2.133s][4624][1688 ][info][gc,heap        ] GC(12) PSYoungGen: 14674K->2938K(29184K)
+[2020-10-28T10:25:39.583+0800][2.133s][4624][1688 ][info][gc,heap        ] GC(12) ParOldGen: 86922K->86996K(87552K)
+[2020-10-28T10:25:39.583+0800][2.133s][4624][1688 ][info][gc,metaspace   ] GC(12) Metaspace: 16379K->16379K(1064960K)
+[2020-10-28T10:25:39.583+0800][2.133s][4624][1688 ][info][gc             ] GC(12) Pause Full (Ergonomics) 99M->87M(114M) 46.610ms
+[2020-10-28T10:25:39.583+0800][2.133s][4624][1688 ][info][gc,cpu         ] GC(12) User=0.09s Sys=0.00s Real=0.05s
+[2020-10-28T10:25:39.586+0800][2.136s][4624][1688 ][info][gc,start       ] GC(13) Pause Full (Ergonomics)
+[2020-10-28T10:25:39.586+0800][2.136s][4624][1688 ][info][gc,phases,start] GC(13) Marking Phase
+[2020-10-28T10:25:39.595+0800][2.146s][4624][1688 ][info][gc,phases      ] GC(13) Marking Phase 9.337ms
+[2020-10-28T10:25:39.595+0800][2.146s][4624][1688 ][info][gc,phases,start] GC(13) Summary Phase
+[2020-10-28T10:25:39.596+0800][2.146s][4624][1688 ][info][gc,phases      ] GC(13) Summary Phase 0.039ms
+[2020-10-28T10:25:39.596+0800][2.146s][4624][1688 ][info][gc,phases,start] GC(13) Adjust Roots
+[2020-10-28T10:25:39.598+0800][2.149s][4624][1688 ][info][gc,phases      ] GC(13) Adjust Roots 2.834ms
+[2020-10-28T10:25:39.598+0800][2.149s][4624][1688 ][info][gc,phases,start] GC(13) Compaction Phase
+[2020-10-28T10:25:39.629+0800][2.180s][4624][1688 ][info][gc,phases      ] GC(13) Compaction Phase 30.988ms
+[2020-10-28T10:25:39.630+0800][2.180s][4624][1688 ][info][gc,phases,start] GC(13) Post Compact
+[2020-10-28T10:25:39.630+0800][2.180s][4624][1688 ][info][gc,phases      ] GC(13) Post Compact 0.220ms
+[2020-10-28T10:25:39.630+0800][2.180s][4624][1688 ][info][gc,heap        ] GC(13) PSYoungGen: 14574K->5046K(29184K)
+[2020-10-28T10:25:39.630+0800][2.180s][4624][1688 ][info][gc,heap        ] GC(13) ParOldGen: 86996K->87374K(87552K)
+[2020-10-28T10:25:39.630+0800][2.180s][4624][1688 ][info][gc,metaspace   ] GC(13) Metaspace: 16379K->16379K(1064960K)
+[2020-10-28T10:25:39.630+0800][2.180s][4624][1688 ][info][gc             ] GC(13) Pause Full (Ergonomics) 99M->90M(114M) 43.954ms
+[2020-10-28T10:25:39.630+0800][2.181s][4624][1688 ][info][gc,cpu         ] GC(13) User=0.06s Sys=0.00s Real=0.04s
+[2020-10-28T10:25:39.633+0800][2.183s][4624][1688 ][info][gc,start       ] GC(14) Pause Full (Ergonomics)
+[2020-10-28T10:25:39.633+0800][2.183s][4624][1688 ][info][gc,phases,start] GC(14) Marking Phase
+[2020-10-28T10:25:39.639+0800][2.189s][4624][1688 ][info][gc,phases      ] GC(14) Marking Phase 6.443ms
+[2020-10-28T10:25:39.639+0800][2.189s][4624][1688 ][info][gc,phases,start] GC(14) Summary Phase
+[2020-10-28T10:25:39.639+0800][2.189s][4624][1688 ][info][gc,phases      ] GC(14) Summary Phase 0.040ms
+[2020-10-28T10:25:39.639+0800][2.189s][4624][1688 ][info][gc,phases,start] GC(14) Adjust Roots
+[2020-10-28T10:25:39.643+0800][2.193s][4624][1688 ][info][gc,phases      ] GC(14) Adjust Roots 3.450ms
+[2020-10-28T10:25:39.643+0800][2.193s][4624][1688 ][info][gc,phases,start] GC(14) Compaction Phase
+[2020-10-28T10:25:39.671+0800][2.221s][4624][1688 ][info][gc,phases      ] GC(14) Compaction Phase 27.788ms
+[2020-10-28T10:25:39.671+0800][2.221s][4624][1688 ][info][gc,phases,start] GC(14) Post Compact
+[2020-10-28T10:25:39.671+0800][2.221s][4624][1688 ][info][gc,phases      ] GC(14) Post Compact 0.286ms
+[2020-10-28T10:25:39.671+0800][2.221s][4624][1688 ][info][gc,heap        ] GC(14) PSYoungGen: 14519K->7157K(29184K)
+[2020-10-28T10:25:39.671+0800][2.221s][4624][1688 ][info][gc,heap        ] GC(14) ParOldGen: 87374K->87380K(87552K)
+[2020-10-28T10:25:39.671+0800][2.221s][4624][1688 ][info][gc,metaspace   ] GC(14) Metaspace: 16379K->16379K(1064960K)
+[2020-10-28T10:25:39.671+0800][2.221s][4624][1688 ][info][gc             ] GC(14) Pause Full (Ergonomics) 99M->92M(114M) 38.760ms
+[2020-10-28T10:25:39.672+0800][2.222s][4624][1688 ][info][gc,cpu         ] GC(14) User=0.05s Sys=0.00s Real=0.04s
+[2020-10-28T10:25:39.676+0800][2.226s][4624][1688 ][info][gc,start       ] GC(15) Pause Full (Ergonomics)
+[2020-10-28T10:25:39.676+0800][2.226s][4624][1688 ][info][gc,phases,start] GC(15) Marking Phase
+[2020-10-28T10:25:39.684+0800][2.234s][4624][1688 ][info][gc,phases      ] GC(15) Marking Phase 8.190ms
+[2020-10-28T10:25:39.684+0800][2.234s][4624][1688 ][info][gc,phases,start] GC(15) Summary Phase
+[2020-10-28T10:25:39.684+0800][2.234s][4624][1688 ][info][gc,phases      ] GC(15) Summary Phase 0.036ms
+[2020-10-28T10:25:39.684+0800][2.234s][4624][1688 ][info][gc,phases,start] GC(15) Adjust Roots
+[2020-10-28T10:25:39.686+0800][2.236s][4624][1688 ][info][gc,phases      ] GC(15) Adjust Roots 2.059ms
+[2020-10-28T10:25:39.686+0800][2.236s][4624][1688 ][info][gc,phases,start] GC(15) Compaction Phase
+[2020-10-28T10:25:39.714+0800][2.264s][4624][1688 ][info][gc,phases      ] GC(15) Compaction Phase 27.525ms
+[2020-10-28T10:25:39.714+0800][2.264s][4624][1688 ][info][gc,phases,start] GC(15) Post Compact
+[2020-10-28T10:25:39.714+0800][2.264s][4624][1688 ][info][gc,phases      ] GC(15) Post Compact 0.246ms
+[2020-10-28T10:25:39.714+0800][2.264s][4624][1688 ][info][gc,heap        ] GC(15) PSYoungGen: 14752K->10049K(29184K)
+[2020-10-28T10:25:39.714+0800][2.264s][4624][1688 ][info][gc,heap        ] GC(15) ParOldGen: 87380K->87209K(87552K)
+[2020-10-28T10:25:39.714+0800][2.264s][4624][1688 ][info][gc,metaspace   ] GC(15) Metaspace: 16379K->16379K(1064960K)
+[2020-10-28T10:25:39.714+0800][2.264s][4624][1688 ][info][gc             ] GC(15) Pause Full (Ergonomics) 99M->94M(114M) 38.665ms
+[2020-10-28T10:25:39.715+0800][2.265s][4624][1688 ][info][gc,cpu         ] GC(15) User=0.08s Sys=0.00s Real=0.04s
+[2020-10-28T10:25:39.717+0800][2.267s][4624][1688 ][info][gc,start       ] GC(16) Pause Full (Ergonomics)
+[2020-10-28T10:25:39.717+0800][2.267s][4624][1688 ][info][gc,phases,start] GC(16) Marking Phase
+[2020-10-28T10:25:39.723+0800][2.274s][4624][1688 ][info][gc,phases      ] GC(16) Marking Phase 6.315ms
+[2020-10-28T10:25:39.724+0800][2.274s][4624][1688 ][info][gc,phases,start] GC(16) Summary Phase
+[2020-10-28T10:25:39.724+0800][2.274s][4624][1688 ][info][gc,phases      ] GC(16) Summary Phase 0.033ms
+[2020-10-28T10:25:39.724+0800][2.274s][4624][1688 ][info][gc,phases,start] GC(16) Adjust Roots
+[2020-10-28T10:25:39.727+0800][2.277s][4624][1688 ][info][gc,phases      ] GC(16) Adjust Roots 3.610ms
+[2020-10-28T10:25:39.727+0800][2.277s][4624][1688 ][info][gc,phases,start] GC(16) Compaction Phase
+[2020-10-28T10:25:39.766+0800][2.316s][4624][1688 ][info][gc,phases      ] GC(16) Compaction Phase 38.532ms
+[2020-10-28T10:25:39.766+0800][2.316s][4624][1688 ][info][gc,phases,start] GC(16) Post Compact
+[2020-10-28T10:25:39.766+0800][2.316s][4624][1688 ][info][gc,phases      ] GC(16) Post Compact 0.284ms
+[2020-10-28T10:25:39.766+0800][2.316s][4624][1688 ][info][gc,heap        ] GC(16) PSYoungGen: 14836K->10956K(29184K)
+[2020-10-28T10:25:39.766+0800][2.316s][4624][1688 ][info][gc,heap        ] GC(16) ParOldGen: 87209K->87194K(87552K)
+[2020-10-28T10:25:39.766+0800][2.316s][4624][1688 ][info][gc,metaspace   ] GC(16) Metaspace: 16379K->16379K(1064960K)
+[2020-10-28T10:25:39.766+0800][2.316s][4624][1688 ][info][gc             ] GC(16) Pause Full (Ergonomics) 99M->95M(114M) 49.289ms
+[2020-10-28T10:25:39.767+0800][2.317s][4624][1688 ][info][gc,cpu         ] GC(16) User=0.06s Sys=0.00s Real=0.05s
+[2020-10-28T10:25:39.769+0800][2.320s][4624][1688 ][info][gc,start       ] GC(17) Pause Full (Ergonomics)
+[2020-10-28T10:25:39.769+0800][2.320s][4624][1688 ][info][gc,phases,start] GC(17) Marking Phase
+[2020-10-28T10:25:39.778+0800][2.328s][4624][1688 ][info][gc,phases      ] GC(17) Marking Phase 8.592ms
+[2020-10-28T10:25:39.778+0800][2.328s][4624][1688 ][info][gc,phases,start] GC(17) Summary Phase
+[2020-10-28T10:25:39.778+0800][2.328s][4624][1688 ][info][gc,phases      ] GC(17) Summary Phase 0.052ms
+[2020-10-28T10:25:39.778+0800][2.329s][4624][1688 ][info][gc,phases,start] GC(17) Adjust Roots
+[2020-10-28T10:25:39.781+0800][2.331s][4624][1688 ][info][gc,phases      ] GC(17) Adjust Roots 2.512ms
+[2020-10-28T10:25:39.781+0800][2.331s][4624][1688 ][info][gc,phases,start] GC(17) Compaction Phase
+[2020-10-28T10:25:39.813+0800][2.363s][4624][1688 ][info][gc,phases      ] GC(17) Compaction Phase 31.674ms
+[2020-10-28T10:25:39.813+0800][2.363s][4624][1688 ][info][gc,phases,start] GC(17) Post Compact
+[2020-10-28T10:25:39.813+0800][2.363s][4624][1688 ][info][gc,phases      ] GC(17) Post Compact 0.279ms
+[2020-10-28T10:25:39.813+0800][2.363s][4624][1688 ][info][gc,heap        ] GC(17) PSYoungGen: 14309K->12278K(29184K)
+[2020-10-28T10:25:39.813+0800][2.363s][4624][1688 ][info][gc,heap        ] GC(17) ParOldGen: 87194K->86838K(87552K)
+[2020-10-28T10:25:39.813+0800][2.363s][4624][1688 ][info][gc,metaspace   ] GC(17) Metaspace: 16379K->16379K(1064960K)
+[2020-10-28T10:25:39.813+0800][2.363s][4624][1688 ][info][gc             ] GC(17) Pause Full (Ergonomics) 99M->96M(114M) 43.750ms
+[2020-10-28T10:25:39.814+0800][2.364s][4624][1688 ][info][gc,cpu         ] GC(17) User=0.08s Sys=0.00s Real=0.04s
+[2020-10-28T10:25:39.815+0800][2.365s][4624][1688 ][info][gc,start       ] GC(18) Pause Full (Ergonomics)
+[2020-10-28T10:25:39.815+0800][2.365s][4624][1688 ][info][gc,phases,start] GC(18) Marking Phase
+[2020-10-28T10:25:39.822+0800][2.372s][4624][1688 ][info][gc,phases      ] GC(18) Marking Phase 6.514ms
+[2020-10-28T10:25:39.822+0800][2.372s][4624][1688 ][info][gc,phases,start] GC(18) Summary Phase
+[2020-10-28T10:25:39.822+0800][2.372s][4624][1688 ][info][gc,phases      ] GC(18) Summary Phase 0.030ms
+[2020-10-28T10:25:39.822+0800][2.372s][4624][1688 ][info][gc,phases,start] GC(18) Adjust Roots
+[2020-10-28T10:25:39.823+0800][2.374s][4624][1688 ][info][gc,phases      ] GC(18) Adjust Roots 1.628ms
+[2020-10-28T10:25:39.824+0800][2.374s][4624][1688 ][info][gc,phases,start] GC(18) Compaction Phase
+[2020-10-28T10:25:39.835+0800][2.385s][4624][1688 ][info][gc,phases      ] GC(18) Compaction Phase 11.489ms
+[2020-10-28T10:25:39.835+0800][2.385s][4624][1688 ][info][gc,phases,start] GC(18) Post Compact
+[2020-10-28T10:25:39.835+0800][2.385s][4624][1688 ][info][gc,phases      ] GC(18) Post Compact 0.242ms
+[2020-10-28T10:25:39.835+0800][2.386s][4624][1688 ][info][gc,heap        ] GC(18) PSYoungGen: 14587K->12321K(29184K)
+[2020-10-28T10:25:39.835+0800][2.386s][4624][1688 ][info][gc,heap        ] GC(18) ParOldGen: 86838K->86838K(87552K)
+[2020-10-28T10:25:39.835+0800][2.386s][4624][1688 ][info][gc,metaspace   ] GC(18) Metaspace: 16379K->16379K(1064960K)
+[2020-10-28T10:25:39.836+0800][2.386s][4624][1688 ][info][gc             ] GC(18) Pause Full (Ergonomics) 99M->96M(114M) 20.530ms
+[2020-10-28T10:25:39.836+0800][2.386s][4624][1688 ][info][gc,cpu         ] GC(18) User=0.06s Sys=0.00s Real=0.02s
+[2020-10-28T10:25:39.837+0800][2.387s][4624][1688 ][info][gc,start       ] GC(19) Pause Full (Ergonomics)
+[2020-10-28T10:25:39.837+0800][2.387s][4624][1688 ][info][gc,phases,start] GC(19) Marking Phase
+[2020-10-28T10:25:39.848+0800][2.399s][4624][1688 ][info][gc,phases      ] GC(19) Marking Phase 11.113ms
+[2020-10-28T10:25:39.848+0800][2.399s][4624][1688 ][info][gc,phases,start] GC(19) Summary Phase
+[2020-10-28T10:25:39.849+0800][2.399s][4624][1688 ][info][gc,phases      ] GC(19) Summary Phase 0.055ms
+[2020-10-28T10:25:39.849+0800][2.399s][4624][1688 ][info][gc,phases,start] GC(19) Adjust Roots
+[2020-10-28T10:25:39.851+0800][2.401s][4624][1688 ][info][gc,phases      ] GC(19) Adjust Roots 2.694ms
+[2020-10-28T10:25:39.851+0800][2.401s][4624][1688 ][info][gc,phases,start] GC(19) Compaction Phase
+[2020-10-28T10:25:39.884+0800][2.434s][4624][1688 ][info][gc,phases      ] GC(19) Compaction Phase 32.918ms
+[2020-10-28T10:25:39.884+0800][2.435s][4624][1688 ][info][gc,phases,start] GC(19) Post Compact
+[2020-10-28T10:25:39.885+0800][2.435s][4624][1688 ][info][gc,phases      ] GC(19) Post Compact 0.341ms
+[2020-10-28T10:25:39.885+0800][2.435s][4624][1688 ][info][gc,heap        ] GC(19) PSYoungGen: 14821K->12590K(29184K)
+[2020-10-28T10:25:39.885+0800][2.435s][4624][1688 ][info][gc,heap        ] GC(19) ParOldGen: 86838K->87249K(87552K)
+[2020-10-28T10:25:39.885+0800][2.435s][4624][1688 ][info][gc,metaspace   ] GC(19) Metaspace: 16379K->16379K(1064960K)
+[2020-10-28T10:25:39.885+0800][2.435s][4624][1688 ][info][gc             ] GC(19) Pause Full (Ergonomics) 99M->97M(114M) 47.713ms
+[2020-10-28T10:25:39.886+0800][2.436s][4624][1688 ][info][gc,cpu         ] GC(19) User=0.06s Sys=0.00s Real=0.05s
+[2020-10-28T10:25:39.888+0800][2.438s][4624][1688 ][info][gc,start       ] GC(20) Pause Full (Ergonomics)
+[2020-10-28T10:25:39.888+0800][2.438s][4624][1688 ][info][gc,phases,start] GC(20) Marking Phase
+[2020-10-28T10:25:39.895+0800][2.445s][4624][1688 ][info][gc,phases      ] GC(20) Marking Phase 6.728ms
+[2020-10-28T10:25:39.895+0800][2.445s][4624][1688 ][info][gc,phases,start] GC(20) Summary Phase
+[2020-10-28T10:25:39.895+0800][2.445s][4624][1688 ][info][gc,phases      ] GC(20) Summary Phase 0.030ms
+[2020-10-28T10:25:39.895+0800][2.445s][4624][1688 ][info][gc,phases,start] GC(20) Adjust Roots
+[2020-10-28T10:25:39.896+0800][2.446s][4624][1688 ][info][gc,phases      ] GC(20) Adjust Roots 1.552ms
+[2020-10-28T10:25:39.896+0800][2.446s][4624][1688 ][info][gc,phases,start] GC(20) Compaction Phase
+[2020-10-28T10:25:39.911+0800][2.461s][4624][1688 ][info][gc,phases      ] GC(20) Compaction Phase 14.065ms
+[2020-10-28T10:25:39.912+0800][2.461s][4624][1688 ][info][gc,phases,start] GC(20) Post Compact
+[2020-10-28T10:25:39.912+0800][2.461s][4624][1688 ][info][gc,phases      ] GC(20) Post Compact 0.540ms
+[2020-10-28T10:25:39.912+0800][2.461s][4624][1688 ][info][gc,heap        ] GC(20) PSYoungGen: 14726K->12684K(29184K)
+[2020-10-28T10:25:39.912+0800][2.461s][4624][1688 ][info][gc,heap        ] GC(20) ParOldGen: 87249K->87518K(87552K)
+[2020-10-28T10:25:39.912+0800][2.461s][4624][1688 ][info][gc,metaspace   ] GC(20) Metaspace: 16379K->16379K(1064960K)
+[2020-10-28T10:25:39.912+0800][2.461s][4624][1688 ][info][gc             ] GC(20) Pause Full (Ergonomics) 99M->97M(114M) 23.480ms
+[2020-10-28T10:25:39.913+0800][2.462s][4624][1688 ][info][gc,cpu         ] GC(20) User=0.03s Sys=0.00s Real=0.03s
+[2020-10-28T10:25:39.914+0800][2.463s][4624][1688 ][info][gc,start       ] GC(21) Pause Full (Ergonomics)
+[2020-10-28T10:25:39.914+0800][2.463s][4624][1688 ][info][gc,phases,start] GC(21) Marking Phase
+[2020-10-28T10:25:39.920+0800][2.469s][4624][1688 ][info][gc,phases      ] GC(21) Marking Phase 5.888ms
+[2020-10-28T10:25:39.920+0800][2.469s][4624][1688 ][info][gc,phases,start] GC(21) Summary Phase
+[2020-10-28T10:25:39.920+0800][2.469s][4624][1688 ][info][gc,phases      ] GC(21) Summary Phase 0.033ms
+[2020-10-28T10:25:39.920+0800][2.469s][4624][1688 ][info][gc,phases,start] GC(21) Adjust Roots
+[2020-10-28T10:25:39.921+0800][2.470s][4624][1688 ][info][gc,phases      ] GC(21) Adjust Roots 1.423ms
+[2020-10-28T10:25:39.921+0800][2.470s][4624][1688 ][info][gc,phases,start] GC(21) Compaction Phase
+[2020-10-28T10:25:39.942+0800][2.491s][4624][1688 ][info][gc,phases      ] GC(21) Compaction Phase 20.237ms
+[2020-10-28T10:25:39.942+0800][2.491s][4624][1688 ][info][gc,phases,start] GC(21) Post Compact
+[2020-10-28T10:25:39.943+0800][2.493s][4624][1688 ][info][gc,phases      ] GC(21) Post Compact 1.682ms
+[2020-10-28T10:25:39.944+0800][2.493s][4624][1688 ][info][gc,heap        ] GC(21) PSYoungGen: 14299K->12203K(29184K)
+[2020-10-28T10:25:39.944+0800][2.493s][4624][1688 ][info][gc,heap        ] GC(21) ParOldGen: 87518K->87530K(87552K)
+[2020-10-28T10:25:39.944+0800][2.493s][4624][1688 ][info][gc,metaspace   ] GC(21) Metaspace: 16379K->16379K(1064960K)
+[2020-10-28T10:25:39.944+0800][2.493s][4624][1688 ][info][gc             ] GC(21) Pause Full (Ergonomics) 99M->97M(114M) 30.054ms
+[2020-10-28T10:25:39.945+0800][2.495s][4624][1688 ][info][gc,cpu         ] GC(21) User=0.03s Sys=0.00s Real=0.03s
+[2020-10-28T10:25:39.946+0800][2.496s][4624][1688 ][info][gc,start       ] GC(22) Pause Full (Ergonomics)
+[2020-10-28T10:25:39.947+0800][2.496s][4624][1688 ][info][gc,phases,start] GC(22) Marking Phase
+[2020-10-28T10:25:39.952+0800][2.501s][4624][1688 ][info][gc,phases      ] GC(22) Marking Phase 5.529ms
+[2020-10-28T10:25:39.952+0800][2.501s][4624][1688 ][info][gc,phases,start] GC(22) Summary Phase
+[2020-10-28T10:25:39.952+0800][2.501s][4624][1688 ][info][gc,phases      ] GC(22) Summary Phase 0.030ms
+[2020-10-28T10:25:39.952+0800][2.501s][4624][1688 ][info][gc,phases,start] GC(22) Adjust Roots
+[2020-10-28T10:25:39.954+0800][2.503s][4624][1688 ][info][gc,phases      ] GC(22) Adjust Roots 1.511ms
+[2020-10-28T10:25:39.954+0800][2.503s][4624][1688 ][info][gc,phases,start] GC(22) Compaction Phase
+[2020-10-28T10:25:39.956+0800][2.505s][4624][1688 ][info][gc,phases      ] GC(22) Compaction Phase 2.431ms
+[2020-10-28T10:25:39.956+0800][2.505s][4624][1688 ][info][gc,phases,start] GC(22) Post Compact
+[2020-10-28T10:25:39.956+0800][2.506s][4624][1688 ][info][gc,phases      ] GC(22) Post Compact 0.223ms
+[2020-10-28T10:25:39.957+0800][2.506s][4624][1688 ][info][gc,heap        ] GC(22) PSYoungGen: 14757K->13611K(29184K)
+[2020-10-28T10:25:39.957+0800][2.506s][4624][1688 ][info][gc,heap        ] GC(22) ParOldGen: 87530K->87530K(87552K)
+[2020-10-28T10:25:39.957+0800][2.506s][4624][1688 ][info][gc,metaspace   ] GC(22) Metaspace: 16379K->16379K(1064960K)
+[2020-10-28T10:25:39.957+0800][2.506s][4624][1688 ][info][gc             ] GC(22) Pause Full (Ergonomics) 99M->98M(114M) 10.157ms
+[2020-10-28T10:25:39.957+0800][2.507s][4624][1688 ][info][gc,cpu         ] GC(22) User=0.00s Sys=0.00s Real=0.01s
+[2020-10-28T10:25:39.958+0800][2.507s][4624][1688 ][info][gc,start       ] GC(23) Pause Full (Ergonomics)
+[2020-10-28T10:25:39.958+0800][2.507s][4624][1688 ][info][gc,phases,start] GC(23) Marking Phase
+[2020-10-28T10:25:39.967+0800][2.516s][4624][1688 ][info][gc,phases      ] GC(23) Marking Phase 8.692ms
+[2020-10-28T10:25:39.967+0800][2.516s][4624][1688 ][info][gc,phases,start] GC(23) Summary Phase
+[2020-10-28T10:25:39.967+0800][2.516s][4624][1688 ][info][gc,phases      ] GC(23) Summary Phase 0.032ms
+[2020-10-28T10:25:39.967+0800][2.516s][4624][1688 ][info][gc,phases,start] GC(23) Adjust Roots
+[2020-10-28T10:25:39.970+0800][2.519s][4624][1688 ][info][gc,phases      ] GC(23) Adjust Roots 2.421ms
+[2020-10-28T10:25:39.970+0800][2.519s][4624][1688 ][info][gc,phases,start] GC(23) Compaction Phase
+[2020-10-28T10:25:40.002+0800][2.551s][4624][1688 ][info][gc,phases      ] GC(23) Compaction Phase 32.203ms
+[2020-10-28T10:25:40.002+0800][2.551s][4624][1688 ][info][gc,phases,start] GC(23) Post Compact
+[2020-10-28T10:25:40.005+0800][2.554s][4624][1688 ][info][gc,phases      ] GC(23) Post Compact 3.090ms
+[2020-10-28T10:25:40.005+0800][2.554s][4624][1688 ][info][gc,heap        ] GC(23) PSYoungGen: 14810K->14100K(29184K)
+[2020-10-28T10:25:40.005+0800][2.554s][4624][1688 ][info][gc,heap        ] GC(23) ParOldGen: 87530K->87471K(87552K)
+[2020-10-28T10:25:40.005+0800][2.555s][4624][1688 ][info][gc,metaspace   ] GC(23) Metaspace: 16379K->16379K(1064960K)
+[2020-10-28T10:25:40.006+0800][2.555s][4624][1688 ][info][gc             ] GC(23) Pause Full (Ergonomics) 99M->99M(114M) 47.281ms
+[2020-10-28T10:25:40.007+0800][2.556s][4624][1688 ][info][gc,cpu         ] GC(23) User=0.09s Sys=0.00s Real=0.05s
+[2020-10-28T10:25:40.007+0800][2.556s][4624][1688 ][info][gc,start       ] GC(24) Pause Full (Ergonomics)
+[2020-10-28T10:25:40.007+0800][2.556s][4624][1688 ][info][gc,phases,start] GC(24) Marking Phase
+[2020-10-28T10:25:40.017+0800][2.566s][4624][1688 ][info][gc,phases      ] GC(24) Marking Phase 9.913ms
+[2020-10-28T10:25:40.017+0800][2.566s][4624][1688 ][info][gc,phases,start] GC(24) Summary Phase
+[2020-10-28T10:25:40.017+0800][2.566s][4624][1688 ][info][gc,phases      ] GC(24) Summary Phase 0.033ms
+[2020-10-28T10:25:40.017+0800][2.566s][4624][1688 ][info][gc,phases,start] GC(24) Adjust Roots
+[2020-10-28T10:25:40.019+0800][2.568s][4624][1688 ][info][gc,phases      ] GC(24) Adjust Roots 1.654ms
+[2020-10-28T10:25:40.019+0800][2.568s][4624][1688 ][info][gc,phases,start] GC(24) Compaction Phase
+[2020-10-28T10:25:40.030+0800][2.579s][4624][1688 ][info][gc,phases      ] GC(24) Compaction Phase 10.961ms
+[2020-10-28T10:25:40.030+0800][2.579s][4624][1688 ][info][gc,phases,start] GC(24) Post Compact
+[2020-10-28T10:25:40.030+0800][2.579s][4624][1688 ][info][gc,phases      ] GC(24) Post Compact 0.192ms
+[2020-10-28T10:25:40.030+0800][2.579s][4624][1688 ][info][gc,heap        ] GC(24) PSYoungGen: 14380K->14225K(29184K)
+[2020-10-28T10:25:40.030+0800][2.580s][4624][1688 ][info][gc,heap        ] GC(24) ParOldGen: 87471K->87471K(87552K)
+[2020-10-28T10:25:40.030+0800][2.580s][4624][1688 ][info][gc,metaspace   ] GC(24) Metaspace: 16379K->16379K(1064960K)
+[2020-10-28T10:25:40.030+0800][2.580s][4624][1688 ][info][gc             ] GC(24) Pause Full (Ergonomics) 99M->99M(114M) 23.234ms
+[2020-10-28T10:25:40.031+0800][2.580s][4624][1688 ][info][gc,cpu         ] GC(24) User=0.06s Sys=0.00s Real=0.02s
+[2020-10-28T10:25:40.032+0800][2.581s][4624][1688 ][info][gc,start       ] GC(25) Pause Full (Ergonomics)
+[2020-10-28T10:25:40.032+0800][2.581s][4624][1688 ][info][gc,phases,start] GC(25) Marking Phase
+[2020-10-28T10:25:40.037+0800][2.587s][4624][1688 ][info][gc,phases      ] GC(25) Marking Phase 5.777ms
+[2020-10-28T10:25:40.038+0800][2.587s][4624][1688 ][info][gc,phases,start] GC(25) Summary Phase
+[2020-10-28T10:25:40.038+0800][2.587s][4624][1688 ][info][gc,phases      ] GC(25) Summary Phase 0.030ms
+[2020-10-28T10:25:40.038+0800][2.587s][4624][1688 ][info][gc,phases,start] GC(25) Adjust Roots
+[2020-10-28T10:25:40.039+0800][2.588s][4624][1688 ][info][gc,phases      ] GC(25) Adjust Roots 1.399ms
+[2020-10-28T10:25:40.039+0800][2.588s][4624][1688 ][info][gc,phases,start] GC(25) Compaction Phase
+[2020-10-28T10:25:40.041+0800][2.591s][4624][1688 ][info][gc,phases      ] GC(25) Compaction Phase 2.342ms
+[2020-10-28T10:25:40.041+0800][2.591s][4624][1688 ][info][gc,phases,start] GC(25) Post Compact
+[2020-10-28T10:25:40.043+0800][2.592s][4624][1688 ][info][gc,phases      ] GC(25) Post Compact 1.228ms
+[2020-10-28T10:25:40.043+0800][2.592s][4624][1688 ][info][gc,heap        ] GC(25) PSYoungGen: 14848K->14225K(29184K)
+[2020-10-28T10:25:40.043+0800][2.592s][4624][1688 ][info][gc,heap        ] GC(25) ParOldGen: 87471K->87471K(87552K)
+[2020-10-28T10:25:40.043+0800][2.592s][4624][1688 ][info][gc,metaspace   ] GC(25) Metaspace: 16379K->16379K(1064960K)
+[2020-10-28T10:25:40.043+0800][2.592s][4624][1688 ][info][gc             ] GC(25) Pause Full (Ergonomics) 99M->99M(114M) 11.272ms
+[2020-10-28T10:25:40.044+0800][2.593s][4624][1688 ][info][gc,cpu         ] GC(25) User=0.02s Sys=0.00s Real=0.01s
+[2020-10-28T10:25:40.045+0800][2.594s][4624][1688 ][info][gc,start       ] GC(26) Pause Full (Ergonomics)
+[2020-10-28T10:25:40.045+0800][2.594s][4624][1688 ][info][gc,phases,start] GC(26) Marking Phase
+[2020-10-28T10:25:40.051+0800][2.600s][4624][1688 ][info][gc,phases      ] GC(26) Marking Phase 5.821ms
+[2020-10-28T10:25:40.051+0800][2.600s][4624][1688 ][info][gc,phases,start] GC(26) Summary Phase
+[2020-10-28T10:25:40.051+0800][2.600s][4624][1688 ][info][gc,phases      ] GC(26) Summary Phase 0.029ms
+[2020-10-28T10:25:40.051+0800][2.600s][4624][1688 ][info][gc,phases,start] GC(26) Adjust Roots
+[2020-10-28T10:25:40.052+0800][2.601s][4624][1688 ][info][gc,phases      ] GC(26) Adjust Roots 1.378ms
+[2020-10-28T10:25:40.052+0800][2.601s][4624][1688 ][info][gc,phases,start] GC(26) Compaction Phase
+[2020-10-28T10:25:40.054+0800][2.603s][4624][1688 ][info][gc,phases      ] GC(26) Compaction Phase 2.050ms
+[2020-10-28T10:25:40.054+0800][2.604s][4624][1688 ][info][gc,phases,start] GC(26) Post Compact
+[2020-10-28T10:25:40.055+0800][2.604s][4624][1688 ][info][gc,phases      ] GC(26) Post Compact 0.222ms
+[2020-10-28T10:25:40.055+0800][2.604s][4624][1688 ][info][gc,heap        ] GC(26) PSYoungGen: 14557K->14471K(29184K)
+[2020-10-28T10:25:40.055+0800][2.604s][4624][1688 ][info][gc,heap        ] GC(26) ParOldGen: 87471K->87471K(87552K)
+[2020-10-28T10:25:40.055+0800][2.604s][4624][1688 ][info][gc,metaspace   ] GC(26) Metaspace: 16379K->16379K(1064960K)
+[2020-10-28T10:25:40.055+0800][2.604s][4624][1688 ][info][gc             ] GC(26) Pause Full (Ergonomics) 99M->99M(114M) 9.968ms
+[2020-10-28T10:25:40.056+0800][2.605s][4624][1688 ][info][gc,cpu         ] GC(26) User=0.02s Sys=0.00s Real=0.01s
+[2020-10-28T10:25:40.056+0800][2.605s][4624][1688 ][info][gc,start       ] GC(27) Pause Full (Ergonomics)
+[2020-10-28T10:25:40.056+0800][2.605s][4624][1688 ][info][gc,phases,start] GC(27) Marking Phase
+[2020-10-28T10:25:40.063+0800][2.612s][4624][1688 ][info][gc,phases      ] GC(27) Marking Phase 7.212ms
+[2020-10-28T10:25:40.063+0800][2.612s][4624][1688 ][info][gc,phases,start] GC(27) Summary Phase
+[2020-10-28T10:25:40.063+0800][2.612s][4624][1688 ][info][gc,phases      ] GC(27) Summary Phase 0.030ms
+[2020-10-28T10:25:40.063+0800][2.612s][4624][1688 ][info][gc,phases,start] GC(27) Adjust Roots
+[2020-10-28T10:25:40.065+0800][2.614s][4624][1688 ][info][gc,phases      ] GC(27) Adjust Roots 1.510ms
+[2020-10-28T10:25:40.065+0800][2.614s][4624][1688 ][info][gc,phases,start] GC(27) Compaction Phase
+[2020-10-28T10:25:40.067+0800][2.616s][4624][1688 ][info][gc,phases      ] GC(27) Compaction Phase 2.002ms
+[2020-10-28T10:25:40.067+0800][2.616s][4624][1688 ][info][gc,phases,start] GC(27) Post Compact
+[2020-10-28T10:25:40.067+0800][2.616s][4624][1688 ][info][gc,phases      ] GC(27) Post Compact 0.211ms
+[2020-10-28T10:25:40.067+0800][2.616s][4624][1688 ][info][gc,heap        ] GC(27) PSYoungGen: 14848K->14785K(29184K)
+[2020-10-28T10:25:40.067+0800][2.616s][4624][1688 ][info][gc,heap        ] GC(27) ParOldGen: 87471K->87471K(87552K)
+[2020-10-28T10:25:40.067+0800][2.616s][4624][1688 ][info][gc,metaspace   ] GC(27) Metaspace: 16379K->16379K(1064960K)
+[2020-10-28T10:25:40.067+0800][2.616s][4624][1688 ][info][gc             ] GC(27) Pause Full (Ergonomics) 99M->99M(114M) 11.391ms
+[2020-10-28T10:25:40.068+0800][2.617s][4624][1688 ][info][gc,cpu         ] GC(27) User=0.00s Sys=0.00s Real=0.01s
+[2020-10-28T10:25:40.068+0800][2.617s][4624][1688 ][info][gc,start       ] GC(28) Pause Full (Allocation Failure)
+[2020-10-28T10:25:40.068+0800][2.617s][4624][1688 ][info][gc,phases,start] GC(28) Marking Phase
+[2020-10-28T10:25:40.073+0800][2.622s][4624][1688 ][info][gc,phases      ] GC(28) Marking Phase 5.202ms
+[2020-10-28T10:25:40.073+0800][2.623s][4624][1688 ][info][gc,phases,start] GC(28) Summary Phase
+[2020-10-28T10:25:40.073+0800][2.623s][4624][1688 ][info][gc,phases      ] GC(28) Summary Phase 0.031ms
+[2020-10-28T10:25:40.073+0800][2.623s][4624][1688 ][info][gc,phases,start] GC(28) Adjust Roots
+[2020-10-28T10:25:40.078+0800][2.627s][4624][1688 ][info][gc,phases      ] GC(28) Adjust Roots 4.456ms
+[2020-10-28T10:25:40.078+0800][2.627s][4624][1688 ][info][gc,phases,start] GC(28) Compaction Phase
+[2020-10-28T10:25:40.107+0800][2.656s][4624][1688 ][info][gc,phases      ] GC(28) Compaction Phase 28.716ms
+[2020-10-28T10:25:40.107+0800][2.656s][4624][1688 ][info][gc,phases,start] GC(28) Post Compact
+[2020-10-28T10:25:40.107+0800][2.656s][4624][1688 ][info][gc,phases      ] GC(28) Post Compact 0.257ms
+[2020-10-28T10:25:40.107+0800][2.656s][4624][1688 ][info][gc,heap        ] GC(28) PSYoungGen: 14785K->14137K(29184K)
+[2020-10-28T10:25:40.107+0800][2.656s][4624][1688 ][info][gc,heap        ] GC(28) ParOldGen: 87471K->87490K(87552K)
+[2020-10-28T10:25:40.107+0800][2.656s][4624][1688 ][info][gc,metaspace   ] GC(28) Metaspace: 16379K->16379K(1064960K)
+[2020-10-28T10:25:40.107+0800][2.656s][4624][1688 ][info][gc             ] GC(28) Pause Full (Allocation Failure) 99M->99M(114M) 39.112ms
+[2020-10-28T10:25:40.108+0800][2.657s][4624][1688 ][info][gc,cpu         ] GC(28) User=0.09s Sys=0.00s Real=0.04s
+[2020-10-28T10:25:40.109+0800][2.658s][4624][1688 ][info][gc,start       ] GC(29) Pause Full (Ergonomics)
+[2020-10-28T10:25:40.109+0800][2.658s][4624][1688 ][info][gc,phases,start] GC(29) Marking Phase
+[2020-10-28T10:25:40.116+0800][2.666s][4624][1688 ][info][gc,phases      ] GC(29) Marking Phase 7.112ms
+[2020-10-28T10:25:40.116+0800][2.666s][4624][1688 ][info][gc,phases,start] GC(29) Summary Phase
+[2020-10-28T10:25:40.117+0800][2.666s][4624][1688 ][info][gc,phases      ] GC(29) Summary Phase 0.038ms
+[2020-10-28T10:25:40.117+0800][2.666s][4624][1688 ][info][gc,phases,start] GC(29) Adjust Roots
+[2020-10-28T10:25:40.118+0800][2.667s][4624][1688 ][info][gc,phases      ] GC(29) Adjust Roots 1.546ms
+[2020-10-28T10:25:40.118+0800][2.667s][4624][1688 ][info][gc,phases,start] GC(29) Compaction Phase
+[2020-10-28T10:25:40.133+0800][2.682s][4624][1688 ][info][gc,phases      ] GC(29) Compaction Phase 14.681ms
+[2020-10-28T10:25:40.133+0800][2.682s][4624][1688 ][info][gc,phases,start] GC(29) Post Compact
+[2020-10-28T10:25:40.133+0800][2.682s][4624][1688 ][info][gc,phases      ] GC(29) Post Compact 0.218ms
+[2020-10-28T10:25:40.133+0800][2.682s][4624][1688 ][info][gc,heap        ] GC(29) PSYoungGen: 14790K->13746K(29184K)
+[2020-10-28T10:25:40.133+0800][2.682s][4624][1688 ][info][gc,heap        ] GC(29) ParOldGen: 87490K->87408K(87552K)
+[2020-10-28T10:25:40.133+0800][2.682s][4624][1688 ][info][gc,metaspace   ] GC(29) Metaspace: 16379K->16379K(1064960K)
+[2020-10-28T10:25:40.133+0800][2.682s][4624][1688 ][info][gc             ] GC(29) Pause Full (Ergonomics) 99M->98M(114M) 24.093ms
+[2020-10-28T10:25:40.134+0800][2.683s][4624][1688 ][info][gc,cpu         ] GC(29) User=0.05s Sys=0.00s Real=0.03s
+[2020-10-28T10:25:40.161+0800][2.710s][4624][21256][info][gc,heap,exit   ] Heap
+[2020-10-28T10:25:40.162+0800][2.711s][4624][21256][info][gc,heap,exit   ]  PSYoungGen      total 29184K, used 14514K [0x00000000fd580000, 0x0000000100000000, 0x0000000100000000)
+[2020-10-28T10:25:40.163+0800][2.712s][4624][21256][info][gc,heap,exit   ]   eden space 14848K, 97% used [0x00000000fd580000,0x00000000fe3acb30,0x00000000fe400000)
+[2020-10-28T10:25:40.164+0800][2.713s][4624][21256][info][gc,heap,exit   ]   from space 14336K, 0% used [0x00000000ff200000,0x00000000ff200000,0x0000000100000000)
+[2020-10-28T10:25:40.164+0800][2.713s][4624][21256][info][gc,heap,exit   ]   to   space 14336K, 0% used [0x00000000fe400000,0x00000000fe400000,0x00000000ff200000)
+[2020-10-28T10:25:40.165+0800][2.713s][4624][21256][info][gc,heap,exit   ]  ParOldGen       total 87552K, used 87408K [0x00000000f8000000, 0x00000000fd580000, 0x00000000fd580000)
+[2020-10-28T10:25:40.165+0800][2.714s][4624][21256][info][gc,heap,exit   ]   object space 87552K, 99% used [0x00000000f8000000,0x00000000fd55c0b0,0x00000000fd580000)
+[2020-10-28T10:25:40.165+0800][2.714s][4624][21256][info][gc,heap,exit   ]  Metaspace       used 16547K, capacity 16956K, committed 17024K, reserved 1064960K
+[2020-10-28T10:25:40.165+0800][2.714s][4624][21256][info][gc,heap,exit   ]   class space    used 1746K, capacity 1890K, committed 1920K, reserved 1048576K

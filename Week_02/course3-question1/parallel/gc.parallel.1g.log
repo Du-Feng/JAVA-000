@@ -1,0 +1,93 @@
+[2020-10-28T10:30:25.381+0800][0.021s][2580][9320][info][gc] Using Parallel
+[2020-10-28T10:30:25.382+0800][0.022s][2580][9320][info][gc,heap,coops] Heap address: 0x00000000c0000000, size: 1024 MB, Compressed Oops mode: 32-bit
+[2020-10-28T10:30:26.267+0800][0.906s][2580][9584][info][gc,start     ] GC(0) Pause Young (Allocation Failure)
+[2020-10-28T10:30:26.291+0800][0.930s][2580][9584][info][gc,heap      ] GC(0) PSYoungGen: 262144K->43516K(305664K)
+[2020-10-28T10:30:26.291+0800][0.930s][2580][9584][info][gc,heap      ] GC(0) ParOldGen: 0K->43986K(699392K)
+[2020-10-28T10:30:26.291+0800][0.931s][2580][9584][info][gc,metaspace ] GC(0) Metaspace: 16386K->16386K(1064960K)
+[2020-10-28T10:30:26.292+0800][0.931s][2580][9584][info][gc           ] GC(0) Pause Young (Allocation Failure) 256M->85M(981M) 25.420ms
+[2020-10-28T10:30:26.293+0800][0.932s][2580][9584][info][gc,cpu       ] GC(0) User=0.11s Sys=0.13s Real=0.03s
+[2020-10-28T10:30:26.354+0800][0.993s][2580][9584][info][gc,start     ] GC(1) Pause Young (Allocation Failure)
+[2020-10-28T10:30:26.394+0800][1.033s][2580][9584][info][gc,heap      ] GC(1) PSYoungGen: 305660K->43518K(305664K)
+[2020-10-28T10:30:26.394+0800][1.033s][2580][9584][info][gc,heap      ] GC(1) ParOldGen: 43986K->129126K(699392K)
+[2020-10-28T10:30:26.394+0800][1.033s][2580][9584][info][gc,metaspace ] GC(1) Metaspace: 16391K->16391K(1064960K)
+[2020-10-28T10:30:26.394+0800][1.033s][2580][9584][info][gc           ] GC(1) Pause Young (Allocation Failure) 341M->168M(981M) 40.096ms
+[2020-10-28T10:30:26.395+0800][1.034s][2580][9584][info][gc,cpu       ] GC(1) User=0.06s Sys=0.16s Real=0.04s
+[2020-10-28T10:30:26.456+0800][1.095s][2580][9584][info][gc,start     ] GC(2) Pause Young (Allocation Failure)
+[2020-10-28T10:30:26.490+0800][1.130s][2580][9584][info][gc,heap      ] GC(2) PSYoungGen: 305662K->43519K(305664K)
+[2020-10-28T10:30:26.490+0800][1.130s][2580][9584][info][gc,heap      ] GC(2) ParOldGen: 129126K->211127K(699392K)
+[2020-10-28T10:30:26.490+0800][1.130s][2580][9584][info][gc,metaspace ] GC(2) Metaspace: 16391K->16391K(1064960K)
+[2020-10-28T10:30:26.490+0800][1.130s][2580][9584][info][gc           ] GC(2) Pause Young (Allocation Failure) 424M->248M(981M) 34.579ms
+[2020-10-28T10:30:26.491+0800][1.130s][2580][9584][info][gc,cpu       ] GC(2) User=0.14s Sys=0.09s Real=0.03s
+[2020-10-28T10:30:26.543+0800][1.183s][2580][9584][info][gc,start     ] GC(3) Pause Young (Allocation Failure)
+[2020-10-28T10:30:26.582+0800][1.221s][2580][9584][info][gc,heap      ] GC(3) PSYoungGen: 305663K->43518K(305664K)
+[2020-10-28T10:30:26.582+0800][1.221s][2580][9584][info][gc,heap      ] GC(3) ParOldGen: 211127K->289250K(699392K)
+[2020-10-28T10:30:26.582+0800][1.221s][2580][9584][info][gc,metaspace ] GC(3) Metaspace: 16391K->16391K(1064960K)
+[2020-10-28T10:30:26.582+0800][1.221s][2580][9584][info][gc           ] GC(3) Pause Young (Allocation Failure) 504M->324M(981M) 38.806ms
+[2020-10-28T10:30:26.583+0800][1.222s][2580][9584][info][gc,cpu       ] GC(3) User=0.13s Sys=0.08s Real=0.04s
+[2020-10-28T10:30:26.632+0800][1.271s][2580][9584][info][gc,start     ] GC(4) Pause Young (Allocation Failure)
+[2020-10-28T10:30:26.670+0800][1.309s][2580][9584][info][gc,heap      ] GC(4) PSYoungGen: 305662K->43515K(305664K)
+[2020-10-28T10:30:26.670+0800][1.309s][2580][9584][info][gc,heap      ] GC(4) ParOldGen: 289250K->365567K(699392K)
+[2020-10-28T10:30:26.670+0800][1.309s][2580][9584][info][gc,metaspace ] GC(4) Metaspace: 16391K->16391K(1064960K)
+[2020-10-28T10:30:26.670+0800][1.309s][2580][9584][info][gc           ] GC(4) Pause Young (Allocation Failure) 580M->399M(981M) 37.916ms
+[2020-10-28T10:30:26.670+0800][1.310s][2580][9584][info][gc,cpu       ] GC(4) User=0.06s Sys=0.13s Real=0.04s
+[2020-10-28T10:30:26.721+0800][1.360s][2580][9584][info][gc,start     ] GC(5) Pause Young (Allocation Failure)
+[2020-10-28T10:30:26.782+0800][1.422s][2580][9584][info][gc,heap      ] GC(5) PSYoungGen: 305659K->43516K(160256K)
+[2020-10-28T10:30:26.784+0800][1.423s][2580][9584][info][gc,heap      ] GC(5) ParOldGen: 365567K->442226K(699392K)
+[2020-10-28T10:30:26.785+0800][1.424s][2580][9584][info][gc,metaspace ] GC(5) Metaspace: 16391K->16391K(1064960K)
+[2020-10-28T10:30:26.787+0800][1.426s][2580][9584][info][gc           ] GC(5) Pause Young (Allocation Failure) 655M->474M(839M) 66.444ms
+[2020-10-28T10:30:26.788+0800][1.427s][2580][9584][info][gc,cpu       ] GC(5) User=0.17s Sys=0.19s Real=0.07s
+[2020-10-28T10:30:26.825+0800][1.464s][2580][9584][info][gc,start     ] GC(6) Pause Young (Allocation Failure)
+[2020-10-28T10:30:26.850+0800][1.489s][2580][9584][info][gc,heap      ] GC(6) PSYoungGen: 159893K->68616K(232960K)
+[2020-10-28T10:30:26.850+0800][1.489s][2580][9584][info][gc,heap      ] GC(6) ParOldGen: 442226K->450620K(699392K)
+[2020-10-28T10:30:26.850+0800][1.489s][2580][9584][info][gc,metaspace ] GC(6) Metaspace: 16391K->16391K(1064960K)
+[2020-10-28T10:30:26.850+0800][1.489s][2580][9584][info][gc           ] GC(6) Pause Young (Allocation Failure) 588M->507M(910M) 25.285ms
+[2020-10-28T10:30:26.851+0800][1.490s][2580][9584][info][gc,cpu       ] GC(6) User=0.06s Sys=0.08s Real=0.03s
+[2020-10-28T10:30:26.872+0800][1.511s][2580][9584][info][gc,start     ] GC(7) Pause Young (Allocation Failure)
+[2020-10-28T10:30:26.898+0800][1.537s][2580][9584][info][gc,heap      ] GC(7) PSYoungGen: 185210K->102740K(232960K)
+[2020-10-28T10:30:26.898+0800][1.537s][2580][9584][info][gc,heap      ] GC(7) ParOldGen: 450620K->457546K(699392K)
+[2020-10-28T10:30:26.898+0800][1.537s][2580][9584][info][gc,metaspace ] GC(7) Metaspace: 16391K->16391K(1064960K)
+[2020-10-28T10:30:26.898+0800][1.537s][2580][9584][info][gc           ] GC(7) Pause Young (Allocation Failure) 620M->547M(910M) 26.353ms
+[2020-10-28T10:30:26.899+0800][1.538s][2580][9584][info][gc,cpu       ] GC(7) User=0.16s Sys=0.02s Real=0.03s
+[2020-10-28T10:30:26.924+0800][1.563s][2580][9584][info][gc,start     ] GC(8) Pause Young (Allocation Failure)
+[2020-10-28T10:30:26.989+0800][1.628s][2580][9584][info][gc,heap      ] GC(8) PSYoungGen: 219476K->116203K(232960K)
+[2020-10-28T10:30:26.989+0800][1.629s][2580][9584][info][gc,heap      ] GC(8) ParOldGen: 457546K->476425K(699392K)
+[2020-10-28T10:30:26.990+0800][1.629s][2580][9584][info][gc,metaspace ] GC(8) Metaspace: 16391K->16391K(1064960K)
+[2020-10-28T10:30:26.990+0800][1.630s][2580][9584][info][gc           ] GC(8) Pause Young (Allocation Failure) 661M->578M(910M) 66.811ms
+[2020-10-28T10:30:26.991+0800][1.630s][2580][9584][info][gc,cpu       ] GC(8) User=0.23s Sys=0.23s Real=0.07s
+[2020-10-28T10:30:27.016+0800][1.656s][2580][9584][info][gc,start     ] GC(9) Pause Young (Allocation Failure)
+[2020-10-28T10:30:27.078+0800][1.718s][2580][9584][info][gc,heap      ] GC(9) PSYoungGen: 232939K->90690K(232960K)
+[2020-10-28T10:30:27.080+0800][1.719s][2580][9584][info][gc,heap      ] GC(9) ParOldGen: 476425K->537766K(699392K)
+[2020-10-28T10:30:27.080+0800][1.719s][2580][9584][info][gc,metaspace ] GC(9) Metaspace: 16391K->16391K(1064960K)
+[2020-10-28T10:30:27.080+0800][1.719s][2580][9584][info][gc           ] GC(9) Pause Young (Allocation Failure) 692M->613M(910M) 63.518ms
+[2020-10-28T10:30:27.082+0800][1.721s][2580][9584][info][gc,cpu       ] GC(9) User=0.11s Sys=0.38s Real=0.06s
+[2020-10-28T10:30:27.106+0800][1.745s][2580][9584][info][gc,start     ] GC(10) Pause Young (Allocation Failure)
+[2020-10-28T10:30:27.185+0800][1.824s][2580][9584][info][gc,heap      ] GC(10) PSYoungGen: 207426K->43690K(232960K)
+[2020-10-28T10:30:27.185+0800][1.824s][2580][9584][info][gc,heap      ] GC(10) ParOldGen: 537766K->611801K(699392K)
+[2020-10-28T10:30:27.185+0800][1.825s][2580][9584][info][gc,metaspace ] GC(10) Metaspace: 16391K->16391K(1064960K)
+[2020-10-28T10:30:27.186+0800][1.825s][2580][9584][info][gc           ] GC(10) Pause Young (Allocation Failure) 727M->640M(910M) 80.220ms
+[2020-10-28T10:30:27.186+0800][1.825s][2580][9584][info][gc,cpu       ] GC(10) User=0.19s Sys=0.30s Real=0.08s
+[2020-10-28T10:30:27.188+0800][1.827s][2580][9584][info][gc,start     ] GC(11) Pause Full (Ergonomics)
+[2020-10-28T10:30:27.188+0800][1.827s][2580][9584][info][gc,phases,start] GC(11) Marking Phase
+[2020-10-28T10:30:27.197+0800][1.836s][2580][9584][info][gc,phases      ] GC(11) Marking Phase 9.282ms
+[2020-10-28T10:30:27.197+0800][1.836s][2580][9584][info][gc,phases,start] GC(11) Summary Phase
+[2020-10-28T10:30:27.197+0800][1.836s][2580][9584][info][gc,phases      ] GC(11) Summary Phase 0.048ms
+[2020-10-28T10:30:27.197+0800][1.837s][2580][9584][info][gc,phases,start] GC(11) Adjust Roots
+[2020-10-28T10:30:27.201+0800][1.841s][2580][9584][info][gc,phases      ] GC(11) Adjust Roots 4.037ms
+[2020-10-28T10:30:27.201+0800][1.841s][2580][9584][info][gc,phases,start] GC(11) Compaction Phase
+[2020-10-28T10:30:27.348+0800][1.988s][2580][9584][info][gc,phases      ] GC(11) Compaction Phase 145.163ms
+[2020-10-28T10:30:27.350+0800][1.989s][2580][9584][info][gc,phases,start] GC(11) Post Compact
+[2020-10-28T10:30:27.364+0800][2.003s][2580][9584][info][gc,phases      ] GC(11) Post Compact 12.190ms
+[2020-10-28T10:30:27.366+0800][2.005s][2580][9584][info][gc,heap        ] GC(11) PSYoungGen: 43690K->0K(232960K)
+[2020-10-28T10:30:27.366+0800][2.005s][2580][9584][info][gc,heap        ] GC(11) ParOldGen: 611801K->317940K(699392K)
+[2020-10-28T10:30:27.366+0800][2.005s][2580][9584][info][gc,metaspace   ] GC(11) Metaspace: 16391K->16391K(1064960K)
+[2020-10-28T10:30:27.367+0800][2.006s][2580][9584][info][gc             ] GC(11) Pause Full (Ergonomics) 640M->310M(910M) 178.949ms
+[2020-10-28T10:30:27.368+0800][2.007s][2580][9584][info][gc,cpu         ] GC(11) User=0.31s Sys=0.53s Real=0.18s
+[2020-10-28T10:30:27.432+0800][2.071s][2580][9320][info][gc,heap,exit   ] Heap
+[2020-10-28T10:30:27.433+0800][2.072s][2580][9320][info][gc,heap,exit   ]  PSYoungGen      total 232960K, used 6569K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)
+[2020-10-28T10:30:27.433+0800][2.072s][2580][9320][info][gc,heap,exit   ]   eden space 116736K, 5% used [0x00000000eab00000,0x00000000eb16a4b8,0x00000000f1d00000)
+[2020-10-28T10:30:27.433+0800][2.072s][2580][9320][info][gc,heap,exit   ]   from space 116224K, 0% used [0x00000000f8e80000,0x00000000f8e80000,0x0000000100000000)
+[2020-10-28T10:30:27.433+0800][2.073s][2580][9320][info][gc,heap,exit   ]   to   space 116224K, 0% used [0x00000000f1d00000,0x00000000f1d00000,0x00000000f8e80000)
+[2020-10-28T10:30:27.434+0800][2.073s][2580][9320][info][gc,heap,exit   ]  ParOldGen       total 699392K, used 317940K [0x00000000c0000000, 0x00000000eab00000, 0x00000000eab00000)
+[2020-10-28T10:30:27.434+0800][2.074s][2580][9320][info][gc,heap,exit   ]   object space 699392K, 45% used [0x00000000c0000000,0x00000000d367d3c0,0x00000000eab00000)
+[2020-10-28T10:30:27.436+0800][2.075s][2580][9320][info][gc,heap,exit   ]  Metaspace       used 16555K, capacity 16956K, committed 17024K, reserved 1064960K
+[2020-10-28T10:30:27.436+0800][2.076s][2580][9320][info][gc,heap,exit   ]   class space    used 1747K, capacity 1890K, committed 1920K, reserved 1048576K
