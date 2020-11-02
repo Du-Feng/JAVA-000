@@ -5,6 +5,7 @@
 根据 netty 4.1 如下官方文档：
 
 - [Netty User guide for 4.x](https://netty.io/wiki/user-guide-for-4.x.html)
+- [Chapter 2. Architectural Overview](https://netty.io/3.8/guide/#architecture)
 - [Netty Github 4.1 Branch](https://github.com/netty/netty/)
 
 练习如下官方示例程序：
@@ -17,6 +18,12 @@
 - [pojo](#pojo) ：基于[stream2](#stream2)示例继续改进，演示netty解决TCP粘包/半包问题的最优雅方案。
 
 用于学习 netty 的功能和基本使用方法。
+
+# netty component
+
+下图来自[netty官网](https://netty.io/)，包含netty的所有组件， 同时也诠释了netty的功能之强大：
+
+![Netty Component](assets/drawings/netty-components.png)
 
 # discard
 对应 [Writing a Discard Server](https://netty.io/wiki/user-guide-for-4.x.html#wiki-h3-5)。
