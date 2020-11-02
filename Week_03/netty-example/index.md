@@ -17,6 +17,11 @@
 - [stream2](#stream2) ：基于[stream](#stream)示例继续改进，演示netty解决TCP粘包/半包问题、相对优雅些的方案。
 - [pojo](#pojo) ：基于[stream2](#stream2)示例继续改进，演示netty解决TCP粘包/半包问题的最优雅方案。
 
+ 另外，又扩展了两个示例：
+
+- [localecho](#localecho)
+- [chat](#chat)
+
 用于学习 netty 的功能和基本使用方法。
 
 # netty component
@@ -32,7 +37,7 @@ Client连上Server后，Server忽略所有Client发送过来的消息。
 
 运行方法如下：
 
-1. 启动 DiscardServer
+1. 启动 DiscardServer。
 2. 在Window上可以使用如下telnet命令进行测试：
 
         telnet localhost 8009
@@ -44,7 +49,7 @@ Client 中每输入一个字符，Server 就立即发送相同的字符给Client
 
 运行方法如下：
 
-1. 启动 EchoServer
+1. 启动 EchoServer。
 2. 在Window上可以使用如下telnet命令进行测试：
 
         telnet localhost 8005
@@ -57,7 +62,7 @@ Client 中每输入一个字符，Server 就立即发送相同的字符给Client
 
 运行方法如下：
 
-1. 启动 TimeServer
+1. 启动 TimeServer。
 
 2. 在Windows可以启动 TimeClient 进行测试；在Linux上可以使用如下telnet命令进行测试：
 
@@ -71,7 +76,7 @@ Client 中每输入一个字符，Server 就立即发送相同的字符给Client
 
 运行方法如下：
 
-1. 启动 TimeServer
+1. 启动 TimeServer。
 
 2. 在Windows可以启动 TimeClient 进行测试。
 
@@ -109,7 +114,7 @@ Client 中每输入一个字符，Server 就立即发送相同的字符给Client
 
 运行方法如下：
 
-1. 启动 TimeServer
+1. 启动 TimeServer。
 
 2. 在Windows可以启动 TimeClient 进行测试。
 
@@ -162,6 +167,29 @@ TimeEncoder和TimeDecoder的类图如下：
 
 运行方法如下：
 
-1. 启动 TimeServer
-
+1. 启动 TimeServer。
 2. 在Windows可以启动 TimeClient 进行测试。
+
+
+
+# localecho
+
+参照 [Netty Github 4.1 Branch](https://github.com/netty/netty/) 的 localecho example。
+
+运行方法如下：
+
+1. 启动 LocalEcho，它即是Server，也是Client；Client输入的完事语句，Server都会回显。
+2. Client输入 quit，便可以结束本次对话。
+
+
+
+# chat
+
+# chat
+
+参照 [Netty Project | Understanding Netty using simple real-world example of Chat server client | Good for beginners](https://itsallbinary.com/netty-project-understanding-netty-using-simple-real-world-example-of-chat-server-client-good-for-beginners/) 写了一个简单的chat小程序。
+
+运行方法如下：
+
+1. 启动 ChatServer。
+2. 启动多个 ChatClient，每个ChatClient中输入自己的名字，然后就可以聊天啦。每条消息，都会群发给所有人。
