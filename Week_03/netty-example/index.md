@@ -74,9 +74,9 @@ Client 中每输入一个字符，Server 就立即发送相同的字符给Client
 
 对应 [Dealing with a Stream-based Transport > The Second Solution](https://netty.io/wiki/user-guide-for-4.x.html#wiki-h4-13) ，基于 [stream](#stream) 的示例，演示netty解决TCP粘包/半包问题、相对优雅些的方案：
 
-- 添加另一个TimeClientHandler: TimeDecoder，TimeDecoder继承自 ByteToMessageDecoder，而ByteToMessageDecoder继承自ChannelInboundHandlerAdapter，用于读取4个byte。
+1. 添加另一个TimeClientHandler: TimeDecoder，TimeDecoder继承自 ByteToMessageDecoder，而ByteToMessageDecoder继承自ChannelInboundHandlerAdapter，用于读取4个byte。
 
-- 将TimeDecoder添加至Client的ChannelPipeline：
+2. 将TimeDecoder添加至Client的ChannelPipeline：
 
     ```java
     b.handler(new ChannelInitializer<SocketChannel>() {
@@ -92,6 +92,12 @@ Client 中每输入一个字符，Server 就立即发送相同的字符给Client
     });
     ```
 
+    TimeDecoder的类图如下：
+
+    ![stream2 Class Diagram](assets/drawings/class-diagram-stream2.png)
+
+    
+
 当Client连上Server时，Server把系统当前时间发送给Client。
 
 运行方法如下：
@@ -104,11 +110,11 @@ Client 中每输入一个字符，Server 就立即发送相同的字符给Client
 
 对应 [Speaking in POJO instead of  ByteBuf](https://netty.io/wiki/user-guide-for-4.x.html#wiki-h3-14) ，基于 [stream2](#stream2) 的示例，演示netty解决TCP粘包/半包问题的最优雅方案：
 
-- 添加UnixTime，它用于封装时间，即server和client两端交流的data。
+1. 添加UnixTime，它用于封装时间，即server和client两端交流的data。
 
-- 添加TimeServerHandler: TimeEncoder；TimeDecoder继承自 MessageToByteEncoder，而MessageToByteEncoder继承自ChannelInboundHandlerAdapter，用于编码UnixTime。
+2. 添加TimeServerHandler: TimeEncoder；TimeDecoder继承自 MessageToByteEncoder，而MessageToByteEncoder继承自ChannelInboundHandlerAdapter，用于编码UnixTime。
 
-- 将TimeEncoder添加至Server的ChannelPipeline：
+3. 将TimeEncoder添加至Server的ChannelPipeline：
 
     ```java
     b.childHandler(new ChannelInitializer<SocketChannel>() {
@@ -123,9 +129,9 @@ Client 中每输入一个字符，Server 就立即发送相同的字符给Client
     });
     ```
 
-- 添加TimeClientHandler: TimeDecoder；TimeDecoder继承自 ByteToMessageDecoder，而ByteToMessageDecoder继承自ChannelOutboundHandlerAdapter，用于解码UnixTime。
+4. 添加TimeClientHandler: TimeDecoder；TimeDecoder继承自 ByteToMessageDecoder，而ByteToMessageDecoder继承自ChannelOutboundHandlerAdapter，用于解码UnixTime。
 
-- 将TimeDecoder添加至Client的ChannelPipeline：
+5. 将TimeDecoder添加至Client的ChannelPipeline：
 
     ```java
     b.handler(new ChannelInitializer<SocketChannel>() {
