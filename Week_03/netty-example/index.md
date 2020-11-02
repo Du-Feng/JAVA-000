@@ -4,7 +4,9 @@
 
 - [Netty User guide for 4.x](https://netty.io/wiki/user-guide-for-4.x.html)
 - [netty 4.1 github](https://github.com/netty/netty/)
-以及如下两个官方示例程序：
+
+<br/>以及如下两个官方示例程序：
+
 - discard
 - echo
 学习 netty 的功能和基本使用方法。
@@ -26,8 +28,16 @@ Client 中每输入一个字符，Server 就立即发送相同的字符给Client
 # time
 当Client连上Server时，Server把系统当前时间发送给Client。
 1. 启动 TimeServer
-2. 如何测试：
-   - 在Windows可以启动 TimeClient 进行测试。
-   - 在Linux上可以使用如下telnet命令进行测试：
+
+2. 在Windows可以启动 TimeClient 进行测试；在Linux上可以使用如下telnet命令进行测试：
+
    
+
         rdate -o 8005 -p localhost
+
+
+
+
+
+
+
