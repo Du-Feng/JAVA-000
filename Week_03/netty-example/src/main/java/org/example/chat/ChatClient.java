@@ -17,6 +17,8 @@ public class ChatClient {
     static final int PORT = Integer.parseInt(System.getProperty("port", "8007"));
     static String clientName;
 
+    static final String BYE = "bye";
+
     public static void main(String[] args) throws Exception {
 
         /*
@@ -59,6 +61,10 @@ public class ChatClient {
             // Start the client.
             ChannelFuture f = b.connect(HOST, PORT).sync();
 
+            Channel sayHi = f.sync().channel();
+            sayHi.writeAndFlush("[" + clientName + "] is online");
+            sayHi.flush();
+
             /*
              * Iterate & take chat message inputs from user & then send to server.
              */
@@ -67,6 +73,9 @@ public class ChatClient {
                 Channel channel = f.sync().channel();
                 channel.writeAndFlush("[" + clientName + "]: " + input);
                 channel.flush();
+                if(BYE.equalsIgnoreCase(input)) {
+                    break;
+                }
             }
 
             // Wait until the connection is closed.

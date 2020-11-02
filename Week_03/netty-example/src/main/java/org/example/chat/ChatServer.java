@@ -15,6 +15,7 @@ public final class ChatServer {
 
     // Port where chat server will listen for connections.
     static final int PORT = Integer.parseInt(System.getProperty("port", "8007"));
+    static final String BYE = "bye";
 
     public static void main(String[] args) throws Exception {
 

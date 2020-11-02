@@ -17,6 +17,9 @@ public class ChatServerHandler extends SimpleChannelInboundHandler<String> {
     @Override
     public void channelActive(final ChannelHandlerContext ctx) {
         System.out.println("Client joined - " + ctx);
+        for (Channel c : channels) {
+            c.writeAndFlush("Client joined - " + ctx.toString() + '\n');
+        }
         channels.add(ctx.channel());
     }
 
@@ -31,6 +34,11 @@ public class ChatServerHandler extends SimpleChannelInboundHandler<String> {
         System.out.println("Server received - " + msg);
         for (Channel c : channels) {
             c.writeAndFlush("-> " + msg + '\n');
+        }
+
+        if(ChatServer.BYE.equalsIgnoreCase(msg)) {
+            channels.remove(ctx.channel());
+            ctx.close();
         }
     }
 
