@@ -16,7 +16,7 @@ import java.security.cert.CertificateException;
 
 public class TimeServer {
     static final boolean SSL = System.getProperty("ssl") != null;
-    static final int PORT = Integer.parseInt(System.getProperty("port", "8005"));
+    static final int PORT = Integer.parseInt(System.getProperty("port", "8002"));
 
     public static void main(String[] args) throws CertificateException, InterruptedException, SSLException {
         // Configure SSL.

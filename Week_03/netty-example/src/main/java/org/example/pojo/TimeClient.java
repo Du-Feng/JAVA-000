@@ -1,4 +1,4 @@
-package org.example.stream;
+package org.example.pojo;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
@@ -16,7 +16,7 @@ import javax.net.ssl.SSLException;
 public class TimeClient {
     static final boolean SSL = System.getProperty("ssl") != null;
     static final String HOST = System.getProperty("host", "127.0.0.1");
-    static final int PORT = Integer.parseInt(System.getProperty("port", "8003"));
+    static final int PORT = Integer.parseInt(System.getProperty("port", "8001"));
     static final int SIZE = Integer.parseInt(System.getProperty("size", "256"));
 
     public static void main(String[] args) throws InterruptedException, SSLException {
@@ -44,7 +44,7 @@ public class TimeClient {
                                 p.addLast(sslCtx.newHandler(ch.alloc(), HOST, PORT));
                             }
                             p.addLast(new LoggingHandler(LogLevel.INFO));
-                            p.addLast(new TimeClientHandler());
+                            p.addLast(new TimeDecoder(), new TimeClientHandler());
                         }
                     });
 

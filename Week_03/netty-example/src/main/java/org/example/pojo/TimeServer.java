@@ -1,4 +1,4 @@
-package org.example.stream;
+package org.example.pojo;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
@@ -16,7 +16,7 @@ import java.security.cert.CertificateException;
 
 public class TimeServer {
     static final boolean SSL = System.getProperty("ssl") != null;
-    static final int PORT = Integer.parseInt(System.getProperty("port", "8003"));
+    static final int PORT = Integer.parseInt(System.getProperty("port", "8001"));
 
     public static void main(String[] args) throws CertificateException, InterruptedException, SSLException {
         // Configure SSL.
@@ -45,7 +45,7 @@ public class TimeServer {
                             if (sslCtx != null) {
                                 p.addLast(sslCtx.newHandler(ch.alloc()));
                             }
-                            p.addLast(serverHandler);
+                            p.addLast(new TimeEncoder(), serverHandler);
                         }
                     });
 
