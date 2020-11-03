@@ -1,0 +1,35 @@
+@startuml
+
+package "io.netty.example.study.common" {
+    MessageHeader "1"*-- Message
+    MessageBody "1"*-- Message
+    Message <|-- RequestMessage
+    Message <|-- ResponseMessage
+
+    abstract class Message<T extends MessageBody> {
+        - MessageHeader messageHeader
+        - T messageBody
+
+        + void encode(ByteBuf byteBuf)
+        + void decode(ByteBuf msg)
+        + {abstract} Class<T> getMessageBodyDecodeClass(int opcode)
+    }
+
+    class MessageHeader {
+        - int version = 1
+        - int opCode
+        - long streamId
+    }
+
+    abstract class MessageBody {
+    }
+
+    class RequestMessage<Operation> {
+    }
+
+    class ResponseMessage<OperationResult> {
+    }
+
+}
+
+@enduml

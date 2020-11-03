@@ -1,0 +1,98 @@
+@startuml
+package "io.netty.example.study.common" {
+    Message *-left->"1" MessageHeader
+    Message *-down->"1" MessageBody
+    Message <|-- RequestMessage
+    Message <|-- ResponseMessage
+    RequestMessage *-->"1" Operation
+    ResponseMessage *-->"1" OperationResult
+
+    MessageBody <|-- Operation
+    MessageBody <|-- OperationResult
+
+    abstract class Message<T extends MessageBody> {
+        - MessageHeader messageHeader
+        - T messageBody
+
+        + void encode(ByteBuf byteBuf)
+        + void decode(ByteBuf msg)
+        + {abstract} Class<T> getMessageBodyDecodeClass(int opcode)
+    }
+
+    class MessageHeader {
+        - int version = 1
+        - int opCode
+        - long streamId
+    }
+
+    ' MessageBody Family
+    abstract class MessageBody {
+    }
+
+    class RequestMessage<Operation> {
+    }
+
+    class ResponseMessage<OperationResult> {
+    }
+
+    abstract class MessageBody {
+    }
+
+    abstract class Operation {
+        + {abstract} OperationResult execute();
+    }
+
+    abstract class OperationResult{
+    }
+}
+
+package "io.netty.example.study.common.auth" {
+    Operation <|-- AuthOperation
+    OperationResult <|-- AuthOperationResult
+
+    class AuthOperation {
+        - final String userName
+        - final String password
+        + OperationResult execute()
+    }
+
+    class AuthOperationResult{
+        - final boolean passAuth
+    }
+}
+
+package "io.netty.example.study.common.keepalive" {
+    Operation <|-- KeepaliveOperation
+    OperationResult <|-- KeepaliveOperationResult
+
+    class KeepaliveOperation {
+        - long time
+
+        + KeepaliveOperation(long time)
+        + OperationResult execute()
+    }
+
+    class KeepaliveOperationResult {
+        - final long time
+    }
+}
+
+package "io.netty.example.study.common.order" {
+    Operation <|-- OrderOperation
+    OperationResult <|-- OrderOperationResult
+
+    class OrderOperation {
+        - int tableId
+        - String dish
+
+        + OrderOperation(int tableId, String dish)
+        + OperationResult execute()
+    }
+
+    class OrderOperationResult {
+        - final int tableId
+        - final String dish
+        - final boolean complete
+    }
+}
+@enduml
