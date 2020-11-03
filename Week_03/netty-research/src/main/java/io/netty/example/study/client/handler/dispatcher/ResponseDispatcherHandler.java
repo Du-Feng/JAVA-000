@@ -12,7 +12,7 @@ public class ResponseDispatcherHandler extends SimpleChannelInboundHandler<Respo
     }
 
     @Override
-    protected void channelRead0(ChannelHandlerContext channelHandlerContext, ResponseMessage responseMessage) throws Exception {
+    protected void channelRead0(ChannelHandlerContext ctx, ResponseMessage responseMessage) throws Exception {
         requestPendingCenter.set(responseMessage.getMessageHeader().getStreamId(), responseMessage.getMessageBody());
     }
 }
