@@ -106,7 +106,7 @@ Client 中每输入一个字符，Server 就立即发送相同的字符给Client
 
     TimeDecoder的类图如下：
 
-    ![stream2 Class Diagram](assets/drawings/class-diagram-stream2.png)
+    ![stream2 Class Diagram](assets/uml/stream2-class-diagram.png)
 
     
 
@@ -161,7 +161,7 @@ Client 中每输入一个字符，Server 就立即发送相同的字符给Client
 
 TimeEncoder和TimeDecoder的类图如下：
 
-![POJO Class Diagram](assets/drawings/class-diagram-POJO.png)
+![POJO Class Diagram](assets/uml/POJO-class-diagram.png)
 
 当Client连上Server时，Server把系统当前时间发送给Client。
 

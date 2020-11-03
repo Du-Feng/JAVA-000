@@ -1,0 +1,24 @@
+@startuml
+
+package "org.example.stream2" {
+    ChannelHandler <|.. ChannelInboundHandler
+    ChannelHandler <|.. ChannelHandlerAdapter
+    ChannelInboundHandler <|.. ChannelInboundHandlerAdapter
+    ChannelHandlerAdapter <|-- ChannelInboundHandlerAdapter
+    ChannelInboundHandlerAdapter <|-- ByteToMessageDecoder
+    ByteToMessageDecoder <|-- TimeDecoder
+
+    interface ChannelHandler { }
+    abstract class ChannelHandlerAdapter { }
+    interface ChannelInboundHandler { }
+    class ChannelInboundHandlerAdapter { }
+    abstract class ByteToMessageDecoder {
+        # void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception
+    }
+
+    class TimeDecoder {
+        # void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception
+    }
+}
+
+@enduml

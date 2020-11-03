@@ -1,0 +1,52 @@
+@startuml
+
+package "org.example.pojo" {
+    '  TimeDecoder class diagram
+    ChannelHandler <|.. ChannelOutboundHandler
+    ChannelOutboundHandler <|.. ChannelOutboundHandlerAdapter
+    ChannelHandlerAdapter <|-- ChannelOutboundHandlerAdapter
+    ChannelOutboundHandlerAdapter <|-- MessageToByteEncoder
+    MessageToByteEncoder <|-- TimeEncoder
+
+    interface ChannelOutboundHandler { }
+    class ChannelOutboundHandlerAdapter { }
+    abstract class MessageToByteEncoder<I> {
+        # void encode(ChannelHandlerContext ctx, UnixTime msg, ByteBuf out) throws Exception
+    }
+
+    class TimeEncoder<UnixTime> {
+        # void encode(ChannelHandlerContext ctx, UnixTime msg, ByteBuf out) throws Exception
+    }
+
+    '  TimeDecoder class diagram
+    ChannelHandler <|.. ChannelInboundHandler
+    ChannelHandler <|.. ChannelHandlerAdapter
+    ChannelInboundHandler <|.. ChannelInboundHandlerAdapter
+    ChannelHandlerAdapter <|-- ChannelInboundHandlerAdapter
+    ChannelInboundHandlerAdapter <|-- ByteToMessageDecoder
+    ByteToMessageDecoder <|-- TimeDecoder
+
+    interface ChannelHandler { }
+    abstract class ChannelHandlerAdapter { }
+    interface ChannelInboundHandler { }
+    class ChannelInboundHandlerAdapter { }
+    abstract class ByteToMessageDecoder {
+        # void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception
+    }
+
+    class TimeDecoder {
+        # void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception
+    }
+
+    ' UnixTime
+    TimeEncoder o-left-"1" UnixTime
+    TimeDecoder o-right-"1" UnixTime
+
+    class UnixTime {
+        - final long value
+        + long value()
+        + String toString()
+    }
+}
+
+@enduml
