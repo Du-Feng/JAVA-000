@@ -1,15 +1,36 @@
 @startuml
-ClientV0 -> OrderFrameDecoder: Send Request to Server
-OrderFrameDecoder --> OrderFrameEncoder: decode
-OrderFrameEncoder --> OrderProtocolDecoder: (do nothing)
-OrderProtocolDecoder --> OrderProtocolEncoder: decode
-OrderProtocolEncoder --> LoggingHandler: (do nothing)
-LoggingHandler --> OrderServerProcessHandler: channelRead
-OrderServerProcessHandler --> OrderServerProcessHandler: channelRead
-OrderServerProcessHandler --> LoggingHandler: ctx.writeAndFlush(responseMessage)
-LoggingHandler --> OrderProtocolEncoder:channelRead
+Client -> OrderFrameDecoder: send request to server
+OrderFrameDecoder -> OrderFrameDecoder: channelRead
+OrderFrameDecoder -> OrderFrameDecoder: decode
+OrderFrameDecoder -> OrderFrameDecoder: channelReadComplete
+OrderFrameDecoder -> OrderFrameEncoder: request
+OrderFrameEncoder -> OrderProtocolDecoder: pass request
+OrderProtocolDecoder -> OrderProtocolDecoder: channelRead
+OrderProtocolDecoder -> OrderProtocolDecoder: decode
+OrderProtocolDecoder -> OrderProtocolDecoder: channelReadComplete
+OrderProtocolDecoder -> OrderProtocolEncoder: request
+OrderProtocolEncoder -> LoggingHandler: pass request
+LoggingHandler -> LoggingHandler: channelRead
+LoggingHandler -> LoggingHandler: channelReadComplete
+LoggingHandler -> OrderServerProcessHandler: request
+
+OrderServerProcessHandler -> OrderServerProcessHandler: channelRead
+note right of OrderServerProcessHandler: <b>channelRead</b> invokes <b>writeAndFlush(responseMessage)</b>
+
+OrderServerProcessHandler --> LoggingHandler: response
+LoggingHandler --> LoggingHandler: write
+LoggingHandler --> LoggingHandler: flush
+LoggingHandler --> OrderProtocolEncoder: response
 OrderProtocolEncoder --> OrderProtocolEncoder: write
-OrderProtocolEncoder --> OrderProtocolDecoder: encode
+OrderProtocolEncoder --> OrderProtocolEncoder: encode
+OrderProtocolEncoder --> OrderProtocolEncoder: flush
+OrderProtocolEncoder --> OrderProtocolDecoder: response
+OrderProtocolDecoder --> OrderFrameEncoder: pass response
+OrderFrameEncoder --> OrderFrameEncoder: write
+OrderFrameEncoder --> OrderFrameEncoder: encode
+OrderFrameEncoder --> OrderFrameEncoder: flush
+OrderFrameEncoder --> OrderFrameDecoder: response
+OrderFrameDecoder --> Client: send response to client
 
 box Server
 participant OrderFrameDecoder
