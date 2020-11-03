@@ -161,7 +161,7 @@ Client 中每输入一个字符，Server 就立即发送相同的字符给Client
 
 TimeEncoder和TimeDecoder的类图如下：
 
-<img src="assets/uml/POJO-class-diagram.png" alt="POJO Class Diagram" style="zoom:150%;" />
+![POJO Class Diagram](assets/uml/POJO-class-diagram.png)
 
 当Client连上Server时，Server把系统当前时间发送给Client。
 
