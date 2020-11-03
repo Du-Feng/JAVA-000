@@ -37,13 +37,10 @@ public class ClientV1 {
             });
 
             ChannelFuture channelFuture = bootstrap.connect("127.0.0.1", 8090);
-
             channelFuture.sync();
 
             OrderOperation orderOperation = new OrderOperation(1001, "tudou");
-
             channelFuture.channel().writeAndFlush(orderOperation);
-
             channelFuture.channel().closeFuture().sync();
         } finally {
             group.shutdownGracefully();

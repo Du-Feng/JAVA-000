@@ -52,18 +52,14 @@ public class ClientV2 {
             channelFuture.sync();
 
             long streamId = IdUtil.nextId();
-
             RequestMessage requestMessage = new RequestMessage(streamId, new OrderOperation(1001, "tudou"));
             OperationResultFuture operationResultFuture = new OperationResultFuture();
 
             requestPendingCenter.add(streamId, operationResultFuture);
-
             channelFuture.channel().writeAndFlush(requestMessage);
 
             OperationResult operationResult = operationResultFuture.get();
-
             System.out.println(operationResult);
-
             channelFuture.channel().closeFuture().sync();
         } finally {
             group.shutdownGracefully();
