@@ -14,8 +14,16 @@
 
 
 
-# Message
+# Message Format
 
-Message 整体类图如下：
+Client 和 Server 交流所使用的 Message 格式如下：
+
+![Message Format](assets/images/data-structure.png)
+
+
+
+# Message Class Diagram
+
+Message 的类图如下：
 
 ![Message Family Class Diagram](assets/uml/message-family-class-diagram.png)

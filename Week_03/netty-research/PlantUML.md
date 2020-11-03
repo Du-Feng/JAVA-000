@@ -7,6 +7,8 @@ PlantUML 有两种生成UML图片的方法：
 
 
 
+**Reference**: PlantUML 的[语法官方文档](https://plantuml.com/)。
+
 ## Graphviz
 
 1. 安装 [Graphviz](https://graphviz.org/)。
