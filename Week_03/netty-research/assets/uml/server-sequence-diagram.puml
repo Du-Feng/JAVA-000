@@ -1,0 +1,23 @@
+@startuml
+ClientV0 -> OrderFrameDecoder: Send Request to Server
+OrderFrameDecoder --> OrderFrameEncoder: decode
+OrderFrameEncoder --> OrderProtocolDecoder: (do nothing)
+OrderProtocolDecoder --> OrderProtocolEncoder: decode
+OrderProtocolEncoder --> LoggingHandler: (do nothing)
+LoggingHandler --> OrderServerProcessHandler: channelRead
+OrderServerProcessHandler --> OrderServerProcessHandler: channelRead
+OrderServerProcessHandler --> LoggingHandler: ctx.writeAndFlush(responseMessage)
+LoggingHandler --> OrderProtocolEncoder:channelRead
+OrderProtocolEncoder --> OrderProtocolEncoder: write
+OrderProtocolEncoder --> OrderProtocolDecoder: encode
+
+box Server
+participant OrderFrameDecoder
+participant OrderFrameEncoder
+participant OrderProtocolDecoder
+participant OrderProtocolEncoder
+participant LoggingHandler
+participant OrderServerProcessHandler
+end box
+
+@enduml

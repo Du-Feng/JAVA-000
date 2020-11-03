@@ -8,11 +8,24 @@ package "org.example.pojo" {
     ChannelOutboundHandlerAdapter <|-- MessageToByteEncoder
     MessageToByteEncoder <|-- TimeEncoder
 
-    interface ChannelOutboundHandler { }
+    interface ChannelOutboundHandler {
+        void bind(ChannelHandlerContext, SocketAddress, ChannelPromise)
+        void connect(ChannelHandlerContext, SocketAddress, SocketAddress, ChannelPromise)
+        void disconnect(ChannelHandlerContext, ChannelPromise)
+        void close(ChannelHandlerContext, ChannelPromise)
+        void deregister(ChannelHandlerContext, ChannelPromise)
+        void read(ChannelHandlerContext)
+        void write(ChannelHandlerContext, Object, ChannelPromise)
+        void flush(ChannelHandlerContext)
+    }
     class ChannelOutboundHandlerAdapter { }
     abstract class MessageToByteEncoder<I> {
-        # void encode(ChannelHandlerContext ctx, UnixTime msg, ByteBuf out) throws Exception
+        - final TypeParameterMatcher matcher
+        - final boolean preferDirect
+    	+ void write(ChannelHandlerContext ctx, Object msg, ChannelPromise promise)
+    	# {abstract} void encode(ChannelHandlerContext ctx, I msg, ByteBuf out)
     }
+    note right of MessageToByteEncoder: <b>write</b> invokes <b>encode</b>
 
     class TimeEncoder<UnixTime> {
         # void encode(ChannelHandlerContext ctx, UnixTime msg, ByteBuf out) throws Exception
@@ -26,17 +39,43 @@ package "org.example.pojo" {
     ChannelInboundHandlerAdapter <|-- ByteToMessageDecoder
     ByteToMessageDecoder <|-- TimeDecoder
 
-    interface ChannelHandler { }
-    abstract class ChannelHandlerAdapter { }
-    interface ChannelInboundHandler { }
-    class ChannelInboundHandlerAdapter { }
-    abstract class ByteToMessageDecoder {
-        # void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception
+    interface ChannelHandler {
+         void handlerAdded(ChannelHandlerContext)
+         void handlerRemoved(ChannelHandlerContext)
     }
 
-    class TimeDecoder {
-        # void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception
+    abstract class ChannelHandlerAdapter {
+        boolean added
+
+        + void handlerAdded(ChannelHandlerContext)
+        + void handlerRemoved(ChannelHandlerContext)
     }
+
+    interface ChannelInboundHandler {
+        void channelRegistered(ChannelHandlerContext)
+        void channelUnregistered(ChannelHandlerContext)
+        void channelActive(ChannelHandlerContext)
+        void channelInactive(ChannelHandlerContext)
+        void channelRead(ChannelHandlerContext, Object)
+        void channelReadComplete(ChannelHandlerContext)
+        void userEventTriggered(ChannelHandlerContext, Object)
+        void channelWritabilityChanged(ChannelHandlerContext)
+        void exceptionCaught(ChannelHandlerContext, Throwable)
+    }
+
+    class ChannelInboundHandlerAdapter { }
+
+    abstract class ByteToMessageDecoder {
+        + void channelRead(ChannelHandlerContext ctx, Object msg)
+        + void channelReadComplete(ChannelHandlerContext ctx)
+        # void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out)
+    }
+    note right of ByteToMessageDecoder : <b>channelRead</b> invokes <b>decode</b>
+
+    class TimeDecoder {
+        # void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out)
+    }
+
 
     ' UnixTime
     TimeEncoder o-left-"1" UnixTime

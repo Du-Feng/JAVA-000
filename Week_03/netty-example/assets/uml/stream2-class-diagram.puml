@@ -8,16 +8,41 @@ package "org.example.stream2" {
     ChannelInboundHandlerAdapter <|-- ByteToMessageDecoder
     ByteToMessageDecoder <|-- TimeDecoder
 
-    interface ChannelHandler { }
-    abstract class ChannelHandlerAdapter { }
-    interface ChannelInboundHandler { }
-    class ChannelInboundHandlerAdapter { }
-    abstract class ByteToMessageDecoder {
-        # void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception
+    interface ChannelHandler {
+         void handlerAdded(ChannelHandlerContext)
+         void handlerRemoved(ChannelHandlerContext)
     }
 
+    abstract class ChannelHandlerAdapter {
+        boolean added
+
+        + void handlerAdded(ChannelHandlerContext)
+        + void handlerRemoved(ChannelHandlerContext)
+    }
+
+    interface ChannelInboundHandler {
+        void channelRegistered(ChannelHandlerContext)
+        void channelUnregistered(ChannelHandlerContext)
+        void channelActive(ChannelHandlerContext)
+        void channelInactive(ChannelHandlerContext)
+        void channelRead(ChannelHandlerContext, Object)
+        void channelReadComplete(ChannelHandlerContext)
+        void userEventTriggered(ChannelHandlerContext, Object)
+        void channelWritabilityChanged(ChannelHandlerContext)
+        void exceptionCaught(ChannelHandlerContext, Throwable)
+    }
+
+    class ChannelInboundHandlerAdapter { }
+
+    abstract class ByteToMessageDecoder {
+        + void channelRead(ChannelHandlerContext ctx, Object msg)
+        + void channelReadComplete(ChannelHandlerContext ctx)
+        # void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out)
+    }
+    note right of ByteToMessageDecoder : <b>channelRead</b> invokes <b>decode</b>
+
     class TimeDecoder {
-        # void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception
+        # void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out)
     }
 }
 
