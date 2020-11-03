@@ -13,7 +13,7 @@ public class RequestMessage extends Message<Operation> {
     }
 
     @Override
-    public Class<Operation> getMessageBodyDecodeClass(int opcode) {
-        return null;
+    public Class getMessageBodyDecodeClass(int opcode) {
+        return OperationType.fromOpCode(opcode).getOperationClazz();
     }
 }
