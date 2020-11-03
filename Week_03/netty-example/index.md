@@ -161,7 +161,7 @@ Client 中每输入一个字符，Server 就立即发送相同的字符给Client
 
 TimeEncoder和TimeDecoder的类图如下：
 
-![POJO Class Diagram](assets/uml/POJO-class-diagram.png)
+<img src="assets/uml/POJO-class-diagram.png" alt="POJO Class Diagram" style="zoom:150%;" />
 
 当Client连上Server时，Server把系统当前时间发送给Client。
 
@@ -185,9 +185,7 @@ TimeEncoder和TimeDecoder的类图如下：
 
 # chat
 
-# chat
-
-参照 [Netty Project | Understanding Netty using simple real-world example of Chat server client | Good for beginners](https://itsallbinary.com/netty-project-understanding-netty-using-simple-real-world-example-of-chat-server-client-good-for-beginners/) 写了一个简单的chat小程序。
+参照 [Netty Project > Understanding Netty using simple real-world example of Chat server client > Good for beginners](https://itsallbinary.com/netty-project-understanding-netty-using-simple-real-world-example-of-chat-server-client-good-for-beginners/) 写了一个简单的chat小程序。
 
 运行方法如下：
 

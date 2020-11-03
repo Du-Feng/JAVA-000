@@ -62,4 +62,4 @@ Server解析request的时序图如下（**注**：这只是粗略步骤，用于
     - Handler的**write**方法加工response，Encoder会进一步调用**decode**加工response。
     - 加工完成后，**flush**会把response传递给下一个handler，直至返回至client端。
 
-![Interpret Request Sequence Diagarm](assets/uml/server-sequence-diagram.png)
+<img src="assets/uml/server-sequence-diagram.png" alt="Interpret Request Sequence Diagarm" style="zoom:150%;" />
