@@ -25,13 +25,14 @@ import static io.netty.handler.codec.http.HttpResponseStatus.OK;
 import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
 
 public class OkHttpOutboundHandler implements HttpOutBoundHandler {
+    private static final Logger logger = LoggerFactory.getLogger(OkHttpOutboundHandler.class);
 
-    private static final Logger log = LoggerFactory.getLogger(OkHttpOutboundHandler.class);
     private final OkHttpClient client;
     private final String backendUrl;
 
     public OkHttpOutboundHandler(String backendUrl) {
         Objects.requireNonNull(backendUrl, "BackendUrl can not be null!");
+        logger.info("OkHttpOutboundHandler is created for backendUrl {}", backendUrl);
         this.backendUrl = backendUrl;
         this.client = new OkHttpClient();
     }

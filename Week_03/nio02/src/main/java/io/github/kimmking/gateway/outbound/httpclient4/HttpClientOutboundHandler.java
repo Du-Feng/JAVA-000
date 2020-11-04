@@ -1,5 +1,6 @@
 package io.github.kimmking.gateway.outbound.httpclient4;
 
+import io.github.kimmking.gateway.client.netty.NettyHttpClientOutboundHandler;
 import io.github.kimmking.gateway.outbound.HttpOutBoundHandler;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFutureListener;
@@ -16,7 +17,10 @@ import org.apache.http.impl.nio.client.HttpAsyncClients;
 import org.apache.http.impl.nio.reactor.IOReactorConfig;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.util.Objects;
 import java.util.concurrent.*;
 
 import static io.netty.handler.codec.http.HttpResponseStatus.NO_CONTENT;
@@ -24,12 +28,16 @@ import static io.netty.handler.codec.http.HttpResponseStatus.OK;
 import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
 
 public class HttpClientOutboundHandler implements HttpOutBoundHandler {
+    private static Logger logger = LoggerFactory.getLogger(HttpClientOutboundHandler.class);
 
     private CloseableHttpAsyncClient httpclient;
     private ExecutorService proxyService;
     private String backendUrl;
 
     public HttpClientOutboundHandler(String backendUrl) {
+        Objects.requireNonNull(backendUrl, "BackendUrl can not be null!");
+        logger.info("HttpClientOutboundHandler is created for backendUrl {}", backendUrl);
+
         this.backendUrl = backendUrl.endsWith("/") ? backendUrl.substring(0, backendUrl.length() - 1) : backendUrl;
         int cores = Runtime.getRuntime().availableProcessors() * 2;
         long keepAliveTime = 1000;

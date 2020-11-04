@@ -11,21 +11,19 @@ public class NettyServerApplication {
     public final static String GATEWAY_VERSION = "1.0.0";
     private final static String GATEWAY_PORT = "8888";
 
-    public final static String PROXY_SERVER1 = "http://localhost:8801";
-    public final static String PROXY_SERVER2 = "http://localhost:8802";
-    public final static String PROXY_SERVER3 = "http://localhost:8803";
+    public final static String HTTPCLIENT_MODE = "httpclient";
+    public final static String OKHTTP_MODE = "okhttp";
+    public final static String NETTY_MODE = "netty";
 
     public static void main(String[] args) {
-        System.setProperty("outBoundHandlerType", "httpclient");
-        //System.setProperty("outBoundHandlerType", "okhttp");
+        System.setProperty("outBoundHandlerType", NETTY_MODE);
 
         String gatewayPort = System.getProperty("gatewayPort", GATEWAY_PORT);
-        String proxyServer1 = System.getProperty("proxyServer", PROXY_SERVER1);
-        String proxyServer2 = System.getProperty("proxyServer", PROXY_SERVER2);
-        String proxyServer3 = System.getProperty("proxyServer", PROXY_SERVER3);
-
-        String[] servers = {proxyServer1, proxyServer2, proxyServer3};
-
+        String[] servers = {"http://localhost:8801",
+                "http://localhost:8802",
+                "http://localhost:8803",
+                "http://localhost:8804",
+                "http://localhost:8805"};
         int port = Integer.parseInt(gatewayPort);
         System.out.println(GATEWAY_NAME + " " + GATEWAY_VERSION + " starting...");
         HttpInboundServer server = new HttpInboundServer(port, servers);

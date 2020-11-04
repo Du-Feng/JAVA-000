@@ -13,18 +13,21 @@ import io.netty.util.CharsetUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Objects;
+
 import static io.netty.handler.codec.http.HttpResponseStatus.OK;
 import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
 
 public class NettyHttpClientOutboundHandler implements HttpOutBoundHandler {
-
-    private static final Logger log = LoggerFactory.getLogger(NettyHttpClientOutboundHandler.class);
+    private static final Logger logger = LoggerFactory.getLogger(NettyHttpClientOutboundHandler.class);
 
     private final NettyHttpClient client;
 
     private final String backendUrl;
 
     public NettyHttpClientOutboundHandler(String backendUrl) {
+        Objects.requireNonNull(backendUrl, "BackendUrl can not be null!");
+        logger.info("NettyHttpClientOutboundHandler is created for backendUrl {}", backendUrl);
         this.client = new NettyHttpClient();
         this.backendUrl = backendUrl;
     }

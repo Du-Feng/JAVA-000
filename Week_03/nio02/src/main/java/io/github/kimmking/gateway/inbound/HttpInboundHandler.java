@@ -1,9 +1,11 @@
 package io.github.kimmking.gateway.inbound;
 
+import io.github.kimmking.gateway.NettyServerApplication;
 import io.github.kimmking.gateway.filter.HttpRequestFilter;
 import io.github.kimmking.gateway.filter.HttpRequestHeaderAppenderFilter;
 import io.github.kimmking.gateway.outbound.HttpOutBoundHandler;
 import io.github.kimmking.gateway.outbound.httpclient4.HttpClientOutboundHandler;
+import io.github.kimmking.gateway.outbound.netty4.NettyHttpClientOutboundHandler;
 import io.github.kimmking.gateway.outbound.okhttp.OkHttpOutboundHandler;
 import io.github.kimmking.gateway.router.HttpEndpointRouter;
 import io.github.kimmking.gateway.router.RandomEndpointRouter;
@@ -28,11 +30,13 @@ public class HttpInboundHandler extends ChannelInboundHandlerAdapter {
         filter = new HttpRequestHeaderAppenderFilter();
         router = new RandomEndpointRouter();
 
-        String outBoundHandlerType = System.getProperty("outBoundHandlerType", "httpclient");
-        if (outBoundHandlerType.equalsIgnoreCase("httpclient")) {
+        String outBoundHandlerType = System.getProperty("outBoundHandlerType", NettyServerApplication.HTTPCLIENT_MODE);
+        if (outBoundHandlerType.equalsIgnoreCase(NettyServerApplication.HTTPCLIENT_MODE)) {
             handler = new HttpClientOutboundHandler(router.route(proxyServers));
-        } else {
+        } else if (outBoundHandlerType.equalsIgnoreCase(NettyServerApplication.OKHTTP_MODE))  {
             handler = new OkHttpOutboundHandler(router.route(proxyServers));
+        } else {
+            handler = new NettyHttpClientOutboundHandler(router.route(proxyServers));
         }
     }
 
