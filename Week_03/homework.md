@@ -16,7 +16,7 @@
 
 ## 作业详细要求：
 
-![作业要求](C:/Data/Code/GitHub/JAVA-000/Week_03/作业.png)
+![作业要求](C:/Data/Code/GitHub/JAVA-000/Week_03/homework.png)
 
 
 
