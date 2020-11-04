@@ -30,7 +30,7 @@ Message 的类图如下：
 
 
 
-# Server Sequence Diagram
+# Server Child Handler Pipeline
 
 Server 的 childHandler pipeline 如下：
 
@@ -53,6 +53,20 @@ serverBootstrap.childHandler(new ChannelInitializer<NioSocketChannel>() {
 });
 ```
 
+
+
+## Server Child Handler Pipeline - Class Diagram
+
+Server 的 childHandler 的类图如下：
+
+**注**：package 不正确，下图只是为了比较形象的区分Inbound、Outbound、Duplex和Message。
+
+![Server Child Pipeline Class Diagram](assets/uml/server-child-pipeline-class-diagram.png)
+
+
+
+## Server Child Handler Pipeline - Sequence Diagram
+
 Server解析request的时序图如下（**注**：这只是粗略步骤，用于解释逻辑）：
 
 - Decode: 接收到request时，
@@ -66,7 +80,23 @@ Server解析request的时序图如下（**注**：这只是粗略步骤，用于
 
 
 
-# ClientV0
+## Pipeline Order
+
+根据上面的pipeline类图和时序图，可以得出pipeline的排序原则，此原则同时适用于client和server：
+
+- 左侧为Inbound，执行顺序从上往下，此顺序不可乱。
+- 右侧为Outbound，执行顺序从下往上，此顺序也不可乱。
+- 底部**OrderServerProcessHandler**为业务处理逻辑，是Inbound的最后一步，Outbound的第一步。
+- Inbound与Outbound的顺序无所谓，比如**OrderFrameDecoder**和**OrderFrameEncoder**谁在前、谁在后，不会产生任何影响。
+- **LoggingHandler**为双向，它同时出现在Inbound和Outbound上。
+
+![Pipeline Order](assets/images/pipeline-order.png)
+
+# Client
+
+下面详细介绍下三个Client的区别。
+
+## ClientV0
 
 **ClientV0**比较简单粗糙，它可以发送**RequestMessage**给Server，但是不能接收Server返回的**ResponseMessage**。
 
@@ -95,7 +125,7 @@ RequestMessage requestMessage = new RequestMessage(IdUtil.nextId(), new OrderOpe
 channelFuture.channel().writeAndFlush(requestMessage);
 ```
 
-# ClientV1
+## ClientV1
 
 **ClientV1**它可以发送**RequestMessage**给Server，但是它仍然不能接收Server返回的**ResponseMessage**。
 
@@ -160,7 +190,7 @@ if (this.acceptOutboundMessage(msg)) {
 }
 ```
 
-# ClientV2
+## ClientV2
 
 通过**io.netty.example.study.client.handler.dispatcher**  package的如下三个class，**ClientV2**实现了响应分发，可以接收Server返回的**ResponseMessage**。
 

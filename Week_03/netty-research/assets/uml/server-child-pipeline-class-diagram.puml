@@ -1,0 +1,181 @@
+@startuml
+
+    interface ChannelHandler {
+         void handlerAdded(ChannelHandlerContext)
+         void handlerRemoved(ChannelHandlerContext)
+    }
+    
+    abstract class ChannelHandlerAdapter {
+        boolean added
+
+        + void handlerAdded(ChannelHandlerContext)
+        + void handlerRemoved(ChannelHandlerContext)
+    }
+
+package "ChannelOutboundHandler" {
+    '  OrderProtocolEncoder class diagram
+    ChannelHandler <|.. ChannelOutboundHandler
+    ChannelOutboundHandler <|.. ChannelOutboundHandlerAdapter
+    ChannelHandlerAdapter <|-- ChannelOutboundHandlerAdapter
+    ChannelOutboundHandlerAdapter <|-- MessageToMessageEncoder
+    MessageToMessageEncoder <|-- OrderProtocolEncoder
+
+    interface ChannelOutboundHandler {
+        void bind(ChannelHandlerContext, SocketAddress, ChannelPromise)
+        void connect(ChannelHandlerContext, SocketAddress, SocketAddress, ChannelPromise)
+        void disconnect(ChannelHandlerContext, ChannelPromise)
+        void close(ChannelHandlerContext, ChannelPromise)
+        void deregister(ChannelHandlerContext, ChannelPromise)
+        void read(ChannelHandlerContext)
+        void write(ChannelHandlerContext, Object, ChannelPromise)
+        void flush(ChannelHandlerContext)
+    }
+
+    class ChannelOutboundHandlerAdapter { }
+
+    abstract class MessageToMessageEncoder<I> {
+        - final TypeParameterMatcher matcher
+        - final boolean preferDirect
+    	+ void write(ChannelHandlerContext ctx, Object msg, ChannelPromise promise)
+    	# {abstract} void encode(ChannelHandlerContext ctx, I msg, ByteBuf out)
+    }
+    note left of MessageToMessageEncoder: <b>write</b> invokes <b>encode</b>
+
+    class OrderProtocolEncoder<ResponseMessage> {
+        # void encode(ChannelHandlerContext ctx, ResponseMessage msg, ByteBuf out)
+    }
+
+    ' OrderFrameEncoder class diagram
+    MessageToMessageEncoder <|-- LengthFieldPrepender
+    LengthFieldPrepender <|-- OrderFrameEncoder
+
+    class LengthFieldPrepender<ByteBuf> {
+        - final ByteOrder byteOrder
+        - final int lengthFieldLength
+        - final boolean lengthIncludesLengthFieldLength
+        - final int lengthAdjustment
+        # void encode(ChannelHandlerContext ctx, ByteBuf msg, List<Object> out)
+    }
+
+    class OrderFrameEncoder { }
+}
+
+package "ChannelInboundHandler" {
+    '  OrderProtocolDecoder class diagram
+    ChannelHandler <|.. ChannelInboundHandler
+    ChannelHandler <|.. ChannelHandlerAdapter
+    ChannelInboundHandler <|.. ChannelInboundHandlerAdapter
+    ChannelHandlerAdapter <|-- ChannelInboundHandlerAdapter
+    ChannelInboundHandlerAdapter <|-- MessageToMessageDecoder
+    MessageToMessageDecoder <|-- OrderProtocolDecoder
+
+    interface ChannelInboundHandler {
+        void channelRegistered(ChannelHandlerContext)
+        void channelUnregistered(ChannelHandlerContext)
+        void channelActive(ChannelHandlerContext)
+        void channelInactive(ChannelHandlerContext)
+        void channelRead(ChannelHandlerContext, Object)
+        void channelReadComplete(ChannelHandlerContext)
+        void userEventTriggered(ChannelHandlerContext, Object)
+        void channelWritabilityChanged(ChannelHandlerContext)
+        void exceptionCaught(ChannelHandlerContext, Throwable)
+    }
+
+    class ChannelInboundHandlerAdapter { }
+    
+    class OrderProtocolDecoder<ByteBuf> {
+        # void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out)
+    }
+
+    ' OrderFrameDecoder class diagram
+    ChannelInboundHandlerAdapter <|-- ByteToMessageDecoder
+    ByteToMessageDecoder <|-- LengthFieldBasedFrameDecoder
+    LengthFieldBasedFrameDecoder <|-- OrderFrameDecoder
+
+    class LengthFieldBasedFrameDecoder {
+        # final void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out)
+        # Object decode(ChannelHandlerContext ctx, ByteBuf in)
+    }
+
+    abstract class MessageToMessageDecoder {
+        - final TypeParameterMatcher matcher
+        + void channelRead(ChannelHandlerContext ctx, Object msg)
+        + void channelReadComplete(ChannelHandlerContext ctx)
+        # void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out)
+    }
+    note right of MessageToMessageDecoder : <b>channelRead</b> invokes <b>decode</b>
+
+    abstract class ByteToMessageDecoder {
+        - final TypeParameterMatcher matcher
+        + void channelRead(ChannelHandlerContext ctx, Object msg)
+        + void channelReadComplete(ChannelHandlerContext ctx)
+        # void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out)
+    }
+    note right of ByteToMessageDecoder : <b>channelRead</b> invokes <b>decode</b>
+
+    ' OrderServerProcessHandler
+    ChannelInboundHandlerAdapter <|-- SimpleChannelInboundHandler
+    SimpleChannelInboundHandler <|-- OrderServerProcessHandler
+
+    abstract class SimpleChannelInboundHandler<I> {
+        + void channelRead(ChannelHandlerContext ctx, Object msg)
+        # abstract void channelRead0(ChannelHandlerContext ctx, I msg) 
+    }
+
+    class OrderServerProcessHandler<RequestMessage> {
+        # void channelRead0(ChannelHandlerContext ctx, RequestMessage requestMessage)
+    }
+}
+
+package "ChannelDuplexHandler" {
+    ChannelOutboundHandler <|.. ChannelDuplexHandler
+    ChannelInboundHandlerAdapter <|-- ChannelDuplexHandler
+    ChannelDuplexHandler <|-- LoggingHandler
+    class LoggingHandler {
+        - static final LogLevel DEFAULT_LEVEL
+        - final InternalLogger logger
+        - final InternalLogLevel internalLevel;
+        - final LogLevel level
+        - final ByteBufFormat byteBufFormat
+
+        + LogLevel level()
+        + ByteBufFormat byteBufFormat()
+        + void channelUnregistered(ChannelHandlerContext ctx)
+        + void channelActive(ChannelHandlerContext ctx)
+        + void channelInactive(ChannelHandlerContext ctx)
+        + void exceptionCaught(ChannelHandlerContext ctx, Throwable cause)
+        + void userEventTriggered(ChannelHandlerContext ctx, Object evt)
+        + void bind(ChannelHandlerContext ctx, SocketAddress localAddress, ChannelPromise promise)
+        + void connect(ChannelHandlerContext ctx, SocketAddress remoteAddress, SocketAddress localAddress, ChannelPromise promise)
+        + void disconnect(ChannelHandlerContext ctx, ChannelPromise promise)
+        + void close(ChannelHandlerContext ctx, ChannelPromise promise)
+        + void deregister(ChannelHandlerContext ctx, ChannelPromise promise)
+        + void channelReadComplete(ChannelHandlerContext ctx)
+        + void channelRead(ChannelHandlerContext ctx, Object msg)
+        + void write(ChannelHandlerContext ctx, Object msg, ChannelPromise promise)
+        + void channelWritabilityChanged(ChannelHandlerContext ctx)
+        + void flush(ChannelHandlerContext ctx)
+    }
+}
+
+package "io.netty.example.study.common" {
+    ' Message class diagram
+    Message <|-- RequestMessage
+    Message <|-- ResponseMessage
+    OrderProtocolDecoder o-down-"1" RequestMessage
+    OrderProtocolEncoder o-down-"1" ResponseMessage
+
+    abstract class Message<T extends MessageBody> {
+        - MessageHeader messageHeader
+        - T messageBody
+        + T getMessageBody()
+        + void encode(ByteBuf byteBuf)
+        + void decode(ByteBuf msg)
+    }
+
+    class RequestMessage<Operation> { }
+    
+    class ResponseMessage<OperationResult> { }
+}
+
+@enduml
