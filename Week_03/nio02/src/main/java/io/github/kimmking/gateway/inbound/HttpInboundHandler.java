@@ -29,7 +29,10 @@ public class HttpInboundHandler extends ChannelInboundHandlerAdapter {
         this.proxyServers = proxyServers;
         filter = new HttpRequestHeaderAppenderFilter();
         router = new RandomEndpointRouter();
+        initHandler();
+    }
 
+    private void initHandler() {
         String outBoundHandlerType = System.getProperty("outBoundHandlerType", NettyServerApplication.HTTPCLIENT_MODE);
         if (outBoundHandlerType.equalsIgnoreCase(NettyServerApplication.HTTPCLIENT_MODE)) {
             handler = new HttpClientOutboundHandler(router.route(proxyServers));

@@ -44,6 +44,39 @@
 
 
 
+[io.github.kimmking.gateway.inbound.HttpInboundHandler](nio02/src/main/java/io/github/kimmking/gateway/inbound/HttpInboundHandler.java) class 是核心，它指向**filter**、**router**和**handler**。
+
+```java
+private HttpOutBoundHandler handler;
+private final HttpRequestFilter filter;
+private final HttpEndpointRouter router;
+```
+
+三种 **HttpOutBoundHandler** 是由 system property **outBoundHandlerType** 决定的：
+
+```java
+private void initHandler() {
+    String outBoundHandlerType = System.getProperty("outBoundHandlerType", NettyServerApplication.HTTPCLIENT_MODE);
+    if (outBoundHandlerType.equalsIgnoreCase(NettyServerApplication.HTTPCLIENT_MODE)) {
+        handler = new HttpClientOutboundHandler(router.route(proxyServers));
+    } else if (outBoundHandlerType.equalsIgnoreCase(NettyServerApplication.OKHTTP_MODE))  {
+        handler = new OkHttpOutboundHandler(router.route(proxyServers));
+    } else {
+        handler = new NettyHttpClientOutboundHandler(router.route(proxyServers));
+    }
+}
+```
+
+system property **outBoundHandlerType** 是在[io.github.kimmking.gateway.NettyServerApplication](nio02/src/main/java/io/github/kimmking/gateway/NettyServerApplication.java) 中设置的。
+
+```java
+System.setProperty("outBoundHandlerType", NETTY_MODE);
+```
+
+类图如下：
+
+![Class Diagram](nio02/assets/uml/class-diagram.png)
+
 ## 作业4：
 
 **作业要求**：实现路由。

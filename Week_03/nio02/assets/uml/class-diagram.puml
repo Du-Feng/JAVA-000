@@ -1,0 +1,54 @@
+@startuml
+
+NettyServerApplication -right-> HttpInboundServer
+HttpInboundServer -right-> HttpInboundInitializer
+HttpInboundInitializer -right-> HttpInboundHandler
+
+HttpInboundHandler *-right-"1" HttpOutBoundHandler
+HttpClientOutboundHandler .up.|> HttpOutBoundHandler
+OkHttpOutboundHandler .up.|> HttpOutBoundHandler
+NettyHttpClientOutboundHandler .up.|> HttpOutBoundHandler
+
+HttpInboundHandler *-down-"1" HttpRequestFilter
+HttpRequestHeaderAppenderFilter .up.|> HttpRequestFilter
+HttpInboundHandler *-down-"1" HttpEndpointRouter
+RandomEndpointRouter .up.|> HttpEndpointRouter
+
+class NettyServerApplication { }
+class HttpInboundServer { }
+class HttpInboundInitializer { }
+class HttpInboundHandler {
+    - final List<String> proxyServers
+    - HttpOutBoundHandler handler
+    - final HttpRequestFilter filter
+    - final HttpEndpointRouter router
+}
+interface HttpOutBoundHandler {
+    void handle(final FullHttpRequest fullRequest, final ChannelHandlerContext ctx);
+}
+class HttpClientOutboundHandler {
+    - CloseableHttpAsyncClient httpclient
+    - ExecutorService proxyService
+    - String backendUrl
+}
+class OkHttpOutboundHandler {
+    - final OkHttpClient client
+    - final String backendUrl
+}
+class NettyHttpClientOutboundHandler {
+    - NettyHttpClient client
+    - ExecutorService proxyService
+    - String backendUrl
+}
+
+interface HttpRequestFilter {
+    void filter(FullHttpRequest fullRequest, ChannelHandlerContext ctx)
+}
+class HttpRequestHeaderAppenderFilter { }
+
+interface HttpEndpointRouter {
+    String route(List<String> endpoints)
+}
+class RandomEndpointRouter { }
+
+@enduml
