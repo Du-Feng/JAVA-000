@@ -1,6 +1,5 @@
 package io.github.kimmking.gateway.outbound.httpclient4;
 
-import io.github.kimmking.gateway.client.netty.NettyHttpClientOutboundHandler;
 import io.github.kimmking.gateway.outbound.HttpOutBoundHandler;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFutureListener;
