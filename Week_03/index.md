@@ -2,7 +2,7 @@
 
 - [netty-example](netty-example/index.md): 学习netty官方文档。
 - [netty-research](netty-research/index.md): 学习极客时间的课程 《[Netty源码剖析与实战](https://time.geekbang.org/course/intro/100036701)》第四章，练习程序的初级版。
-- netty in action: （尚未完成课程）学习极客时间的课程 《[Netty源码剖析与实战](https://time.geekbang.org/course/intro/100036701)》第五章，练习程序的高级版。
+- [netty in action](netty-in-action.md): （尚未完成课程）学习极客时间的课程 《[Netty源码剖析与实战](https://time.geekbang.org/course/intro/100036701)》第五章，练习程序的高级版。
 
 
 
