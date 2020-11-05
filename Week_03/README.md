@@ -2,7 +2,7 @@
 
 - [netty-example](netty-example/index.md): 学习netty官方文档。
 - [netty-research](netty-research/index.md): 学习极客时间的课程 《[Netty源码剖析与实战](https://time.geekbang.org/course/intro/100036701)》第四章，练习程序的初级版。
-- netty in action: （尚未完成课程）学习极客时间的课程 《[Netty源码剖析与实战](https://time.geekbang.org/course/intro/100036701)》第五章，练习程序的高级版。
+- [netty in action](netty-in-action.md): （尚未完成课程）学习极客时间的课程 《[Netty源码剖析与实战](https://time.geekbang.org/course/intro/100036701)》第五章，练习程序的高级版。
 
 
 
@@ -10,7 +10,7 @@
 
 [作业的详细要求](homework.md)。
 
-
+**备注**：以后时间充裕时，可以学习 [cwdtom/gateway](https://github.com/cwdtom/gateway/blob/master/README-CN.md) ，里面实现了秦老师作业中提出的各种功能。
 
 ## 作业1：
 
@@ -75,7 +75,7 @@ System.setProperty("outBoundHandlerType", NETTY_MODE);
 
 类图如下：
 
-![Class Diagram](C:/Data/Code/GitHub/JAVA-000/Week_03/nio02/assets/uml/class-diagram.png)
+![Class Diagram](nio02/assets/uml/class-diagram.png)
 
 ## 作业4：
 
