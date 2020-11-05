@@ -10,7 +10,7 @@
 
 [作业的详细要求](homework.md)。
 
-
+**备注**：以后时间充裕时，可以学习 [cwdtom/gateway](https://github.com/cwdtom/gateway/blob/master/README-CN.md) ，里面实现了秦老师作业中提出的各种功能。
 
 ## 作业1：
 
