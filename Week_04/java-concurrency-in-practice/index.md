@@ -257,3 +257,44 @@ thread1.join();
 - object.wait() : 放弃锁
 - object.notify() : 通知一个等待的线程来抢这个锁
 - object.notifyAll() : 通知所有等待的线程来抢这个锁
+
+
+
+### package org.example.introduction.lock
+
+演示lock的基本用法。
+
+#### ConditionDemo
+
+演示 lock 和 condition的结合使用方法。
+
+#### ObjectCache
+
+演示了Semaphore的使用方法。
+
+#### package org.example.introduction.lock
+
+演示ReentrantLock 的使用办法，它继承自interface Lock，在同一个线程中，可以多次获取到此锁。
+
+#### package org.example.introduction.lock.reentrantreadwrite
+
+演示ReentrantReadWriteLock 的使用办法，它继承自interface ReadWriteLock，有读、写两把锁。
+
+注：ReadWriteLock 不支持 condition。
+
+#### ReentrantReadWriteLockDemo2
+
+继续演示ReentrantReadWriteLock 的使用办法。
+
+#### package org.example.introduction.lock.deadlock
+
+演示了一种死锁。
+
+注：这里使用byte[]作为锁，不推荐这种用法，推荐使用object作为锁。
+
+#### LockSupportDemo
+
+演示LockSupport的使用方法。
+
+- Thread 1 被park后，使用interrupt唤醒t1。
+- Thread 1 被park后，使用unpark唤醒t1。
