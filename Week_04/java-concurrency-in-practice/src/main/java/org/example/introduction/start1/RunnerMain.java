@@ -1,4 +1,4 @@
-package org.example.introduction.practice1;
+package org.example.introduction.start1;
 
 import java.io.IOException;
 

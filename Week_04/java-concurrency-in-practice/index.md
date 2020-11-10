@@ -153,21 +153,21 @@ Java 中的线程状态转换图:
 
 ### DaemonThread
 
-- 默认线程是非守护线程，用于完成某个任务。
+- 默认线程是前台线程，用于完成某个任务。
 
-- 守护线程用于为其它线程提供服务，比如keep alive。可用如下代码指定一个线程为守护线程。当其它任务线程结束后，守护线程就会自动结束。
+- 守护线程用于为其它线程提供服务，比如keep alive。可用如下代码指定一个线程为守护线程。
 
 ```java
 thread.setDaemon(true);
 ```
 
+- 当所有前台线程结束后，主线程就会结束，守护线程也就会随之结束。
+
+**注**：由于这个练习中只有一个主线程、一个守护线程，也就是说没有任何任务线程，所以当为true时，守护线程不会启动。
 
 
-由于这个练习中只有一个主线程、一个守护线程，也就是说没有任何任务线程，所以当为true时，守护线程不会启动。
 
-
-
-### package org.example.introduction.practice1
+### package org.example.introduction.start1
 
 演示启动线程的一个方法：实现接口 **Runnable**，没有任何返回值。
 
@@ -211,7 +211,7 @@ boolean result1 = Thread.interrupted(); // 重置状态
 boolean result3 = Thread.currentThread().isInterrupted(); // 重新获取中断状态，结果为false
 ```
 
-### package org.example.introduction.practice2
+### package org.example.introduction.start2
 
 这里演示了三种启动线程的办法：
 
@@ -220,3 +220,27 @@ boolean result3 = Thread.currentThread().isInterrupted(); // 重新获取中断�
 - 实现接口**Callable**，有返回值，可以通过**FutureTask**获取到返回值。
 
 类图如下：
+
+
+
+### package org.example.introduction.collaboration1
+
+演示了如何通过 thread.join() 实现线程间的协作和通信。
+
+执行如下方法时，当前线程会暂停，直至thread1执行完，才会再继续执行当前线程。
+
+```java
+thread1.join();
+```
+
+
+
+### package org.example.introduction.collaboration2
+
+演示了如何通过object.wait() 和 object.notifyAll() 实现线程间的协作和通信。
+
+需要结合 synchronized ,它们的后台锁是 this，即当前对象：
+
+- object.wait() : 放弃锁
+- object.notify() : 通知一个等待的线程来抢这个锁
+- object.notifyAll() : 通知所有等待的线程来抢这个锁

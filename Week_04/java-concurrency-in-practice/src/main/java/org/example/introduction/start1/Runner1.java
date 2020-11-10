@@ -1,4 +1,4 @@
-package org.example.introduction.practice1;
+package org.example.introduction.start1;
 
 public class Runner1 implements Runnable {
     @Override

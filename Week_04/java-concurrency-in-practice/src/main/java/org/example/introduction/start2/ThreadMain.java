@@ -1,4 +1,4 @@
-package org.example.introduction.practice2;
+package org.example.introduction.start2;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
