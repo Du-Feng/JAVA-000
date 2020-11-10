@@ -223,6 +223,19 @@ boolean result3 = Thread.currentThread().isInterrupted(); // 重新获取中断�
 
 
 
+### package org.example.introduction.sync
+
+演示synchronized的使用方法：
+
+- 实例方法锁的是 this 代表的对象
+- 静态方法锁的是对应的 Class 对象
+- synchronized块使用的是 this 对象
+- synchronized(obj)使用的是obj对象
+
+**注**：Thread3 中的锁无效。
+
+
+
 ### package org.example.introduction.collaboration1
 
 演示了如何通过 thread.join() 实现线程间的协作和通信。
