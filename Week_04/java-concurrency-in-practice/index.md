@@ -298,3 +298,22 @@ thread1.join();
 
 - Thread 1 被park后，使用interrupt唤醒t1。
 - Thread 1 被park后，使用unpark唤醒t1。
+
+### package org.example.introduction.atomic
+
+#### Count
+
+实现了int的加法，但是线程不安全。
+
+#### SyncCount
+
+利用synchronized实现了线程安全的int加法。
+
+#### AtomicCount和AtomicMain
+
+演示了AtomicInteger的使用方法。
+
+LongDemo
+
+演示了AtomicLong和LongAdder。
+
