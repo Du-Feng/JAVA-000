@@ -1,6 +1,5 @@
 package org.example.advance.tool;
 
-
 import java.util.concurrent.CountDownLatch;
 
 public class CountDownLatchDemo {
