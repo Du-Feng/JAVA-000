@@ -264,23 +264,33 @@ thread1.join();
 
 演示lock的基本用法。
 
+
+
 #### ConditionDemo
 
 演示 lock 和 condition的结合使用方法。
+
+
 
 #### ObjectCache
 
 演示了Semaphore的使用方法。
 
+
+
 #### package org.example.introduction.lock
 
 演示ReentrantLock 的使用办法，它继承自interface Lock，在同一个线程中，可以多次获取到此锁。
+
+
 
 #### package org.example.introduction.lock.reentrantreadwrite
 
 演示ReentrantReadWriteLock 的使用办法，它继承自interface ReadWriteLock，有读、写两把锁。
 
 注：ReadWriteLock 不支持 condition。
+
+
 
 #### ReentrantReadWriteLockDemo2
 
@@ -314,12 +324,16 @@ ReadWriteLock 支持两种模式：一种是**读锁**，一种是**写锁**。
 
 注：这里使用byte[]作为锁，不推荐这种用法，推荐使用object作为锁。
 
+
+
 #### LockSupportDemo
 
 演示LockSupport的使用方法。
 
 - Thread 1 被park后，使用interrupt唤醒t1。
 - Thread 1 被park后，使用unpark唤醒t1。
+
+
 
 ### package org.example.introduction.atomic
 
@@ -331,6 +345,8 @@ ReadWriteLock 支持两种模式：一种是**读锁**，一种是**写锁**。
 
 利用synchronized实现了线程安全的int加法。
 
+
+
 #### AtomicCount和AtomicMain
 
 演示了AtomicInteger的使用方法。
@@ -341,11 +357,25 @@ LongDemo
 
 
 
-## package org.example.advance.future
+## package org.example.advance
 
-### CompletableFutureDemo
+### package org.example.advance.future
 
-#### 创建 CompletableFuture 对象
+#### FutureDemo
+
+演示Future的用法。
+
+
+
+#### FutureTaskDemo1 & FutureTaskDemo2
+
+演示 FutureTask 的用法。
+
+
+
+#### CompletableFutureDemo
+
+##### 创建 CompletableFuture 对象
 
 创建 CompletableFuture 对象主要靠下面代码中展示的这 4 个静态方法，我们先看前两个：runAsync(Runnable runnable)和supplyAsync(Supplier supplier)，它们之间的区别是：Runnable 接口的 run() 方法没有返回值，而 Supplier 接口的 get() 方法是有返回值的。
 
@@ -360,7 +390,9 @@ static CompletableFuture<Void> runAsync(Runnable runnable, Executor executor)
 static <U> CompletableFuture<U> supplyAsync(Supplier<U> supplier, Executor executor)
 ```
 
-#### 如何理解 CompletionStage 接口
+
+
+##### 如何理解 CompletionStage 接口
 
 可以站在分工的角度类比一下工作流。任务是有时序关系的，比如有串行关系、并行关系、汇聚关系等。这样说可能有点抽象，这里还举前面烧水泡茶的例子，其中洗水壶和烧开水就是串行关系，洗水壶、烧开水和洗茶壶、洗茶杯这两组任务之间就是并行关系，而烧开水、拿茶叶和泡茶就是汇聚关系。
 
@@ -407,6 +439,40 @@ static <U> CompletableFuture<U> supplyAsync(Supplier<U> supplier, Executor execu
 
 
 
-#### 获取 CompletableFuture 结果
+##### 获取 CompletableFuture 结果
 
 上面的组合完毕后，在最后执行join()方法，可以获取结果。
+
+
+
+#### package org.example.advance.tool
+
+演示各种工具类的使用方法：
+
+- CountDownLatch
+- CyclicBarrier
+- Semaphore
+
+
+
+#### package org.example.advance.threadpool
+
+演示线程池的使用方法。
+
+
+
+#### package org.example.advance.threadlocal
+
+演示ThreadLocal的使用方法。
+
+
+
+#### package org.example.advance.collection
+
+演示线程安全collection的使用方法。
+
+
+
+#### package org.example.advance.stream
+
+演示线程安全collection的stream用法。
