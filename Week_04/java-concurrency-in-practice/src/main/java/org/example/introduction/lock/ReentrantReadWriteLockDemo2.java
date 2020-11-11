@@ -6,9 +6,7 @@ import java.util.Map;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class ReentrantReadWriteLockDemo2 {
-
     private final Map<String, Object> map = new HashMap<>();
-
     private final ReentrantReadWriteLock rwLock = new ReentrantReadWriteLock();
 
     public Object readWrite(String key) {
@@ -43,6 +41,5 @@ public class ReentrantReadWriteLockDemo2 {
         ReentrantReadWriteLockDemo2 demo2 = new ReentrantReadWriteLockDemo2();
         demo2.readWrite("bingfabiancheng");
     }
-
 }
 

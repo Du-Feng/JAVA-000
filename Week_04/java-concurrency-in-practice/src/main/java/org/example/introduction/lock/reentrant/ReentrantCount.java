@@ -3,7 +3,7 @@ package org.example.introduction.lock.reentrant;
 
 import java.util.concurrent.locks.ReentrantLock;
 
-public class Count {
+public class ReentrantCount {
 
     final ReentrantLock lock = new ReentrantLock();
 

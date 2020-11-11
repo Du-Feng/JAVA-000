@@ -1,7 +1,7 @@
 package org.example.introduction.lock.deadlock;
 
 
-public class Count3 {
+public class Count {
 
     private byte[] lock1 = new byte[1];
     private byte[] lock2 = new byte[1];

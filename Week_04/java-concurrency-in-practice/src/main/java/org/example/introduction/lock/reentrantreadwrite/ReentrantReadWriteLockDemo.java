@@ -4,7 +4,7 @@ package org.example.introduction.lock.reentrantreadwrite;
 public class ReentrantReadWriteLockDemo {
 
     public static void main(String[] args) {
-        final Count2 count = new Count2();
+        final ReentrantReadWriteCount count = new ReentrantReadWriteCount();
 
         for (int i = 0; i < 5; i++) {
             new Thread() {

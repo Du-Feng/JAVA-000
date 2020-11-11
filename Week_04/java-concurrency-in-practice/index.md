@@ -286,6 +286,22 @@ thread1.join();
 
 继续演示ReentrantReadWriteLock 的使用办法。
 
+
+
+#### StampedLockDemo
+
+我们先来看看在使用上 StampedLock 和上一篇文章讲的 ReadWriteLock 有哪些区别。
+
+ReadWriteLock 支持两种模式：一种是**读锁**，一种是**写锁**。
+
+而 StampedLock 支持三种模式，分别是：**写锁**、**悲观读锁**和**乐观读**。其中，写锁、悲观读锁的语义和 ReadWriteLock 的写锁、读锁的语义非常类似，允许多个线程同时获取悲观读锁，但是只允许一个线程获取写锁，写锁和悲观读锁是互斥的。不同的是：StampedLock 里的写锁和悲观读锁加锁成功之后，都会返回一个 stamp；然后解锁的时候，需要传入这个 stamp。
+
+**注意这里，我们用的是“乐观读”这个词，而不是“乐观读锁”，**是要提醒你，**乐观读这个操作是无锁的**，所以相比较 ReadWriteLock 的读锁，乐观读的性能更好一些。
+
+StampedLock 的性能之所以比 ReadWriteLock 还要好，其关键是 StampedLock 支持乐观读的方式。ReadWriteLock 支持多个线程同时读，但是当多个线程同时读的时候，所有的写操作会被阻塞；而 StampedLock 提供的乐观读，是允许一个线程获取写锁的，也就是说不是所有的写操作都被阻塞。
+
+
+
 #### package org.example.introduction.lock.deadlock
 
 演示了一种死锁。

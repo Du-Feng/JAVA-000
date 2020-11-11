@@ -3,7 +3,7 @@ package org.example.introduction.lock.reentrantreadwrite;
 
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-public class Count2 {
+public class ReentrantReadWriteCount {
 
     private final ReentrantReadWriteLock rwLock = new ReentrantReadWriteLock();
 

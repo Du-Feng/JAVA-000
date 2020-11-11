@@ -2,7 +2,7 @@ package org.example.introduction.lock.reentrant;
 
 public class ReentrantLockDemo {
     public static void main(String[] args) {
-        final Count count = new Count();
+        final ReentrantCount count = new ReentrantCount();
 
         for (int i = 0; i < 2; i++) {
             new Thread() {
