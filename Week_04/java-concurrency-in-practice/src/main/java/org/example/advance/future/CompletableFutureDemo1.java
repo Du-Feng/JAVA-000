@@ -2,7 +2,7 @@ package org.example.advance.future;
 
 import java.util.concurrent.CompletableFuture;
 
-public class CompletableFutureDemo {
+public class CompletableFutureDemo1 {
     public static void main(String[] args) {
         // 1.变换结果
         System.out.println("\n=====>1.变换结果");

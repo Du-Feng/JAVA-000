@@ -317,3 +317,74 @@ LongDemo
 
 演示了AtomicLong和LongAdder。
 
+
+
+## package org.example.advance.future
+
+### CompletableFutureDemo
+
+#### 创建 CompletableFuture 对象
+
+创建 CompletableFuture 对象主要靠下面代码中展示的这 4 个静态方法，我们先看前两个：runAsync(Runnable runnable)和supplyAsync(Supplier supplier)，它们之间的区别是：Runnable 接口的 run() 方法没有返回值，而 Supplier 接口的 get() 方法是有返回值的。
+
+前两个方法和后两个方法的区别在于：后两个方法可以指定线程池参数。
+
+```java
+//使用默认线程池
+static CompletableFuture<Void> runAsync(Runnable runnable)
+static <U> CompletableFuture<U> supplyAsync(Supplier<U> supplier)
+//可以指定线程池  
+static CompletableFuture<Void> runAsync(Runnable runnable, Executor executor)
+static <U> CompletableFuture<U> supplyAsync(Supplier<U> supplier, Executor executor)
+```
+
+#### 如何理解 CompletionStage 接口
+
+可以站在分工的角度类比一下工作流。任务是有时序关系的，比如有串行关系、并行关系、汇聚关系等。这样说可能有点抽象，这里还举前面烧水泡茶的例子，其中洗水壶和烧开水就是串行关系，洗水壶、烧开水和洗茶壶、洗茶杯这两组任务之间就是并行关系，而烧开水、拿茶叶和泡茶就是汇聚关系。
+
+串行关系：
+
+![CompletionStage Flow](assets/future/CompletionStage-flow-serial.png)
+
+
+
+并行关系：
+
+![CompletionStage Flow](assets/future/CompletionStage-flow-parallel.png)
+
+
+
+汇聚关系：
+
+![CompletionStage Flow](assets/future/CompletionStage-flow-aggregation.png)
+
+
+
+| Type                     | 串行                                                         |
+| ------------------------ | ------------------------------------------------------------ |
+| 有参数和返回值           | CompletionStage<R> thenApply(fn);<br/>CompletionStage<R> thenApplyAsync(fn); |
+| 有参数，但是没有返回值   | CompletionStage<Void> thenAccept(consumer);<br/>CompletionStage<Void> thenAcceptAsync(consumer); |
+| 无参数，无返回值         | CompletionStage<Void> thenRun(action);<br/>CompletionStage<Void> thenRunAsync(action); |
+| 子流程（有参数和返回值） | CompletionStage<R> thenCompose(fn);<br/>CompletionStage<R> thenComposeAsync(fn); |
+
+
+
+| Type                   | AND汇聚                                                      |
+| ---------------------- | ------------------------------------------------------------ |
+| 有参数和返回值         | CompletionStage<R> thenCombine(other, fn);<br/>CompletionStage<R> thenCombineAsync(other, fn); |
+| 有参数，但是没有返回值 | CompletionStage<Void> thenAcceptBoth(other, consumer);<br/>CompletionStage<Void> thenAcceptBothAsync(other, consumer); |
+| 无参数，无返回值       | CompletionStage<Void> runAfterBoth(other, action);<br/>CompletionStage<Void> runAfterBothAsync(other, action); |
+
+
+
+| Type                   | OR汇聚                                                       |
+| ---------------------- | ------------------------------------------------------------ |
+| 有参数和返回值         | CompletionStage applyToEither(other, fn);<br/>CompletionStage applyToEitherAsync(other, fn); |
+| 有参数，但是没有返回值 | CompletionStage acceptEither(other, consumer);<br/>CompletionStage acceptEitherAsync(other, consumer); |
+| 无参数，无返回值       | CompletionStage runAfterEither(other, action);<br/>CompletionStage runAfterEitherAsync(other, action); |
+
+
+
+#### 获取 CompletableFuture 结果
+
+上面的组合完毕后，在最后执行join()方法，可以获取结果。
