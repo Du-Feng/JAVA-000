@@ -1,22 +1,22 @@
 package org.example.homework;
 
-import java.util.Random;
-import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
-public class FutureHomework {
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
+public class ThreadJoinSolution {
+    private static Object lock = new Object();
+
+    public static void main(String[] args) throws InterruptedException {
         long start = System.currentTimeMillis();
         // 在这里创建一个线程或线程池，
         // 异步执行 下面方法
-        ExecutorService executor = Executors.newSingleThreadExecutor();
-        Future<Integer> future = executor.submit(new Callable<Integer>() {
-            public Integer call() throws Exception {
-                return FutureHomework.sum();
-            }
+        AtomicInteger value = new AtomicInteger();
+        Thread thread = new Thread(()-> {
+            value.set(sum());
         });
-        executor.shutdown();
+        thread.start();
+        thread.join();
 
-        int result = future.get(); //这是得到的返回值
+        int result = value.get(); //这是得到的返回值
 
         // 确保  拿到result 并输出
         System.out.println("异步计算结果为：" + result);

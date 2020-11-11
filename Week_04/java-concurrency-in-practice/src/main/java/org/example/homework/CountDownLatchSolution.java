@@ -3,7 +3,7 @@ package org.example.homework;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class CountDownLatchHomework {
+public class CountDownLatchSolution {
     public static void main(String[] args) throws InterruptedException {
         CountDownLatch countDownLatch = new CountDownLatch(1);
         long start = System.currentTimeMillis();

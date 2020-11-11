@@ -2,12 +2,12 @@ package org.example.homework;
 
 import java.util.concurrent.CompletableFuture;
 
-public class CompletableFutureHomework {
+public class CompletableFutureSolution {
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
         // 在这里创建一个线程或线程池，
         // 异步执行 下面方法
-        int result = CompletableFuture.supplyAsync(CompletableFutureHomework::sum).join(); //这是得到的返回值
+        int result = CompletableFuture.supplyAsync(CompletableFutureSolution::sum).join(); //这是得到的返回值
 
         // 确保  拿到result 并输出
         System.out.println("异步计算结果为：" + result);

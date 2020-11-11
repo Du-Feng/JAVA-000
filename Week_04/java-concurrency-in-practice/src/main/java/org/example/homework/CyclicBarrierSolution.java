@@ -3,7 +3,7 @@ package org.example.homework;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
-public class CyclicBarrierHomework {
+public class CyclicBarrierSolution {
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
         // 在这里创建一个线程或线程池，

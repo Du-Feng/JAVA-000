@@ -5,7 +5,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
-public class FutureTaskHomework {
+public class FutureTaskSolution {
     public static void main(String[] args) throws InterruptedException {
         long start = System.currentTimeMillis();
         // 在这里创建一个线程或线程池，
@@ -13,7 +13,7 @@ public class FutureTaskHomework {
         FutureTask<Integer> futureTask = new FutureTask(new Callable<Integer>() {
             @Override
             public Integer call() throws Exception {
-                return FutureTaskHomework.sum();
+                return FutureTaskSolution.sum();
             }
         });
         new Thread(futureTask).start();
