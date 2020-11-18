@@ -8,8 +8,9 @@ import lombok.extern.slf4j.Slf4j;
 public class Person {
     private String firstName;
     private String lastName;
-
     private Address address;
+
+    private Contact contact;
 
     public String getFirstName() {
         return firstName;
@@ -33,5 +34,13 @@ public class Person {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public Contact getContact() {
+        return contact;
+    }
+
+    public void setContact(Contact contact) {
+        this.contact = contact;
     }
 }
