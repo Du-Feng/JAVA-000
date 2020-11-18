@@ -8,7 +8,21 @@
                         http://www.springframework.org/schema/context
                         http://www.springframework.org/schema/context/spring-context-3.2.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <context:component-scan base-package="org.example.bean.wiring.scan"/>
+<!--    <context:component-scan base-package="org.example.bean.wiring.autoscan"/>-->
+
+    <bean id="student1" class="org.example.bean.wiring.autoscan.Student" init-method="init"></bean>
+    <bean id="student2" class="org.example.bean.wiring.autoscan.Student" init-method="init"></bean>
+    <bean id="klass" class="org.example.bean.wiring.autoscan.Klass">
+        <property name="students">
+            <list>
+                <ref bean="student1"></ref>
+                <ref bean="student2"></ref>
+            </list>
+        </property>
+        <property name="klassName">
+            <value>极客时间6班</value>
+        </property>
+    </bean>
 
     <bean id="xmlBean" class="org.example.bean.wiring.xml.Person">
         <property name="firstName" value="Feng"/>
