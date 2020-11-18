@@ -8,7 +8,7 @@
                         http://www.springframework.org/schema/context
                         http://www.springframework.org/schema/context/spring-context-3.2.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <context:component-scan base-package="org.example.bean.wiring.annotation"/>
+    <context:component-scan base-package="org.example.bean.wiring.scan"/>
 
     <bean id="xmlBean" class="org.example.bean.wiring.xml.Person">
         <property name="firstName" value="Feng"/>

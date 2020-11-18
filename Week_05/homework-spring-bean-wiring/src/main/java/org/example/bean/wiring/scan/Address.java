@@ -1,4 +1,4 @@
-package org.example.bean.wiring.annotation;
+package org.example.bean.wiring.scan;
 
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
