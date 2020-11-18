@@ -9,9 +9,9 @@ import java.lang.reflect.Proxy;
 
 @Slf4j
 public class OrderServiceProxy implements InvocationHandler {
-    private Object target;
+    private OrderService target;
 
-    public void OrderServiceProxy(Object target) {
+    public OrderServiceProxy(OrderService target) {
         this.target = target;
     }
 
@@ -19,10 +19,10 @@ public class OrderServiceProxy implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         log.info("Start the proxy");
         long startTime = System.currentTimeMillis();
-        Object invoke = method.invoke(target, args);
-        log.info("执行目标方法花费时间：" + (System.currentTimeMillis() - startTime));
+        Object result = method.invoke(target, args);
+        log.info("Elapsed time: " + (System.currentTimeMillis() - startTime));
         log.info("Complete the proxy");
-        return invoke;
+        return result;
     }
 
     public OrderService getProxyObject() {
