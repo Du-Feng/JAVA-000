@@ -1,18 +1,14 @@
-package org.example.bean.wiring.annotation;
+package org.example.bean.wiring.xml;
 
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 @Slf4j
 @ToString
-@Component
 public class Person {
     private String firstName;
     private String lastName;
 
-    @Autowired
     private Address address;
 
     public String getFirstName() {

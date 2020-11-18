@@ -10,5 +10,13 @@
 
     <context:component-scan base-package="org.example.bean.wiring.annotation"/>
 
+    <bean id="xmlBean" class="org.example.bean.wiring.xml.Person">
+        <property name="firstName" value="Feng"/>
+        <property name="lastName" value="Du"/>
+        <property name="address" ref="xmlAddress"/>
+    </bean>
+    <bean id="xmlAddress" class="org.example.bean.wiring.xml.Address">
+        <property name="address" value="(XML Address) Dalian, China" />
+    </bean>
 
 </beans>

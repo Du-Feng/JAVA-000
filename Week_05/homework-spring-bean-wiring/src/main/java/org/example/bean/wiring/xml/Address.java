@@ -1,10 +1,8 @@
-package org.example.bean.wiring.annotation;
+package org.example.bean.wiring.xml;
 
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
 
-@Component
 @Slf4j
 @ToString
 public class Address {
@@ -15,6 +13,6 @@ public class Address {
     }
 
     public void setAddress(String address) {
-        this.address = "two address";
+        this.address = address;
     }
 }
