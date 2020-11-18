@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/context/spring-context-3.2.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="xmlBean" class="org.example.bean.wiring.xml.Person">
+        <property name="firstName" value="Feng"/>
+        <property name="lastName" value="Du"/>
+        <property name="address" ref="xmlAddress"/>
+        <property name="contact" ref="xmlContact"/>
+        <property name="occupation" ref="xmlOccupationFactoryBean"/>
+    </bean>
+    <!-- Member -->
+    <bean id="xmlAddress" class="org.example.bean.wiring.xml.Address">
+        <property name="address" value="(XML Address) Dalian, China"/>
+    </bean>
+    <!-- 构造函数 -->
+    <bean id="xmlContact" class="org.example.bean.wiring.xml.Contact">
+        <constructor-arg name="email" value="feng.du@outlook.com"/>
+        <constructor-arg name="phone" value="18525461400"/>
+    </bean>
+    <!-- Bean Factory -->
+    <bean id="xmlOccupationFactoryBean" class="org.example.bean.wiring.xml.OccupationFactoryBean"/>
+
+</beans>

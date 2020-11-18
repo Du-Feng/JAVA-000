@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 
 @Slf4j
-@ImportResource("applicationContext.xml")
+@ImportResource("autoscan-bean-context.xml")
 @Configuration
 @ComponentScan(basePackages = {"org.example.bean.wiring.autoscan"})
 public class AutoScanWithXmlApplication {
