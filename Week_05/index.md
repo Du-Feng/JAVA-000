@@ -31,5 +31,4 @@
 ## 第10节课作业实践
 
 1. （选做）总结一下，单例的各种写法，比较它们的优劣。
-2. （选做）maven/spring 的 profile 机制，都有什么用法？
-3. （必做）给前面课程提供的 Student/Klass/School 实现自动配置和 Starter。
+2. （必做）给前面课程提供的 Student/Klass/School 实现自动配置和 Starter。
