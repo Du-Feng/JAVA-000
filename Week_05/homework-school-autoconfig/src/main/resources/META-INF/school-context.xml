@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="student1" class="com.example.school.autoconfig.bean.Student">
+        <property name="id" value="1"></property>
+        <property name="name" value="杜枫"></property>
+    </bean>
+
+    <bean id="student2" class="com.example.school.autoconfig.bean.Student">
+        <property name="id" value="2"></property>
+        <property name="name" value="龚靖"></property>
+    </bean>
+
+    <bean id="student3" class="com.example.school.autoconfig.bean.Student">
+        <property name="id" value="3"></property>
+        <property name="name" value="龚静"></property>
+    </bean>
+
+    <bean id="klass" class="com.example.school.autoconfig.bean.Klass">
+        <property name="students">
+            <list>
+                <ref bean="student1"></ref>
+                <ref bean="student2"></ref>
+                <ref bean="student3"></ref>
+            </list>
+        </property>
+        <property name="klassName">
+            <value>Java进阶训练营6班</value>
+        </property>
+    </bean>
+
+    <bean id="school" class="com.example.school.autoconfig.bean.School">
+        <property name="klass" ref="klass"></property>
+        <property name="student" ref="student1"></property>
+    </bean>
+
+</beans>
