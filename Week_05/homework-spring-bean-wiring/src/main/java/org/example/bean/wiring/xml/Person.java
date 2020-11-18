@@ -9,8 +9,8 @@ public class Person {
     private String firstName;
     private String lastName;
     private Address address;
-
     private Contact contact;
+    private Occupation occupation;
 
     public String getFirstName() {
         return firstName;
@@ -42,5 +42,13 @@ public class Person {
 
     public void setContact(Contact contact) {
         this.contact = contact;
+    }
+
+    public Occupation getOccupation() {
+        return occupation;
+    }
+
+    public void setOccupation(Occupation occupation) {
+        this.occupation = occupation;
     }
 }

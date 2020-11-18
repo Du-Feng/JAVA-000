@@ -15,13 +15,18 @@
         <property name="lastName" value="Du"/>
         <property name="address" ref="xmlAddress"/>
         <property name="contact" ref="xmlContact" />
+        <property name="occupation" ref="xmlOccupationFactoryBean" />
     </bean>
+    <!-- Member -->
     <bean id="xmlAddress" class="org.example.bean.wiring.xml.Address">
         <property name="address" value="(XML Address) Dalian, China" />
     </bean>
+    <!-- 构造函数 -->
     <bean id="xmlContact" class="org.example.bean.wiring.xml.Contact">
         <constructor-arg name="email" value="feng.du@outlook.com" />
         <constructor-arg name="phone" value="18525461400" />
     </bean>
+    <!-- Bean Factory -->
+    <bean id="xmlOccupationFactoryBean" class="org.example.bean.wiring.xml.OccupationFactoryBean" />
 
 </beans>
