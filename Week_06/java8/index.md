@@ -5,14 +5,16 @@
 按照秦老师课上讲解的内容，同时参考如下资料，学习Lambda、Method Reference和Stream的使用方法：
 
 - 《Java in Action》
+- [Exceptions in Java 8 Lambda Expressions]([Exceptions in Java 8 Lambda Expressions | Baeldung](https://www.baeldung.com/java-lambda-exceptions))
+- [Sneakily Throwing Exceptions in Lambda Expressions in Java]([Sneakily Throwing Exceptions in Lambda Expressions in Java – { 4Comprehension }](https://4comprehension.com/sneakily-throwing-exceptions-in-lambda-expressions-in-java/))
 
 
 
 当下还存在如下不足之处：
 
-- Collect和reduce掌握的不太熟练。
+- Collect掌握的不太熟练。
 
-- 没有学习并行数据处理。
+- 并行数据处理理解的不够透彻。
 
 
 
@@ -251,26 +253,31 @@ Putting lambdas into practice: the execute-around pattern
 
 函数式接口定义且只定义了一个抽象方法。函数式接口很有用，因为抽象方法的签名可以描述Lambda表达式的签名。函数式接口的抽象方法的签名称为函数描述符。所以为了应用不同的Lambda表达式，需要一套能够描述常见函数描述符的函数式接口。
 
-- Predicate<T> 有参数、条件判断
-- Function<T, R> 有参数、有返回值
-- Consumer<T> 无返回值
+- Predicate<T> 有一个参数、条件判断
+- Function<T, R> 有一个参数、有返回值
+- Consumer<T> 有一个参数、无返回值
 - Supplier<T>    无参数、有返回值
+- BiPredicate<T, U> 有两个参数、条件判断
+- BiFunction<T, U, R> 有两个参数、有返回值
+- BiConsumer<T, U> 有两个参数、无返回值
+- UnaryOperator<T> (UnaryOperator<T> extends Function<T, T>) 一个参数、相同类型的返回值
+- BinaryOperator<T> (BinaryOperator<T> extends BiFunction<T,T,T>) 有两个相同类型的参数、相同类型的返回值
 
 
 
 **Common functional interfaces added in Java 8 java.util.function package:**
 
-| Functional interface | Predicate<T>      | Consumer<T>                                                  |
-| -------------------- | ----------------- | ------------------------------------------------------------ |
-| Predicate<T>         | T -> boolean      | IntPredicate,<br/>LongPredicate,<br/>DoublePredicate         |
-| Consumer<T>          | T -> void         | IntConsumer,<br/>LongConsumer,<br/>DoubleConsumer            |
-| Function<T, R>       | T -> R            | IntFunction<R>,<br/>IntToDoubleFunction,<br/>IntToLongFunction,<br/>LongFunction<R>,<br/>LongToDoubleFunction,<br/>LongToIntFunction,<br/>DoubleFunction<R>,<br/>DoubleToIntFunction,<br/>DoubleToLongFunction,<br/>ToIntFunction<T>,<br/>ToDoubleFunction<T>,<br/>ToLongFunction<T> |
-| Supplier<T>          | () -> T           | BooleanSupplier,<br/>IntSupplier,<br/>LongSupplier,<br/>DoubleSupplier |
-| UnaryOperator<T>     | T -> T            | IntUnaryOperator,<br/>LongUnaryOperator,<br/>DoubleUnaryOperator |
-| BinaryOperator<T>    | (T, T) -> T       | IntBinaryOperator,<br/>LongBinaryOperator,<br/>DoubleBinaryOperator |
-| BiPredicate<T, U>    | (T, U) -> boolean |                                                              |
-| BiConsumer<T, U>     | (T, U) -> void    | ObjIntConsumer<T>,<br/>ObjLongConsumer<T>,<br/>ObjDoubleConsumer<T> |
-| BiFunction<T, U, R>  | (T, U) -> R       | ToIntBiFunction<T, U>,<br/>ToLongBiFunction<T, U>,<br/>ToDoubleBiFunction<T, U> |
+| Functional interface                                         | Predicate<T>      | Consumer<T>                                                  |
+| ------------------------------------------------------------ | ----------------- | ------------------------------------------------------------ |
+| Predicate<T>                                                 | T -> boolean      | IntPredicate,<br/>LongPredicate,<br/>DoublePredicate         |
+| Consumer<T>                                                  | T -> void         | IntConsumer,<br/>LongConsumer,<br/>DoubleConsumer            |
+| Function<T, R>                                               | T -> R            | IntFunction<R>,<br/>IntToDoubleFunction,<br/>IntToLongFunction,<br/>LongFunction<R>,<br/>LongToDoubleFunction,<br/>LongToIntFunction,<br/>DoubleFunction<R>,<br/>DoubleToIntFunction,<br/>DoubleToLongFunction,<br/>ToIntFunction<T>,<br/>ToDoubleFunction<T>,<br/>ToLongFunction<T> |
+| Supplier<T>                                                  | () -> T           | BooleanSupplier,<br/>IntSupplier,<br/>LongSupplier,<br/>DoubleSupplier |
+| UnaryOperator<T><br/>(UnaryOperator<T> extends Function<T, T>) | T -> T            | IntUnaryOperator,<br/>LongUnaryOperator,<br/>DoubleUnaryOperator |
+| BinaryOperator<T><br/>(BinaryOperator<T> extends BiFunction<T,T,T>) | (T, T) -> T       | IntBinaryOperator,<br/>LongBinaryOperator,<br/>DoubleBinaryOperator |
+| BiPredicate<T, U>                                            | (T, U) -> boolean |                                                              |
+| BiConsumer<T, U>                                             | (T, U) -> void    | ObjIntConsumer<T>,<br/>ObjLongConsumer<T>,<br/>ObjDoubleConsumer<T> |
+| BiFunction<T, U, R>                                          | (T, U) -> R       | ToIntBiFunction<T, U>,<br/>ToLongBiFunction<T, U>,<br/>ToDoubleBiFunction<T, U> |
 
 
 
@@ -684,7 +691,7 @@ menu.stream().forEach(System.out::println);
 
     - min 返回流中最小值。
 
-2. 归约 reduce， 需要初始值（类比Map-Reduce）。
+2. 归约 reduce， 需要提供一个初始值，然后反复结合每个元素，直到将流归约为一个值。
 
 3. 收集 collect
 
