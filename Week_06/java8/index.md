@@ -10,7 +10,7 @@
 
 
 
-当下还存在如下不足之处：
+当下还存在如下**不足**之处：
 
 - Collect掌握的不太熟练。
 
@@ -580,7 +580,7 @@ str.sort(String::compareToIgnoreCase);
 
 
 
-### Stream 操作
+### 流操作
 
 java.util.stream.Stream中的Stream接口定义了许多操作，它们可以分为两大类：
 
@@ -693,7 +693,7 @@ menu.stream().forEach(System.out::println);
 
 2. 归约 reduce， 需要提供一个初始值，然后反复结合每个元素，直到将流归约为一个值。
 
-3. 收集 collect
+3. 收集 collect，也是一个归约操作。
 
     - toList List<T> 把流中元素收集到 List。
 
@@ -721,6 +721,121 @@ menu.stream().forEach(System.out::println);
 
 #### 用流收集数据
 
+collect是一个归约操作，就像reduce一样可以接受各种做法作为参数，将流中的元素累积成一个汇总结果。
+
+具体的做法是通过定义新的Collector接口来定义的，因此区分Collection、Collector和collect是很重要的。 
+
+- Collection 数据集合，即数据源。
+
+- collect 流的一个终端操作 terminal operation，它接收收集器Collector参数，经常由 final class: java.util.stream.Collectors 便捷生成 Collector实例：
+
+    ```java
+    <R, A> R collect(Collector<? super T, A, R> collector);
+    ```
+
+
+
+##### Collector 收集器
+
+java.util.stream package 的一个接口：interface Collector<T, A, R>
+
+- T是流中要收集的项目的泛型。
+- A是累加器的类型，累加器是在收集过程中用于累积部分结果的对象。 
+-  R是收集操作得到的对象（通常但并不一定是集合）的类型。 
+
+它的重要方法如下：
+
+1. 建立᯦的结果容器：supplier方法
+
+2. 将元素添加到结果容器：accumulator方法
+
+3. 对结果容器应用最终转换：finisher方法
+
+4.  合并两个结果容器：combiner方法
+
+5. characteristics方法
+
+    最后一个方法——characteristics会返回一个不可变的Characteristics集合，它定义了收集器的行为——尤其是关于流是否可以并行归约，以及可以使用哪些优化的提示。Characteristics是一个包含三个项目的౥举。
+
+    - UNORDERED——归约结果不受流中项目的遍历和累积顺序的影响。
+    - CONCURRENT——accumulator函数可以从多个线程同时调用，且该收集器可以并行归约流。如果收集器没有标为UNORDERED，那它仅在用于无序数据源时才可以并行归约。
+    - IDENTITY_FINISH——这表明完成器方法返回的函数是一个恒等函数，可以跳过。这种情况下，累加器对象将会直接用作归约过程的最终结果。这也意味着，将累加器A不加检查地转换为结果R是安全的。 
+
+
+
+下图是一个自定义的ToListCollector示例：
+
+![ToListCollector](assets/Stream/ToListCollector.png)
+
+
+
+```java
+package java.util.stream;
+
+/**
+ * @param <T> the type of input elements to the reduction operation
+ * @param <A> the mutable accumulation type of the reduction operation (often
+ *            hidden as an implementation detail)
+ * @param <R> the result type of the reduction operation
+ * @since 1.8
+ */
+public interface Collector<T, A, R> {
+    Supplier<A> supplier();
+    BiConsumer<A, T> accumulator();
+    BinaryOperator<A> combiner();
+    Function<A, R> finisher();
+    Set<Characteristics> characteristics();
+
+    public static<T, R> Collector<T, R, R> of(Supplier<R> supplier,
+                                              BiConsumer<R, T> accumulator,
+                                              BinaryOperator<R> combiner,
+                                              Characteristics... characteristics) {
+        Objects.requireNonNull(supplier);
+        Objects.requireNonNull(accumulator);
+        Objects.requireNonNull(combiner);
+        Objects.requireNonNull(characteristics);
+        Set<Characteristics> cs = (characteristics.length == 0)
+                                  ? Collectors.CH_ID
+                                  : Collections.unmodifiableSet(EnumSet.of(Collector.Characteristics.IDENTITY_FINISH,
+                                                                           characteristics));
+        return new Collectors.CollectorImpl<>(supplier, accumulator, combiner, cs);
+    }
+
+    public static<T, A, R> Collector<T, A, R> of(Supplier<A> supplier,
+                                                 BiConsumer<A, T> accumulator,
+                                                 BinaryOperator<A> combiner,
+                                                 Function<A, R> finisher,
+                                                 Characteristics... characteristics) {
+        Objects.requireNonNull(supplier);
+        Objects.requireNonNull(accumulator);
+        Objects.requireNonNull(combiner);
+        Objects.requireNonNull(finisher);
+        Objects.requireNonNull(characteristics);
+        Set<Characteristics> cs = Collectors.CH_NOID;
+        if (characteristics.length > 0) {
+            cs = EnumSet.noneOf(Characteristics.class);
+            Collections.addAll(cs, characteristics);
+            cs = Collections.unmodifiableSet(cs);
+        }
+        return new Collectors.CollectorImpl<>(supplier, accumulator, combiner, finisher, cs);
+    }
+
+    enum Characteristics {
+        CONCURRENT,
+        UNORDERED,
+        IDENTITY_FINISH
+    }
+}
+```
+
+
+
+##### Collectors 工厂类
+
+java.util.stream package中的一个final class，是Collector的工厂类，里面提供了常用的快速生成 Collector 实例的工厂方法：
+
+
+
 **The main static factory methods of the Collectors class**
 
 | Factory method    | Returned type                                  | Used to                                                      | Example use                                                  |
@@ -739,6 +854,498 @@ menu.stream().forEach(System.out::println);
 | collectingAndThen | The type returned by the transforming function | Wrap another collector and apply a transformation function to its result. | int howManyDishes = menuStream.collect(collectingAndThen(toList(), List::size)); |
 | groupingBy        | Map<K, List<T>>                                | Group the items in the stream based on the value of one of their properties and use those values as keys in the resulting Map. | Map<Dish.Type,List<Dish>> dishesByType = menuStream.collect(groupingBy(Dish::getType)); |
 | partitioningBy    | Map<Boolean, List<T>>                          | Partition the items in the stream based on the result of the application of a predicate to each of them. | Map<Boolean,List<Dish>> vegetarianDishes = menuStream.collect(partitioningBy(Dish::isVegetarian)); |
+
+下图是上表的中文翻译：
+
+![collect](assets/Stream/collect.png)
+
+
+
+```java
+package java.util.stream;
+
+public final class Collectors {
+    private Collectors() { }
+    
+    static class CollectorImpl<T, A, R> implements Collector<T, A, R> { }
+    
+    public static <T, C extends Collection<T>>
+    Collector<T, ?, C> toCollection(Supplier<C> collectionFactory) {
+        return new CollectorImpl<>(collectionFactory, Collection<T>::add,
+                                   (r1, r2) -> { r1.addAll(r2); return r1; },
+                                   CH_ID);
+    }
+    
+    public static <T>
+    Collector<T, ?, List<T>> toList() {
+        return new CollectorImpl<>((Supplier<List<T>>) ArrayList::new, List::add,
+                                   (left, right) -> { left.addAll(right); return left; },
+                                   CH_ID);
+    }
+    
+    public static <T>
+    Collector<T, ?, List<T>> toUnmodifiableList() {
+        return new CollectorImpl<>((Supplier<List<T>>) ArrayList::new, List::add,
+                                   (left, right) -> { left.addAll(right); return left; },
+                                   list -> (List<T>)List.of(list.toArray()),
+                                   CH_NOID);
+    }
+    
+    public static <T>
+    Collector<T, ?, Set<T>> toSet() {
+        return new CollectorImpl<>((Supplier<Set<T>>) HashSet::new, Set::add,
+                                   (left, right) -> {
+                                       if (left.size() < right.size()) {
+                                           right.addAll(left); return right;
+                                       } else {
+                                           left.addAll(right); return left;
+                                       }
+                                   },
+                                   CH_UNORDERED_ID);
+    }
+    
+    public static <T>
+    Collector<T, ?, Set<T>> toUnmodifiableSet() {
+        return new CollectorImpl<>((Supplier<Set<T>>) HashSet::new, Set::add,
+                                   (left, right) -> {
+                                       if (left.size() < right.size()) {
+                                           right.addAll(left); return right;
+                                       } else {
+                                           left.addAll(right); return left;
+                                       }
+                                   },
+                                   set -> (Set<T>)Set.of(set.toArray()),
+                                   CH_UNORDERED_NOID);
+    }
+    
+    public static Collector<CharSequence, ?, String> joining() {
+        return new CollectorImpl<CharSequence, StringBuilder, String>(
+                StringBuilder::new, StringBuilder::append,
+                (r1, r2) -> { r1.append(r2); return r1; },
+                StringBuilder::toString, CH_NOID);
+    }
+    
+    public static Collector<CharSequence, ?, String> joining(CharSequence delimiter) {
+        return joining(delimiter, "", "");
+    }
+    
+    public static Collector<CharSequence, ?, String> joining(CharSequence delimiter,
+                                                             CharSequence prefix,
+                                                             CharSequence suffix) {
+        return new CollectorImpl<>(
+                () -> new StringJoiner(delimiter, prefix, suffix),
+                StringJoiner::add, StringJoiner::merge,
+                StringJoiner::toString, CH_NOID);
+    }
+    
+    public static <T, U, A, R>
+    Collector<T, ?, R> mapping(Function<? super T, ? extends U> mapper,
+                               Collector<? super U, A, R> downstream) {
+        BiConsumer<A, ? super U> downstreamAccumulator = downstream.accumulator();
+        return new CollectorImpl<>(downstream.supplier(),
+                                   (r, t) -> downstreamAccumulator.accept(r, mapper.apply(t)),
+                                   downstream.combiner(), downstream.finisher(),
+                                   downstream.characteristics());
+    }
+    
+    public static <T, U, A, R>
+    Collector<T, ?, R> flatMapping(Function<? super T, ? extends Stream<? extends U>> mapper,
+                                   Collector<? super U, A, R> downstream) {
+        BiConsumer<A, ? super U> downstreamAccumulator = downstream.accumulator();
+        return new CollectorImpl<>(downstream.supplier(),
+                            (r, t) -> {
+                                try (Stream<? extends U> result = mapper.apply(t)) {
+                                    if (result != null)
+                                        result.sequential().forEach(u -> downstreamAccumulator.accept(r, u));
+                                }
+                            },
+                            downstream.combiner(), downstream.finisher(),
+                            downstream.characteristics());
+    }
+    
+    public static <T, A, R>
+    Collector<T, ?, R> filtering(Predicate<? super T> predicate,
+                                 Collector<? super T, A, R> downstream) {
+        BiConsumer<A, ? super T> downstreamAccumulator = downstream.accumulator();
+        return new CollectorImpl<>(downstream.supplier(),
+                                   (r, t) -> {
+                                       if (predicate.test(t)) {
+                                           downstreamAccumulator.accept(r, t);
+                                       }
+                                   },
+                                   downstream.combiner(), downstream.finisher(),
+                                   downstream.characteristics());
+    }
+    
+    public static<T,A,R,RR> Collector<T,A,RR> collectingAndThen(Collector<T,A,R> downstream,
+                                                                Function<R,RR> finisher) {
+        Set<Collector.Characteristics> characteristics = downstream.characteristics();
+        if (characteristics.contains(Collector.Characteristics.IDENTITY_FINISH)) {
+            if (characteristics.size() == 1)
+                characteristics = Collectors.CH_NOID;
+            else {
+                characteristics = EnumSet.copyOf(characteristics);
+                characteristics.remove(Collector.Characteristics.IDENTITY_FINISH);
+                characteristics = Collections.unmodifiableSet(characteristics);
+            }
+        }
+        return new CollectorImpl<>(downstream.supplier(),
+                                   downstream.accumulator(),
+                                   downstream.combiner(),
+                                   downstream.finisher().andThen(finisher),
+                                   characteristics);
+    }
+    
+    public static <T> Collector<T, ?, Long>
+    counting() {
+        return summingLong(e -> 1L);
+    }
+    
+    public static <T> Collector<T, ?, Optional<T>>
+    minBy(Comparator<? super T> comparator) {
+        return reducing(BinaryOperator.minBy(comparator));
+    }
+    
+    public static <T> Collector<T, ?, Optional<T>>
+    maxBy(Comparator<? super T> comparator) {
+        return reducing(BinaryOperator.maxBy(comparator));
+    }
+    
+    public static <T> Collector<T, ?, Integer>
+    summingInt(ToIntFunction<? super T> mapper) {
+        return new CollectorImpl<>(
+                () -> new int[1],
+                (a, t) -> { a[0] += mapper.applyAsInt(t); },
+                (a, b) -> { a[0] += b[0]; return a; },
+                a -> a[0], CH_NOID);
+    }
+    
+    public static <T> Collector<T, ?, Long>
+    summingLong(ToLongFunction<? super T> mapper) {
+        return new CollectorImpl<>(
+                () -> new long[1],
+                (a, t) -> { a[0] += mapper.applyAsLong(t); },
+                (a, b) -> { a[0] += b[0]; return a; },
+                a -> a[0], CH_NOID);
+    }
+    
+    public static <T> Collector<T, ?, Double>
+    summingDouble(ToDoubleFunction<? super T> mapper) {
+        return new CollectorImpl<>(
+                () -> new double[3],
+                (a, t) -> { double val = mapper.applyAsDouble(t);
+                            sumWithCompensation(a, val);
+                            a[2] += val;},
+                (a, b) -> { sumWithCompensation(a, b[0]);
+                            a[2] += b[2];
+                            return sumWithCompensation(a, b[1]); },
+                a -> computeFinalSum(a),
+                CH_NOID);
+    }
+    
+    public static <T> Collector<T, ?, Double>
+    averagingInt(ToIntFunction<? super T> mapper) {
+        return new CollectorImpl<>(
+                () -> new long[2],
+                (a, t) -> { a[0] += mapper.applyAsInt(t); a[1]++; },
+                (a, b) -> { a[0] += b[0]; a[1] += b[1]; return a; },
+                a -> (a[1] == 0) ? 0.0d : (double) a[0] / a[1], CH_NOID);
+    }
+    
+    public static <T> Collector<T, ?, Double>
+    averagingLong(ToLongFunction<? super T> mapper) {
+        return new CollectorImpl<>(
+                () -> new long[2],
+                (a, t) -> { a[0] += mapper.applyAsLong(t); a[1]++; },
+                (a, b) -> { a[0] += b[0]; a[1] += b[1]; return a; },
+                a -> (a[1] == 0) ? 0.0d : (double) a[0] / a[1], CH_NOID);
+    }
+    
+    public static <T> Collector<T, ?, Double>
+    averagingDouble(ToDoubleFunction<? super T> mapper) {
+        return new CollectorImpl<>(
+                () -> new double[4],
+                (a, t) -> { double val = mapper.applyAsDouble(t); sumWithCompensation(a, val); a[2]++; a[3]+= val;},
+                (a, b) -> { sumWithCompensation(a, b[0]); sumWithCompensation(a, b[1]); a[2] += b[2]; a[3] += b[3]; return a; },
+                a -> (a[2] == 0) ? 0.0d : (computeFinalSum(a) / a[2]),
+                CH_NOID);
+    }
+    
+    public static <T> Collector<T, ?, T>
+    reducing(T identity, BinaryOperator<T> op) {
+        return new CollectorImpl<>(
+                boxSupplier(identity),
+                (a, t) -> { a[0] = op.apply(a[0], t); },
+                (a, b) -> { a[0] = op.apply(a[0], b[0]); return a; },
+                a -> a[0],
+                CH_NOID);
+    }
+    
+    public static <T> Collector<T, ?, Optional<T>>
+    reducing(BinaryOperator<T> op) {
+        class OptionalBox implements Consumer<T> {
+            T value = null;
+            boolean present = false;
+
+            @Override
+            public void accept(T t) {
+                if (present) {
+                    value = op.apply(value, t);
+                }
+                else {
+                    value = t;
+                    present = true;
+                }
+            }
+        }
+
+        return new CollectorImpl<T, OptionalBox, Optional<T>>(
+                OptionalBox::new, OptionalBox::accept,
+                (a, b) -> { if (b.present) a.accept(b.value); return a; },
+                a -> Optional.ofNullable(a.value), CH_NOID);
+    }
+    
+    public static <T, U>
+    Collector<T, ?, U> reducing(U identity,
+                                Function<? super T, ? extends U> mapper,
+                                BinaryOperator<U> op) {
+        return new CollectorImpl<>(
+                boxSupplier(identity),
+                (a, t) -> { a[0] = op.apply(a[0], mapper.apply(t)); },
+                (a, b) -> { a[0] = op.apply(a[0], b[0]); return a; },
+                a -> a[0], CH_NOID);
+    }
+    
+    public static <T, K> Collector<T, ?, Map<K, List<T>>>
+    groupingBy(Function<? super T, ? extends K> classifier) {
+        return groupingBy(classifier, toList());
+    }
+    
+    public static <T, K, A, D>
+    Collector<T, ?, Map<K, D>> groupingBy(Function<? super T, ? extends K> classifier,
+                                          Collector<? super T, A, D> downstream) {
+        return groupingBy(classifier, HashMap::new, downstream);
+    }
+    
+    public static <T, K, D, A, M extends Map<K, D>>
+    Collector<T, ?, M> groupingBy(Function<? super T, ? extends K> classifier,
+                                  Supplier<M> mapFactory,
+                                  Collector<? super T, A, D> downstream) {
+        Supplier<A> downstreamSupplier = downstream.supplier();
+        BiConsumer<A, ? super T> downstreamAccumulator = downstream.accumulator();
+        BiConsumer<Map<K, A>, T> accumulator = (m, t) -> {
+            K key = Objects.requireNonNull(classifier.apply(t), "element cannot be mapped to a null key");
+            A container = m.computeIfAbsent(key, k -> downstreamSupplier.get());
+            downstreamAccumulator.accept(container, t);
+        };
+        BinaryOperator<Map<K, A>> merger = Collectors.<K, A, Map<K, A>>mapMerger(downstream.combiner());
+        @SuppressWarnings("unchecked")
+        Supplier<Map<K, A>> mangledFactory = (Supplier<Map<K, A>>) mapFactory;
+
+        if (downstream.characteristics().contains(Collector.Characteristics.IDENTITY_FINISH)) {
+            return new CollectorImpl<>(mangledFactory, accumulator, merger, CH_ID);
+        }
+        else {
+            @SuppressWarnings("unchecked")
+            Function<A, A> downstreamFinisher = (Function<A, A>) downstream.finisher();
+            Function<Map<K, A>, M> finisher = intermediate -> {
+                intermediate.replaceAll((k, v) -> downstreamFinisher.apply(v));
+                @SuppressWarnings("unchecked")
+                M castResult = (M) intermediate;
+                return castResult;
+            };
+            return new CollectorImpl<>(mangledFactory, accumulator, merger, finisher, CH_NOID);
+        }
+    }
+    
+    public static <T, K>
+    Collector<T, ?, ConcurrentMap<K, List<T>>>
+    groupingByConcurrent(Function<? super T, ? extends K> classifier) {
+        return groupingByConcurrent(classifier, ConcurrentHashMap::new, toList());
+    }
+    
+    public static <T, K, A, D>
+    Collector<T, ?, ConcurrentMap<K, D>> groupingByConcurrent(Function<? super T, ? extends K> classifier,
+                                                              Collector<? super T, A, D> downstream) {
+        return groupingByConcurrent(classifier, ConcurrentHashMap::new, downstream);
+    }
+    
+    public static <T, K, A, D, M extends ConcurrentMap<K, D>>
+    Collector<T, ?, M> groupingByConcurrent(Function<? super T, ? extends K> classifier,
+                                            Supplier<M> mapFactory,
+                                            Collector<? super T, A, D> downstream) {
+        Supplier<A> downstreamSupplier = downstream.supplier();
+        BiConsumer<A, ? super T> downstreamAccumulator = downstream.accumulator();
+        BinaryOperator<ConcurrentMap<K, A>> merger = Collectors.<K, A, ConcurrentMap<K, A>>mapMerger(downstream.combiner());
+        @SuppressWarnings("unchecked")
+        Supplier<ConcurrentMap<K, A>> mangledFactory = (Supplier<ConcurrentMap<K, A>>) mapFactory;
+        BiConsumer<ConcurrentMap<K, A>, T> accumulator;
+        if (downstream.characteristics().contains(Collector.Characteristics.CONCURRENT)) {
+            accumulator = (m, t) -> {
+                K key = Objects.requireNonNull(classifier.apply(t), "element cannot be mapped to a null key");
+                A resultContainer = m.computeIfAbsent(key, k -> downstreamSupplier.get());
+                downstreamAccumulator.accept(resultContainer, t);
+            };
+        }
+        else {
+            accumulator = (m, t) -> {
+                K key = Objects.requireNonNull(classifier.apply(t), "element cannot be mapped to a null key");
+                A resultContainer = m.computeIfAbsent(key, k -> downstreamSupplier.get());
+                synchronized (resultContainer) {
+                    downstreamAccumulator.accept(resultContainer, t);
+                }
+            };
+        }
+
+        if (downstream.characteristics().contains(Collector.Characteristics.IDENTITY_FINISH)) {
+            return new CollectorImpl<>(mangledFactory, accumulator, merger, CH_CONCURRENT_ID);
+        }
+        else {
+            @SuppressWarnings("unchecked")
+            Function<A, A> downstreamFinisher = (Function<A, A>) downstream.finisher();
+            Function<ConcurrentMap<K, A>, M> finisher = intermediate -> {
+                intermediate.replaceAll((k, v) -> downstreamFinisher.apply(v));
+                @SuppressWarnings("unchecked")
+                M castResult = (M) intermediate;
+                return castResult;
+            };
+            return new CollectorImpl<>(mangledFactory, accumulator, merger, finisher, CH_CONCURRENT_NOID);
+        }
+    }
+    
+    public static <T>
+    Collector<T, ?, Map<Boolean, List<T>>> partitioningBy(Predicate<? super T> predicate) {
+        return partitioningBy(predicate, toList());
+    }
+    
+    public static <T, D, A>
+    Collector<T, ?, Map<Boolean, D>> partitioningBy(Predicate<? super T> predicate,
+                                                    Collector<? super T, A, D> downstream) {
+        BiConsumer<A, ? super T> downstreamAccumulator = downstream.accumulator();
+        BiConsumer<Partition<A>, T> accumulator = (result, t) ->
+                downstreamAccumulator.accept(predicate.test(t) ? result.forTrue : result.forFalse, t);
+        BinaryOperator<A> op = downstream.combiner();
+        BinaryOperator<Partition<A>> merger = (left, right) ->
+                new Partition<>(op.apply(left.forTrue, right.forTrue),
+                                op.apply(left.forFalse, right.forFalse));
+        Supplier<Partition<A>> supplier = () ->
+                new Partition<>(downstream.supplier().get(),
+                                downstream.supplier().get());
+        if (downstream.characteristics().contains(Collector.Characteristics.IDENTITY_FINISH)) {
+            return new CollectorImpl<>(supplier, accumulator, merger, CH_ID);
+        }
+        else {
+            Function<Partition<A>, Map<Boolean, D>> finisher = par ->
+                    new Partition<>(downstream.finisher().apply(par.forTrue),
+                                    downstream.finisher().apply(par.forFalse));
+            return new CollectorImpl<>(supplier, accumulator, merger, finisher, CH_NOID);
+        }
+    }
+    
+    public static <T, K, U>
+    Collector<T, ?, Map<K,U>> toMap(Function<? super T, ? extends K> keyMapper,
+                                    Function<? super T, ? extends U> valueMapper) {
+        return new CollectorImpl<>(HashMap::new,
+                                   uniqKeysMapAccumulator(keyMapper, valueMapper),
+                                   uniqKeysMapMerger(),
+                                   CH_ID);
+    }
+    
+    public static <T, K, U>
+    Collector<T, ?, Map<K,U>> toUnmodifiableMap(Function<? super T, ? extends K> keyMapper,
+                                                Function<? super T, ? extends U> valueMapper) {
+        Objects.requireNonNull(keyMapper, "keyMapper");
+        Objects.requireNonNull(valueMapper, "valueMapper");
+        return collectingAndThen(
+                toMap(keyMapper, valueMapper),
+                map -> (Map<K,U>)Map.ofEntries(map.entrySet().toArray(new Map.Entry[0])));
+    }
+    
+    public static <T, K, U>
+    Collector<T, ?, Map<K,U>> toMap(Function<? super T, ? extends K> keyMapper,
+                                    Function<? super T, ? extends U> valueMapper,
+                                    BinaryOperator<U> mergeFunction) {
+        return toMap(keyMapper, valueMapper, mergeFunction, HashMap::new);
+    }
+    
+    public static <T, K, U>
+    Collector<T, ?, Map<K,U>> toUnmodifiableMap(Function<? super T, ? extends K> keyMapper,
+                                                Function<? super T, ? extends U> valueMapper,
+                                                BinaryOperator<U> mergeFunction) {
+        Objects.requireNonNull(keyMapper, "keyMapper");
+        Objects.requireNonNull(valueMapper, "valueMapper");
+        Objects.requireNonNull(mergeFunction, "mergeFunction");
+        return collectingAndThen(
+                toMap(keyMapper, valueMapper, mergeFunction, HashMap::new),
+                map -> (Map<K,U>)Map.ofEntries(map.entrySet().toArray(new Map.Entry[0])));
+    }
+    
+    public static <T, K, U, M extends Map<K, U>>
+    Collector<T, ?, M> toMap(Function<? super T, ? extends K> keyMapper,
+                             Function<? super T, ? extends U> valueMapper,
+                             BinaryOperator<U> mergeFunction,
+                             Supplier<M> mapFactory) {
+        BiConsumer<M, T> accumulator
+                = (map, element) -> map.merge(keyMapper.apply(element),
+                                              valueMapper.apply(element), mergeFunction);
+        return new CollectorImpl<>(mapFactory, accumulator, mapMerger(mergeFunction), CH_ID);
+    }
+    
+    public static <T, K, U>
+    Collector<T, ?, ConcurrentMap<K,U>> toConcurrentMap(Function<? super T, ? extends K> keyMapper,
+                                                        Function<? super T, ? extends U> valueMapper) {
+        return new CollectorImpl<>(ConcurrentHashMap::new,
+                                   uniqKeysMapAccumulator(keyMapper, valueMapper),
+                                   uniqKeysMapMerger(),
+                                   CH_CONCURRENT_ID);
+    }
+    
+    public static <T, K, U>
+    Collector<T, ?, ConcurrentMap<K,U>>
+    toConcurrentMap(Function<? super T, ? extends K> keyMapper,
+                    Function<? super T, ? extends U> valueMapper,
+                    BinaryOperator<U> mergeFunction) {
+        return toConcurrentMap(keyMapper, valueMapper, mergeFunction, ConcurrentHashMap::new);
+    }
+    
+    public static <T, K, U, M extends ConcurrentMap<K, U>>
+    Collector<T, ?, M> toConcurrentMap(Function<? super T, ? extends K> keyMapper,
+                                       Function<? super T, ? extends U> valueMapper,
+                                       BinaryOperator<U> mergeFunction,
+                                       Supplier<M> mapFactory) {
+        BiConsumer<M, T> accumulator
+                = (map, element) -> map.merge(keyMapper.apply(element),
+                                              valueMapper.apply(element), mergeFunction);
+        return new CollectorImpl<>(mapFactory, accumulator, mapMerger(mergeFunction), CH_CONCURRENT_ID);
+    }
+    
+    public static <T>
+    Collector<T, ?, IntSummaryStatistics> summarizingInt(ToIntFunction<? super T> mapper) {
+        return new CollectorImpl<T, IntSummaryStatistics, IntSummaryStatistics>(
+                IntSummaryStatistics::new,
+                (r, t) -> r.accept(mapper.applyAsInt(t)),
+                (l, r) -> { l.combine(r); return l; }, CH_ID);
+    }
+    
+    public static <T>
+    Collector<T, ?, LongSummaryStatistics> summarizingLong(ToLongFunction<? super T> mapper) {
+        return new CollectorImpl<T, LongSummaryStatistics, LongSummaryStatistics>(
+                LongSummaryStatistics::new,
+                (r, t) -> r.accept(mapper.applyAsLong(t)),
+                (l, r) -> { l.combine(r); return l; }, CH_ID);
+    }
+    
+    public static <T>
+    Collector<T, ?, DoubleSummaryStatistics> summarizingDouble(ToDoubleFunction<? super T> mapper) {
+        return new CollectorImpl<T, DoubleSummaryStatistics, DoubleSummaryStatistics>(
+                DoubleSummaryStatistics::new,
+                (r, t) -> r.accept(mapper.applyAsDouble(t)),
+                (l, r) -> { l.combine(r); return l; }, CH_ID);
+    }
+    
+    private static final class Partition<T> { }
+}
+```
 
 
 
