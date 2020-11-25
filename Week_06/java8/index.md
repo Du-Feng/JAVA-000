@@ -1,4 +1,4 @@
-# Java 8 新特性
+# Java 8 新特性——函数式编程
 
 ## Introduction
 
@@ -15,6 +15,10 @@
 - Collect掌握的不太熟练。
 
 - 并行数据处理理解的不够透彻。
+
+
+
+函数式编程 (functional-style programming) 相对于指令式编程 (imperative programming) 的一个主要优点：你只需指出希望的结果——做什么，而不用操心执行的步骤——如何做。
 
 
 
@@ -623,11 +627,13 @@ java.util.stream.Stream中的Stream接口定义了许多操作，它们可以分
 
     - filter(Predicate p) 接收 Lambda ， 从流中排除某些元素。
     - distinct() 筛选，通过流所生成元素的 hashCode() 和 equals() 去除重复元素。
+    
 2. 切片 Slicing a stream
     - takeWhile
     - dropWhile
     - limit(long maxSize) 截断流，使其元素不超过给定数量。
     - skip(long n) 跳过元素，返回一个扔掉了前 n 个元素的流。若流中元素不足 n 个，则返回一个空流。
+    
 3. 映射 Mapping
     - map(Function f) 接收 Lambda ，将元素转换成其他形式或提取信息；接收一个函数作为参数，该函数会被应用到每个元素上，并将其映射成一个新的元素。
 
@@ -639,12 +645,22 @@ java.util.stream.Stream中的Stream接口定义了许多操作，它们可以分
     - noneMatch
     - findAny
     - findFirst
+    
 5. 归约 Reducing
+
+    它接受两个参数：
+
+    - 一个初始值
+    - 一个累积函数，类型为BinaryOperator<T>，来将两个元素结合起来产生一个新值。
+
+    ![reduce operation](assets/Stream/reduce-operation.png)
+
 6. 数值流 Numeric streams
     - sum
     - mapToInt(ToIntFunction f) 接收一个函数作为参数，该函数会被应用到每个元素上，产生一个新的 IntStream。
     - mapToLong(ToLongFunction f) 接收一个函数作为参数，该函数会被应用到每个元素上，产生一个新的 LongStream。
     - mapToDouble(ToDoubleFunction f) 接收一个函数作为参数，该函数会被应用到每个元素上，产生一个新的 DoubleStream。
+
 7. 排序
     - sorted() 产生一个新流，其中按自然顺序排序。
 
@@ -743,15 +759,21 @@ java.util.stream package 的一个接口：interface Collector<T, A, R>
 - A是累加器的类型，累加器是在收集过程中用于累积部分结果的对象。 
 -  R是收集操作得到的对象（通常但并不一定是集合）的类型。 
 
+
+
 它的重要方法如下：
 
-1. 建立᯦的结果容器：supplier方法
+1. 建立新的结果容器：supplier方法
 
 2. 将元素添加到结果容器：accumulator方法
 
 3. 对结果容器应用最终转换：finisher方法
 
-4.  合并两个结果容器：combiner方法
+    ![collect finisher](assets/Stream/collect-finisher.png)
+
+4. 合并两个结果容器：combiner方法
+
+    ![collect combiner](assets/Stream/collect-combiner.png)
 
 5. characteristics方法
 
@@ -832,7 +854,61 @@ public interface Collector<T, A, R> {
 
 ##### Collectors 工厂类
 
-java.util.stream package中的一个final class，是Collector的工厂类，里面提供了常用的快速生成 Collector 实例的工厂方法：
+java.util.stream package中的一个final class，是Collector的工厂类，里面提供了工厂方法创建预定义收集器，它们主要分为三大功能：
+
+- 将流元素归约和汇总为一个值
+
+    - maxBy 计算流中的最大值
+
+    - minBy 计算流中的最小值
+
+    - summingInt 求和
+
+    - summingDouble 求和
+
+    - summingLong 求和
+
+    - joining 连接字符串
+
+    - reducing 广义的归约 (generalized reduction)
+
+        事实上，我们已经讨论的所有收集器，都是一个可以用reducing工厂方法定义的归约过程的特殊情况而已。Collectors.reducing工厂方法是所有这些特殊情况的一般化。可以说，先前讨论的案例仅仅是为了方便程序员而已。
+
+        它需要三个参数：
+
+        - 第一个参数是归约操作的起始值，也是流中没有元素时的返回值，所以很显然对于数值和而言0是一个合适的值。
+        - 第二个参数是转换函数。
+        - 第三个参数是一个BinaryOperator 累积函数，将两个项目累积成一个同类型的值。
+
+        ![collect reducing](assets/Stream/collect-reducing.png)
+
+- 元素分组
+
+    - groupingBy 它接受一个Function作为参数，用来把流中的元素分成不同的组。这个Function叫作**分类函数**。分组的结果是一个Map，把分组函数返回的值作为映射的键，把流中所有具有这个分类值的项目的列表作为对应的映射值。
+
+        支持一级分组、多级分组，也支持按子组收集数据、产生多重效果 （请参照《Java in Action》第6.3.2小节）。
+
+        ![collect reducing one level](assets/Stream/collect-reducing-one-level.png)
+
+        
+
+        ![collect reducing two levels](assets/Stream/collect-reducing-two-levels.png)
+
+        
+
+        ![collect reducing advance](assets/Stream/collect-reducing-advance.png)
+
+- 元素分区
+
+    - partitioningBy 分区是分组的特殊情况：由一个谓词（返回一个布尔值的函数）作为分类函数，它称**分区函数**。分区函数返回一个布尔值，这意味着得到的分组Map的键类型是Boolean，于是它最多可以分为两组——true是一组，false是一组。
+
+        例如，如果你是素食者或是请了一位素食的朋友来共进晚餐，可能会想要把菜单按照素食和非素食分开：
+
+        ![collect partioningBy one level](assets/Stream/collect-partioningBy-one-level.png)
+
+        <br/>与其它结合，也可以产生多级Map：
+
+        ![collect partioningBy two levels](assets/Stream/collect-partioningBy-two-levels.png)
 
 
 
