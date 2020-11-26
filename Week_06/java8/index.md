@@ -232,11 +232,74 @@ Lambda表达式可以：
 
 函数式接口的抽象方法的签名基本上就是Lambda表达式的签名。我们将这种抽象方法叫作函数描述符。
 
+注：正常方法签名是由方法名、形参列表、返回值三部分构成，基本形式是：
+
+**全类名.方法名(形参数据类型列表)返回值数据类型**
+
+但是，在使用Lambda时，它只关注形**参数据类型列表和返回值类型**两个部分。
+
 ![Function Descriptor](assets/Lambda/function-descriptor.png)
 
 
 
 ![Functional Internface API](assets/Lambda/functional-interface-api.png)
+
+
+
+#### 类型检查、类型推断以及限制
+
+##### 类型检查
+
+Lambda的类型是从使用Lambda的上下文推断出来的。上下文（比如，接受它传递的方法的参数，或接受它的值的局部变量）中Lambda表达式需要的类型称为**目标类型 target type** （也可以简单理解为函数式接口的抽象方法的形参数据类型列表+返回值类型）。
+
+下图是一个类型检查过程解析：
+
+![Lambda Interpret](assets/Lambda/interpret.png)
+
+
+
+![interpret example 1](assets/Lambda/interpret-example-1.png)
+
+
+
+![interpret example 2](assets/Lambda/interpret-example-2.png)
+
+
+
+##### 类型推断
+
+你还可以进一步简化你的代码。Java编译器会从上下文（目标类型）推断出用什么函数式接口来配合Lambda表达式，这意味着它也可以推断出适合Lambda的签名，因为函数描述符可以通过目标类型来得到。这样做的好处在于，编译器可以了解Lambda表达式的参数类型，这样就可以在Lambda语法中ᄴ去标注参数类型。换句话说，Java编译器会像下面这样推断Lambda的参数类型：
+
+ 注意：
+
+- 当Lambda仅有一个类型需要推断的参数时，参数名称两边的括号也可以省略。
+- 有时候显式写出类型更易读，有时候去掉它们更易读。没有什么法则说哪种更好；对于如何让代码更易读，程序员必须做出自己的选择。 
+
+![interpret example 3](assets/Lambda/interpret-example-3.png)
+
+
+
+##### 使用局部变量
+
+迄今为止所介绍的所有Lambda表达式都只用到了其主体里面的参数。但Lambda表达式也允许使用**自由变量 free variables**（不是参数，而是在外层作用域中定义的变量），就像匿名类一样。 它们被称作**捕获Lambda (capturing lambdas)**。
+
+
+
+**Lambda表达式引用的局部变量必须是最终的(final)或事实上最终的。这些变量必须是隐式最终的。可以认为Lambda
+是对值封闭，而不是对变量封闭。**
+
+
+
+例如，下面的代码无法编译，因为portNumber变量被赋值两次：
+
+![interpret failed](assets/Lambda/interpret-failed.png)
+
+为什么局部变量有这些限制？
+
+- 实例变量和局部变量背后的实现有一个关键不同。实例变量都存储在堆中，而局部变量则保存在栈上。如果Lambda可以直接访问局部变量，而且Lambda是在一个线程中使用的，则使用Lambda的线程，可能会在分配该变量的线程将这个变量收回之后，去访问该变量。因此，Java在访问自由局部变量时，实际上是在访问它的副本，而不是访问原始变量。如果局部变量仅仅赋值一次那就没有什么区别了——因此就有了这个限制。 
+- 这一限制不鼓励你使用改变外部变量的典型命令式编程模式。
+
+![closure](assets/Lambda/closure.png)
 
 
 
