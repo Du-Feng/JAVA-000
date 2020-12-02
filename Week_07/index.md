@@ -29,9 +29,9 @@ END $
 CALL orders_init_batch();
 ```
 
-运行时间：71.156 sec
+运行时间：71.156 sec，即1.19 min。
 
-![Batch Mode](images/batch.png)
+![Batch Mode](C:/Data/Code/GitHub/JAVA-000/Week_07/images/batch.png)
 
 
 
@@ -52,9 +52,9 @@ END $
 CALL orders_init_autocommit();
 ```
 
-运行时间：
+运行时间：4214.375 sec， 即70.24 min。
 
-![Auto Commit Mode](images/autocommit.png)
+![Auto Commit Mode](C:/Data/Code/GitHub/JAVA-000/Week_07/images/autocommit.png)
 
 
 
