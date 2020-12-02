@@ -54,7 +54,7 @@ CALL orders_init_autocommit();
 
 运行时间：
 
-![Batch Mode](images/autocommit.png)
+![Auto Commit Mode](images/autocommit.png)
 
 
 
