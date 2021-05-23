@@ -60,6 +60,17 @@
 
 由此可见，管程相当于围墙，它把共享变量和对它进行操作的若干个过程围了起来，所有的进程要访问临界资源时，都必须经过管程才能进入，而管程每次只允许一个进程进入管程，从而实现了进程的互斥。
 
+
+
+## 并发(Concurrency)与并发(Parallelism)的区别
+
+请参照：
+
+- [Difference between Concurrency and Parallelism - GeeksforGeeks](https://www.geeksforgeeks.org/difference-between-concurrency-and-parallelism/)
+- [Crazy Snail-CSDN博客：并发和并行的区别](https://blog.csdn.net/java_zero2one/article/details/51477791)
+
+
+
 ## 并发编程领域三个核心问题
 
 参照 [学习攻略 | 如何才能学好并发编程？](https://time.geekbang.org/column/article/83267)。
@@ -70,13 +81,13 @@
 
 ### 分工
 
-分工指的是如何高效地拆解任务并分配给线程。
+**分工指的是如何高效地拆解任务并分配给线程。**
 
 Java SDK 并发包里的 Executor、Fork/Join、Future 本质上都是一种分工方法。除此之外，并发编程领域还总结了一些设计模式，基本上都是和分工方法相关的，例如生产者 - 消费者、Thread-Per-Message、Worker Thread 模式等都是用来指导你如何分工的。
 
 ### 同步
 
-同步指的是线程之间如何协作。
+**同步指的是线程之间如何协作。**
 
 一个线程执行完了一个任务，如何通知执行后续任务的线程开工。
 
@@ -90,7 +101,7 @@ Java SDK 并发包里的 Executor、Fork/Join、Future 本质上都是一种分�
 
 ### 互斥
 
-互斥则是保证同一时刻只允许一个线程访问共享资源。
+**互斥则是保证同一时刻只允许一个线程访问共享资源。**
 
 实现互斥的核心技术就是锁，Java 语言里 synchronized、SDK 里的各种 Lock 都能解决互斥问题。虽说锁解决了安全性问题，但同时也带来了性能问题，那如何保证安全性的同时又尽量提高性能呢？可以分场景优化，Java SDK 里提供的 ReadWriteLock、StampedLock 就可以优化读多写少场景下锁的性能。还可以使用无锁的数据结构，例如 Java SDK 里提供的原子类都是基于无锁技术实现的。除此之外，还有一些其他的方案，原理是不共享变量或者变量只允许读。这方面，Java 提供了 Thread Local 和 final 关键字，还有一种 Copy-on-write 的模式。
 
@@ -158,7 +169,7 @@ Doug Lea《Java 并发编程：设计原则与模式》一书中，
 另外，KK总结-最小使用锁：
 
 1. 降低锁范围：锁定代码的范围/作用域
-2. 细分锁粒度：讲一个大锁，拆分成多个小锁
+2. 细分锁粒度：将一个大锁，拆分成多个小锁
 
 
 
@@ -197,7 +208,7 @@ Java 中的线程状态转换图:
 
 # 实践
 
-以下会练习代码的重点讲解。
+以下是练习代码的重点讲解。
 
 ## package org.example.introduction
 
