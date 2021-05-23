@@ -1,3 +1,5 @@
+[toc]
+
 # Java 8 新特性——函数式编程
 
 ## Introduction
